@@ -29,10 +29,10 @@ public class HomeController {
 	public String showLoginPage(HttpSession session, Model model) {
 		return "/user/login";
 	}
-	@GetMapping("/register")
-	public String showRegistePage(HttpSession session, Model model) {
-		return "/user/register";
-	}
+//	@GetMapping("/register")
+//	public String showRegistePage(HttpSession session, Model model) {
+//		return "/user/register";
+//	}
 	@GetMapping("/detail-template")
 	public String showDetaiTemplatePage(HttpSession session, Model model) {
 		return "/user/detail-template";

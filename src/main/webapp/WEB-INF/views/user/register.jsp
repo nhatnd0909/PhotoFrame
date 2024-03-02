@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en">
@@ -30,16 +31,16 @@
                     <div class="col-12">
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
-                            <a href="index" class="logo">
+                            <a href="index.html" class="logo">
                                 <img src="assets/images/templatemo-eduwell.png" alt="EduWell Template">
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="index" class="active">Trang Chủ</a></li>
-                                <li class=""><a href="template">Dịch Vụ</a></li>
-                                <li class=""><a href="contact-us">Liên hệ</a></li>
-                                <li class=""><a href="login">Đăng Nhập</a></li>
+                                <li class="scroll-to-section"><a href="index.html" class="active">Trang Chủ</a></li>
+                                <li class=""><a href="template.html">Dịch Vụ</a></li>
+                                <li class=""><a href="contact-us.html">Liên hệ</a></li>
+                                <li class=""><a href="login.html">Đăng Nhập</a></li>
                             </ul>
                             <a class='menu-trigger'>
                                 <span>Menu</span>
@@ -51,10 +52,14 @@
                 <div class="login d-flex justify-content-center mt-5">
                     <div class="wrapper">
                         <header>Đăng Ký Ngay</header>
-                        <form action="#">
+                        <p class="text-warning" style="font-size: 17px">${mess}</p>
+                        <form action="register" method="post" onsubmit="return checkPasswordMatch()">
                             <div class="field name">
                                 <div class="input-area">
-                                    <input type="text" placeholder="Họ và Tên">
+                                    <input type="text" name="name" placeholder="Họ và Tên"
+                                        pattern="[a-zA-Z\s\u00C0-\u1FFF\u2C00-\uD7FF]{10,}"
+                                        title="Chỉ chứa các ký tự chữ cái, khoảng trắng, và các ký tự đặc biệt trong tiếng Việt, ít nhất 10 ký tự"
+                                        value="${name}" required>
                                     <i class="icon fas fa-envelope"></i>
                                     <i class="error error-icon fas fa-exclamation-circle"></i>
                                 </div>
@@ -62,7 +67,9 @@
                             </div>
                             <div class="field email">
                                 <div class="input-area">
-                                    <input type="text" placeholder="Username">
+                                    <input type="text" name="username" placeholder="Username"
+                                        pattern="^(?=.*[a-zA-Z])[a-zA-Z\d]{5,}$"
+                                        title="Ít nhất 5 ký tự, có ít nhất 1 chữ cái" value="${username}" required>
                                     <i class="icon fas fa-envelope"></i>
                                     <i class="error error-icon fas fa-exclamation-circle"></i>
                                 </div>
@@ -70,19 +77,19 @@
                             </div>
                             <div class="field password">
                                 <div class="input-area">
-                                    <input type="password" placeholder="Mật khẩu">
+                                    <input id="password" type="password" name="password" placeholder="Mật khẩu"
+                                        pattern=".{6,}" title="Mật khẩu không được để trống và phải có ít nhất 6 ký tự"
+                                        required>
                                     <i class="icon fas fa-lock"></i>
                                     <i class="error error-icon fas fa-exclamation-circle"></i>
                                 </div>
-                                <div class="error error-txt error-txt-pass">Mật khẩu không bỏ trống</div>
                             </div>
                             <div class="field re-password">
                                 <div class="input-area">
-                                    <input type="password" placeholder="Nhập lại mật khẩu">
+                                    <input id="re-password" type="password" placeholder="Nhập lại mật khẩu" required>
                                     <i class="icon fas fa-lock"></i>
                                     <i class="error error-icon fas fa-exclamation-circle"></i>
                                 </div>
-                                <div class="error error-txt error-txt-pass">Mật khẩu không bỏ trống</div>
                             </div>
                             <div class="pass-txt"><a href="#">Quên mật khẩu?</a></div>
                             <input type="submit" value="Đăng ký">
@@ -92,9 +99,19 @@
             </div>
     </header>
 
+    <script>
+        // Function to check if the re-password matches the password
+        function checkPasswordMatch() {
+            var password = document.getElementById("password").value;
+            var rePassword = document.getElementById("re-password").value;
 
-    <script src="assets/js/register.js"></script>
-
+            if (password != rePassword) {
+                alert("Mật khẩu không khớp. Vui lòng nhập lại.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 
 </html>
