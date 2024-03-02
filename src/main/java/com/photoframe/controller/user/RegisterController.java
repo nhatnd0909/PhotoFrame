@@ -38,10 +38,12 @@ public class RegisterController {
 			model.addAttribute("username",username);
 			return "/user/register";
 		}
-		Account account = new Account(username, password);
+		Account account = new Account(username, accountService.getMd5(password));
 		accountService.createUserAccount(account);
 		Customer customer = new Customer(name, account);
 		customerServie.createCustomer(customer, account);
-		return "redirect:/login";
+		model.addAttribute("mess","Đăng ký thành công. Xin mời đăng nhập");
+		model.addAttribute("username",username);
+		return "/user/login";
 	}
 }

@@ -28,5 +28,14 @@ public class CustomerServie {
 	public List<Customer> getAllCustomer() {
 		return customerRepository.findAll();
 	}
+	public Customer getCustomerByUsername(String username) {
+		List<Customer> listCustomers = getAllCustomer();
+		for(Customer c:listCustomers) {
+			if(c.getAccount().getUserName().equals(username)) {
+				return c;
+			}
+		}
+		return null;
+	}
 	
 }

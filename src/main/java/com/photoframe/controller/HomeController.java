@@ -25,10 +25,12 @@ public class HomeController {
 	public String showContactUsPage(HttpSession session, Model model) {
 		return "/user/contact-us";
 	}
-	@GetMapping("/login")
-	public String showLoginPage(HttpSession session, Model model) {
-		return "/user/login";
-	}
+//	@GetMapping("/login")
+//	public String showLoginPage(HttpSession session, Model model) {
+//		model.addAttribute("mess","");
+//		model.addAttribute("username","");
+//		return "/user/login";
+//	}
 //	@GetMapping("/register")
 //	public String showRegistePage(HttpSession session, Model model) {
 //		return "/user/register";

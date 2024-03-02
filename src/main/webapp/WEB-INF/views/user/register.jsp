@@ -31,16 +31,16 @@
                     <div class="col-12">
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
-                            <a href="index.html" class="logo">
+                            <a href="index" class="logo">
                                 <img src="assets/images/templatemo-eduwell.png" alt="EduWell Template">
                             </a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="index.html" class="active">Trang Chủ</a></li>
-                                <li class=""><a href="template.html">Dịch Vụ</a></li>
-                                <li class=""><a href="contact-us.html">Liên hệ</a></li>
-                                <li class=""><a href="login.html">Đăng Nhập</a></li>
+                                <li class="scroll-to-section"><a href="index" class="active">Trang Chủ</a></li>
+                                <li class=""><a href="template">Dịch Vụ</a></li>
+                                <li class=""><a href="contact-us">Liên hệ</a></li>
+                                <li class=""><a href="login">Đăng Nhập</a></li>
                             </ul>
                             <a class='menu-trigger'>
                                 <span>Menu</span>
