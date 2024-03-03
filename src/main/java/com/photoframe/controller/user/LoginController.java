@@ -11,8 +11,8 @@ import com.photoframe.model.Customer;
 import com.photoframe.service.AccountService;
 import com.photoframe.service.CustomerServie;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-
 
 @Controller
 public class LoginController {
@@ -20,23 +20,45 @@ public class LoginController {
 	private AccountService accountService;
 	@Autowired
 	private CustomerServie customerServie;
-	
+
 	@GetMapping("/login")
-	public String showLoginPage(Model model) {
-		model.addAttribute("mess","");
-		model.addAttribute("username","");
+	public String showLoginPage(HttpSession session, Model model) {
+		String userID = (String) session.getAttribute("userID");
+		model.addAttribute("logged", "0");
+		if (userID != null) {
+			model.addAttribute("logged", "1");
+		}
+
+		model.addAttribute("mess", "");
+		model.addAttribute("username", "");
 		return "/user/login";
 	}
+
 	@PostMapping("login")
-	public String login(HttpSession session,Model model,@RequestParam String username,@RequestParam String password) {
-		if(!accountService.checkLogin(username, accountService.getMd5(password))) {
-			model.addAttribute("mess","Sai thông tin đăng nhập");
-			model.addAttribute("username",username);
+	public String login(HttpServletRequest request, Model model, @RequestParam String username,
+			@RequestParam String password, HttpSession session2) {
+		if (!accountService.checkLogin(username, accountService.getMd5(password))) {
+			model.addAttribute("mess", "Sai thông tin đăng nhập");
+			model.addAttribute("username", username);
+
+			String userID = (String) session2.getAttribute("userID");
+			model.addAttribute("logged", "0");
+			if (userID != null) {
+				model.addAttribute("logged", "1");
+			}
+
 			return "/user/login";
 		}
 		Customer customer = customerServie.getCustomerByUsername(username);
 //		lưu dữ liệu user sau khi đăng nhập
-		session.setAttribute("user", customer);
+		HttpSession session = request.getSession();
+		session.setAttribute("userID", customer.getCustomerID().toString());
+//		
+		String userID = (String) session2.getAttribute("userID");
+		model.addAttribute("logged", "0");
+		if (userID != null) {
+			model.addAttribute("logged", "1");
+		}
 		return "/user/index";
 	}
 }

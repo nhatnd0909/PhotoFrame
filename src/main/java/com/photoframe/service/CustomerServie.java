@@ -37,5 +37,14 @@ public class CustomerServie {
 		}
 		return null;
 	}
+	public Customer getCustomerByID(String id) {
+		List<Customer> listCustomers = getAllCustomer();
+		for(Customer c:listCustomers) {
+			if(c.getAccount().getAccountID().equals(Long.parseLong(id))) {
+				return c;
+			}
+		}
+		return null;
+	}
 	
 }
