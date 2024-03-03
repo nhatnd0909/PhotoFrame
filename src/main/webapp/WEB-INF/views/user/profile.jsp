@@ -74,10 +74,11 @@ https://templatemo.com/tm-573-eduwell
 							<c:if test="${logged eq 1}">
 								<span>
 									<li class="has-sub"><a href="javascript:void(0)"><i
-											class="fa-solid fa-user"></i> Người Dùng</a>
+											class="fa-solid fa-user"></i>Hi,
+											${user.getAccount().getUserName()}</a>
 										<ul class="sub-menu">
 											<li><a href="profile">Thông tin</a></li>
-											<li><a href="">Đăng Xuất</a></li>
+											<li><a href="logout">Đăng Xuất</a></li>
 										</ul></li>
 								</span>
 							</c:if>
@@ -102,28 +103,32 @@ https://templatemo.com/tm-573-eduwell
 						<div class="container">
 							<div class="main-body">
 								<div class="row">
+									<h3 class="fw-bold"
+										style="color: #FF9999 !important; margin-bottom: 30px;">
+										Thông tin người dùng</h3>
 									<div class="col-lg-4">
 										<div class="card">
 											<div class="card-body">
 												<div
 													class="d-flex flex-column align-items-center text-center">
-													<form action="changeavatar" method="post">
+													<form action="changeavatar" method="get">
 														<div class="avatar-upload">
 															<div class="avatar-preview">
 																<img id="imagePreview" src="assets/images/avatar.webp"
-																	alt="Avatar Preview">
+																	alt="Avatar Preview"
+																	style="border-radius: 50%; max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 1;">
 															</div>
 															<div class="avatar-edit">
 																<input name="urlimage" type='file' id="imageUpload"
-																	accept=".png, .jpg, .jpeg" onchange="previewImage()" />
-																<label for="imageUpload"></label>
+																	accept="image/*" onchange="previewImage()" /> <label
+																	for="imageUpload"></label>
 															</div>
 														</div>
 														<div class="mt-3">
-															<h4>User Name</h4>
+															<h4>${user.getName()}</h4>
 															<p class="text-muted font-size-sm">Đà Nẵng</p>
-															<button id="saveButton" class="btn btn-outline-primary"
-																style="display: none;">Save</button>
+															<button id="saveButton" class="btn btn-outline-primary">Lưu
+																ảnh</button>
 														</div>
 													</form>
 
@@ -173,7 +178,7 @@ https://templatemo.com/tm-573-eduwell
 										</div>
 									</div>
 									<div class="col-lg-8">
-										<form action="profileUser" method="post">
+										<form action="profile" method="post">
 											<div class="card">
 												<div class="card-body">
 													<div class="row mb-4">
@@ -182,7 +187,7 @@ https://templatemo.com/tm-573-eduwell
 														</div>
 														<div class="col-sm-9 text-secondary">
 															<input name="name" type="text" class="form-control"
-																value="Họ và tên">
+																value="${user.getName()}">
 														</div>
 													</div>
 													<div class="row mb-4">
@@ -190,20 +195,30 @@ https://templatemo.com/tm-573-eduwell
 															<h6 class="mb-0">Email</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">
-															<input name="email" type="text" class="form-control"
-																value="email">
+															<input name="email" type="email" class="form-control"
+																value="${user.getEmail()}">
 														</div>
 													</div>
 													<div class="row mb-4">
 														<div class="col-sm-3">
 															<h6 class="mb-0">Giới tính</h6>
 														</div>
-														<div class="col-sm-9 text-secondary">
-															<select id="gender" name="gender" class="form-control">
-																<option value="Male">Nam</option>
-																<option value="Female">Nữ</option>
-															</select>
-														</div>
+														<c:if test="${user.getGender() eq ('Male')}">
+															<div class="col-sm-9 text-secondary">
+																<select id="gender" name="gender" class="form-control">
+																	<option value="Male">Nam</option>
+																	<option value="Female">Nữ</option>
+																</select>
+															</div>
+														</c:if>
+														<c:if test="${user.getGender() eq ('Female')}">
+															<div class="col-sm-9 text-secondary">
+																<select id="gender" name="gender" class="form-control">
+																	<option value="Female">Nữ</option>
+																	<option value="Male">Nam</option>
+																</select>
+															</div>
+														</c:if>
 													</div>
 													<div class="row mb-4">
 														<div class="col-sm-3">
@@ -211,7 +226,7 @@ https://templatemo.com/tm-573-eduwell
 														</div>
 														<div class="col-sm-9 text-secondary">
 															<input class="form-control" name="dob" type="date"
-																id="start" value="" max="">
+																id="start" value="${user.getDateOfBirth()}" max="">
 														</div>
 													</div>
 													<div class="row mb-4">
@@ -219,28 +234,26 @@ https://templatemo.com/tm-573-eduwell
 															<h6 class="mb-0">Số điện thoại</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">
-															<input name="phone" type="text" class="form-control"
-																value="Số điện thoại">
+															<input name="phone" type="number" class="form-control"
+																value="${user.getPhoneNumber()}">
 														</div>
 													</div>
 													<div class="row mb-4">
 														<div class="col-sm-3">
-															<h6 class="mb-0">Tỉnh thành</h6>
+															<h6 class="mb-0">Tỉnh/ Thành Phố</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">
-															<select id="city" class="form-control">
-																<option value="" selected>Chọn tỉnh thành</option>
-															</select>
+															<input name="city" type="text" class="form-control"
+																value="${city}">
 														</div>
 													</div>
 													<div class="row mb-4">
 														<div class="col-sm-3">
-															<h6 class="mb-0">Quận huyện</h6>
+															<h6 class="mb-0">Quận Huyện</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">
-															<select id="district" class="form-control">
-																<option value="" selected>Chọn quận huyện</option>
-															</select>
+															<input name="distric" type="text" class="form-control"
+																value="${distric}">
 														</div>
 													</div>
 													<div class="row mb-4">
@@ -248,9 +261,8 @@ https://templatemo.com/tm-573-eduwell
 															<h6 class="mb-0">Phường xã</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">
-															<select id="ward" class="form-control">
-																<option value="" selected>Chọn phường xã</option>
-															</select>
+															<input name="ward" type="text" class="form-control"
+																value="${ward}">
 														</div>
 													</div>
 													<div class="row mb-4">
@@ -258,21 +270,14 @@ https://templatemo.com/tm-573-eduwell
 															<h6 class="mb-0">Số nhà</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">
-															<input name="address" class="form-control" type="text">
+															<input name="address" class="form-control" type="text"
+																value="${address}">
 														</div>
 													</div>
-													<input name="address2" id="result2" type="text"
-														class="form-control" hidden="">
-
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Địa chỉ</h6>
-														</div>
-														<div class="col-sm-9 text-secondary">
-															<input type="text" class="form-control" value=""
-																readonly="readonly">
-														</div>
-													</div>
+													<button class="btn btn-outline-primary">Lưu thông
+														tin</button>
+													<a href="profile" class="btn btn-outline-warning"
+														style="margin-left: 10px;">Hủy</a>
 												</div>
 											</div>
 										</form>

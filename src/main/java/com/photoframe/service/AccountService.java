@@ -24,7 +24,6 @@ public class AccountService {
 	
 	public Account createUserAccount(Account account) {
 		account.setRole("user");
-		account.setEmail("");
 		return accountRepository.save(account);
 	}
 

@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,6 +38,9 @@ public class Customer {
 	@Column(name = "PhoneNumber")
 	private String phoneNumber;
 
+	@Column(name = "Email")
+	private String email;
+
 	@Column(name = "Address")
 	private String address;
 
@@ -55,46 +57,45 @@ public class Customer {
 	public Customer() {
 	}
 
-	
-	
 	public Customer(String name, Account account) {
 		super();
 		this.name = name;
 		this.account = account;
 	}
 
-
-
-	public Customer(String name, Date createDate, Account account) {
+	public Customer(String name, String gender, Date dateOfBirth, String phoneNumber, String email, String address) {
 		super();
-		this.name = name;
-		this.createDate = createDate;
-		this.account = account;
-	}
-
-
-
-	public Customer(Long customerID, String name, String gender, Date dateOfBirth, String phoneNumber, String address,
-			Date createDate, Account account, String urlImage) {
-		super();
-		this.customerID = customerID;
 		this.name = name;
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;
 		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.address = address;
+	}
+	
+	public Customer(String name, String gender, Date dateOfBirth, String phoneNumber, String email, String address,
+			Date createDate, Account account, String urlImage) {
+		super();
+		this.name = name;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
 		this.address = address;
 		this.createDate = createDate;
 		this.account = account;
 		this.urlImage = urlImage;
 	}
 
-	public Customer(String name, String gender, Date dateOfBirth, String phoneNumber, String address, Date createDate,
-			Account account, String urlImage) {
+	public Customer(Long customerID, String name, String gender, Date dateOfBirth, String phoneNumber, String email,
+			String address, Date createDate, Account account, String urlImage) {
 		super();
+		this.customerID = customerID;
 		this.name = name;
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;
 		this.phoneNumber = phoneNumber;
+		this.email = email;
 		this.address = address;
 		this.createDate = createDate;
 		this.account = account;
@@ -173,13 +174,19 @@ public class Customer {
 		this.urlImage = urlImage;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
 		return "Customer [customerID=" + customerID + ", name=" + name + ", gender=" + gender + ", dateOfBirth="
-				+ dateOfBirth + ", phoneNumber=" + phoneNumber + ", address=" + address + ", createDate=" + createDate
-				+ ", account=" + account + ", urlImage=" + urlImage + "]";
+				+ dateOfBirth + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address
+				+ ", createDate=" + createDate + ", account=" + account + ", urlImage=" + urlImage + "]";
 	}
-
-	
 
 }

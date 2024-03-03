@@ -18,8 +18,9 @@ public class Account {
 	@Column(name = "UserName")
 	private String userName;
 
-	@Column(name = "Email")
-	private String email;
+	/*
+	 * @Column(name = "Email") private String email;
+	 */
 
 	@Column(name = "Password")
 	private String password;
@@ -36,9 +37,10 @@ public class Account {
 		this.password = password;
 	}
 
-	public Account(String userName, String email, String password, String role) {
+	public Account(Long accountID, String userName, String password, String role) {
+		super();
+		this.accountID = accountID;
 		this.userName = userName;
-		this.email = email;
 		this.password = password;
 		this.role = role;
 	}
@@ -59,14 +61,6 @@ public class Account {
 		this.userName = userName;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -85,8 +79,8 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [accountID=" + accountID + ", userName=" + userName + ", email=" + email + ", password="
-				+ password + ", role=" + role + "]";
+		return "Account [accountID=" + accountID + ", userName=" + userName + ", password=" + password + ", role="
+				+ role + "]";
 	}
-	
+
 }
