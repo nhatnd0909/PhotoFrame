@@ -59,6 +59,8 @@ public class LoginController {
 		if (userID != null) {
 			model.addAttribute("logged", "1");
 		}
+//		lưu thông tin user khi đã đăng nhập
+		model.addAttribute("username", customer.getAccount().getUserName());
 		return "/user/index";
 	}
 }

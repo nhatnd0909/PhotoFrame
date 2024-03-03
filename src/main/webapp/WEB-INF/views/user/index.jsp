@@ -67,7 +67,7 @@ https://templatemo.com/tm-573-eduwell
 											class="fa-solid fa-user"></i> ${username}</a>
 										<ul class="sub-menu">
 											<li><a href="profile">Thông tin</a></li>
-											<li><a href="">Đăng Xuất</a></li>
+											<li><a href="logout">Đăng Xuất</a></li>
 										</ul></li>
 								</span>
 							</c:if>
