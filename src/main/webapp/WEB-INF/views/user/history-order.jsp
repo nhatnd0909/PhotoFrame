@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,13 +29,9 @@
 <link rel="stylesheet" href="assets/css/templatemo-eduwell-style.css">
 <link rel="stylesheet" href="assets/css/owl.css">
 <link rel="stylesheet" href="assets/css/lightbox.css">
-<!--
-
-TemplateMo 573 EduWell
-
-https://templatemo.com/tm-573-eduwell
-
--->
+<link
+	href="/adminAssets/vendor/datatables/dataTables.bootstrap4.min.css"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -96,7 +91,7 @@ https://templatemo.com/tm-573-eduwell
 								<div class="row">
 									<h3 class="fw-bold"
 										style="color: #FF9999 !important; margin-bottom: 30px;">
-										Đổi mật khẩu</h3>
+										Lịch Sử Đặt Hàng</h3>
 									<div class="col-lg-4">
 										<div class="card">
 											<div class="card-body">
@@ -104,8 +99,7 @@ https://templatemo.com/tm-573-eduwell
 													class="d-flex flex-column align-items-center text-center">
 													<div class="avatar-upload">
 														<div class="avatar-preview">
-															<img id="imagePreview"
-																src="assets/images/${user.getUrlImage()}"
+															<img id="imagePreview" src="assets/images/${user.getUrlImage()}"
 																alt="Avatar Preview"
 																style="border-radius: 50%; max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 1; border: 7px solid #FF9999 !important; margin-bottom: 20px">
 														</div>
@@ -128,26 +122,14 @@ https://templatemo.com/tm-573-eduwell
 													<li
 														class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 														<h6 class="mb-0">
-															<svg width="20px" height="20px" viewBox="0 0 1.44 1.44"
-																fill="none" xmlns="http://www.w3.org/2000/svg">
+															<svg width="20px" height="20px" viewBox="0 0 16 16"
+																xmlns="http://www.w3.org/2000/svg">
                                                                 <path
-																	width="48" height="48" fill="white" fill-opacity="0.01"
-																	d="M0 0H1.44V1.44H0V0z" />
-                                                                <path
-																	d="M0.175 0.202V0.42h0.218" stroke="#000000"
-																	stroke-width="0.12" stroke-linecap="round"
-																	stroke-linejoin="round" />
-                                                                <path
-																	d="M0.12 0.72c0 0.331 0.269 0.6 0.6 0.6v0c0.331 0 0.6 -0.269 0.6 -0.6S1.051 0.12 0.72 0.12c-0.222 0 -0.416 0.121 -0.52 0.3"
-																	stroke="#000000" stroke-width="0.12"
-																	stroke-linecap="round" stroke-linejoin="round" />
-                                                                <path
-																	d="m0.72 0.36 0 0.36 0.254 0.254" stroke="#000000"
-																	stroke-width="0.12" stroke-linecap="round"
-																	stroke-linejoin="round" />
+																	d="m 6 1 c -2.761719 0 -5 2.238281 -5 5 s 2.238281 5 5 5 c 0.832031 -0.003906 1.652344 -0.214844 2.382812 -0.617188 l 0.617188 0.617188 v 2 h 2 v 2 h 4 v -3 l -4.308594 -4.308594 c 0.199219 -0.542968 0.304688 -1.113281 0.308594 -1.691406 c 0 -2.761719 -2.238281 -5 -5 -5 z m -1 3 c 0.550781 0 1 0.449219 1 1 s -0.449219 1 -1 1 s -1 -0.449219 -1 -1 s 0.449219 -1 1 -1 z m 0 0"
+																	fill="#2e3436" />
                                                             </svg>
-															<a href="/history-order" class="text-muted font-size-sm">Lịch sử
-																đặt hàng </a>
+															<a href="change-password" class="text-muted font-size-sm">Đổi
+																mật khẩu</a>
 														</h6>
 													</li>
 												</ul>
@@ -155,52 +137,67 @@ https://templatemo.com/tm-573-eduwell
 										</div>
 									</div>
 									<div class="col-lg-8">
-										<form action="change-password" method="post">
-											<div class="card">
-												<p class="text-danger"
-													style="padding: 10px; font-size: 17px;">${mess}</p>
-												<div class="card-body">
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Mật khẩu cũ</h6>
-														</div>
-														<div class="col-sm-9 text-secondary">
-															<input name="oldPassword" type="password"
-																class="form-control" placeholder="Mật khẩu cũ"
-																pattern=".{6,}"
-																title="Mật khẩu phải chứa ít nhất 6 ký tự" required>
-														</div>
-													</div>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Mật khẩu mới</h6>
-														</div>
-														<div class="col-sm-9 text-secondary">
-															<input name="newPassword" type="password"
-																class="form-control" placeholder="Mật khẩu mới"
-																pattern=".{6,}"
-																title="Mật khẩu phải chứa ít nhất 6 ký tự" required>
-														</div>
-													</div>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Nhập lại mật khẩu mới</h6>
-														</div>
-														<div class="col-sm-9 text-secondary">
-															<input name="reNewPassword" type="password"
-																class="form-control" placeholder="Nhập lại mật khẩu mới"
-																pattern=".{6,}"
-																title="Mật khẩu phải chứa ít nhất 6 ký tự" required>
-														</div>
-													</div>
-													<button class="btn btn-outline-primary">Đổi Mật
-														Khẩu</button>
-													<a href="profile" class="btn btn-outline-warning"
-														style="margin-left: 10px;">Hủy</a>
-												</div>
+										<div class="card mb-4">
+											<div
+												class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+												<h6 class="m-0 font-weight-bold text-primary">Lịch sử
+													đặt hàng</h6>
 											</div>
-										</form>
-
+											<div class="table-responsive p-3">
+												<table
+													class="table align-items-center table-flush table-hover"
+													id="dataTableHover">
+													<thead class="thead-light">
+														<tr>
+															<th>Id</th>
+															<th>Tên mẫu</th>
+															<th>Thể loại</th>
+															<th>Giá tiền</th>
+															<th>Trạng thái</th>
+															<th>#</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>#1111</td>
+															<td>Mẫu 1</td>
+															<td>Gia đình</td>
+															<td>180.000đ</td>
+															<td>Đang xử lý</td>
+															<td><a href="detail-order" style="text-decoration: none;">Chi
+																	tiết</a></td>
+														</tr>
+														<tr>
+															<td>#1112</td>
+															<td>Mẫu 2</td>
+															<td>Gia đình</td>
+															<td>140.000đ</td>
+															<td>Đã giao</td>
+															<td><a href="detail-order" style="text-decoration: none;">Chi
+																	tiết</a></td>
+														</tr>
+														<tr>
+															<td>#1111</td>
+															<td>Mẫu 1</td>
+															<td>Gia đình</td>
+															<td>180.000đ</td>
+															<td>Đang xử lý</td>
+															<td><a href="detail-order" style="text-decoration: none;">Chi
+																	tiết</a></td>
+														</tr>
+														<tr>
+															<td>#1111</td>
+															<td>Mẫu 1</td>
+															<td>Gia đình</td>
+															<td>180.000đ</td>
+															<td>Đang xử lý</td>
+															<td><a href="detail-order" style="text-decoration: none;">Chi
+																	tiết</a></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -281,7 +278,7 @@ https://templatemo.com/tm-573-eduwell
         document.addEventListener("DOMContentLoaded", function () {
             var newPasswordInput = document.querySelector('input[name="newPassword"]');
             var reNewPasswordInput = document.querySelector('input[name="reNewPassword"]');
-            var form = document.querySelector('form[action="change-password"]');
+            var form = document.querySelector('form[action="changePassword"]');
 
             form.addEventListener("submit", function (event) {
                 if (newPasswordInput.value !== reNewPasswordInput.value) {
@@ -291,6 +288,15 @@ https://templatemo.com/tm-573-eduwell
             });
         });
 
+    </script>
+	<script src="/adminAssets/vendor/datatables/jquery.dataTables.min.js"></script>
+	<script
+		src="/adminAssets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+	<script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable(); // ID From dataTable 
+            $('#dataTableHover').DataTable(); // ID From dataTable with Hover
+        });
     </script>
 </body>
 

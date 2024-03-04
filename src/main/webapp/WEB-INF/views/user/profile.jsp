@@ -169,7 +169,7 @@ https://templatemo.com/tm-573-eduwell
 																	stroke-width="0.12" stroke-linecap="round"
 																	stroke-linejoin="round" />
                                                             </svg>
-															<a href="/history" class="text-muted font-size-sm">Lịch
+															<a href="/history-order" class="text-muted font-size-sm">Lịch
 																sử đặt hàng </a>
 														</h6>
 													</li>
