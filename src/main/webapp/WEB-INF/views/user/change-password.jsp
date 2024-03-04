@@ -18,6 +18,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 	integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <title>EduWell - Education HTML5 Template</title>
 
 <!-- Bootstrap core CSS -->
@@ -56,16 +57,6 @@ https://templatemo.com/tm-573-eduwell
 						<ul class="nav">
 							<li class="scroll-to-section"><a href="index" class="active">Trang
 									Chủ</a></li>
-							<!-- <li class="has-sub">
-                                <a href="javascript:void(0)">Dịch Vụ</a>
-                                <ul class="sub-menu">
-                                    <li><a href="">Gia Dình</a></li>
-                                    <li><a href="">Người Yêu</a></li>
-                                    <li><a href="">Bạn Bè</a></li>
-                                    <li><a href="">Người Thân</a>
-                                    </li>
-                                </ul>
-                            </li> -->
 							<li class=""><a href="template">Dịch Vụ</a></li>
 							<li class=""><a href="contact-us">Liên hệ</a></li>
 							<c:if test="${logged eq 0}">
@@ -105,32 +96,24 @@ https://templatemo.com/tm-573-eduwell
 								<div class="row">
 									<h3 class="fw-bold"
 										style="color: #FF9999 !important; margin-bottom: 30px;">
-										Thông tin người dùng</h3>
+										Đổi mật khẩu</h3>
 									<div class="col-lg-4">
 										<div class="card">
 											<div class="card-body">
 												<div
 													class="d-flex flex-column align-items-center text-center">
-													<form action="changeavatar" method="get">
-														<div class="avatar-upload">
-															<div class="avatar-preview">
-																<img id="imagePreview" src="assets/images/${user.getUrlImage()}"
-																	alt="Avatar Preview"
-																	style="border-radius: 50%; max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 1; border: 7px solid #FF9999 !important;margin-bottom: 20px">
-															</div>
-															<div class="avatar-edit">
-																<input name="urlimage" type='file' id="imageUpload"
-																	accept="image/*" onchange="previewImage()" /> <label
-																	for="imageUpload"></label>
-															</div>
+													<div class="avatar-upload">
+														<div class="avatar-preview">
+															<img id="imagePreview"
+																src="assets/images/${user.getUrlImage()}"
+																alt="Avatar Preview"
+																style="border-radius: 50%; max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 1; border: 7px solid #FF9999 !important; margin-bottom: 20px">
 														</div>
-														<div class="mt-3">
-															<h4>${user.getName()}</h4>
-															<p class="text-muted font-size-sm">Đà Nẵng</p>
-															<button id="saveButton" class="btn btn-outline-primary">Lưu
-																ảnh</button>
-														</div>
-													</form>
+													</div>
+													<div class="mt-3">
+														<h4>${user.getName()}</h4>
+														<p class="text-muted font-size-sm">Đà Nẵng</p>
+													</div>
 
 												</div>
 												<hr class="my-4">
@@ -138,14 +121,8 @@ https://templatemo.com/tm-573-eduwell
 													<li
 														class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
 														<h6 class="mb-0">
-															<svg width="20px" height="20px" viewBox="0 0 16 16"
-																xmlns="http://www.w3.org/2000/svg">
-                                                                <path
-																	d="m 6 1 c -2.761719 0 -5 2.238281 -5 5 s 2.238281 5 5 5 c 0.832031 -0.003906 1.652344 -0.214844 2.382812 -0.617188 l 0.617188 0.617188 v 2 h 2 v 2 h 4 v -3 l -4.308594 -4.308594 c 0.199219 -0.542968 0.304688 -1.113281 0.308594 -1.691406 c 0 -2.761719 -2.238281 -5 -5 -5 z m -1 3 c 0.550781 0 1 0.449219 1 1 s -0.449219 1 -1 1 s -1 -0.449219 -1 -1 s 0.449219 -1 1 -1 z m 0 0"
-																	fill="#2e3436" />
-                                                            </svg>
-															<a href="change-password" class="text-muted font-size-sm">Đổi mật
-																khẩu</a>
+															<i class="fa-solid fa-user"></i> <a href="profile"
+																class="text-muted font-size-sm">Thông tin cá nhân</a>
 														</h6>
 													</li>
 													<li
@@ -169,8 +146,8 @@ https://templatemo.com/tm-573-eduwell
 																	stroke-width="0.12" stroke-linecap="round"
 																	stroke-linejoin="round" />
                                                             </svg>
-															<a href="/history" class="text-muted font-size-sm">Lịch
-																sử đặt hàng </a>
+															<a href="" class="text-muted font-size-sm">Lịch sử
+																đặt hàng </a>
 														</h6>
 													</li>
 												</ul>
@@ -178,104 +155,46 @@ https://templatemo.com/tm-573-eduwell
 										</div>
 									</div>
 									<div class="col-lg-8">
-										<form action="profile" method="post">
+										<form action="change-password" method="post">
 											<div class="card">
+												<p class="text-danger"
+													style="padding: 10px; font-size: 17px;">${mess}</p>
 												<div class="card-body">
 													<div class="row mb-4">
 														<div class="col-sm-3">
-															<h6 class="mb-0">Họ và tên</h6>
+															<h6 class="mb-0">Mật khẩu cũ</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">
-															<input name="name" type="text" class="form-control"
-																value="${user.getName()}">
+															<input name="oldPassword" type="password"
+																class="form-control" placeholder="Mật khẩu cũ"
+																pattern=".{6,}"
+																title="Mật khẩu phải chứa ít nhất 6 ký tự" required>
 														</div>
 													</div>
 													<div class="row mb-4">
 														<div class="col-sm-3">
-															<h6 class="mb-0">Email</h6>
+															<h6 class="mb-0">Mật khẩu mới</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">
-															<input name="email" type="email" class="form-control"
-																value="${user.getEmail()}">
+															<input name="newPassword" type="password"
+																class="form-control" placeholder="Mật khẩu mới"
+																pattern=".{6,}"
+																title="Mật khẩu phải chứa ít nhất 6 ký tự" required>
 														</div>
 													</div>
 													<div class="row mb-4">
 														<div class="col-sm-3">
-															<h6 class="mb-0">Giới tính</h6>
-														</div>
-														<c:if test="${user.getGender() eq ('Male')}">
-															<div class="col-sm-9 text-secondary">
-																<select id="gender" name="gender" class="form-control">
-																	<option value="Male">Nam</option>
-																	<option value="Female">Nữ</option>
-																</select>
-															</div>
-														</c:if>
-														<c:if test="${user.getGender() eq ('Female')}">
-															<div class="col-sm-9 text-secondary">
-																<select id="gender" name="gender" class="form-control">
-																	<option value="Female">Nữ</option>
-																	<option value="Male">Nam</option>
-																</select>
-															</div>
-														</c:if>
-													</div>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Ngày sinh</h6>
+															<h6 class="mb-0">Nhập lại mật khẩu mới</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">
-															<input class="form-control" name="dob" type="date"
-																id="start" value="${user.getDateOfBirth()}" max="">
+															<input name="reNewPassword" type="password"
+																class="form-control" placeholder="Nhập lại mật khẩu mới"
+																pattern=".{6,}"
+																title="Mật khẩu phải chứa ít nhất 6 ký tự" required>
 														</div>
 													</div>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Số điện thoại</h6>
-														</div>
-														<div class="col-sm-9 text-secondary">
-															<input name="phone" type="number" class="form-control"
-																value="${user.getPhoneNumber()}">
-														</div>
-													</div>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Tỉnh/ Thành Phố</h6>
-														</div>
-														<div class="col-sm-9 text-secondary">
-															<input name="city" type="text" class="form-control"
-																value="${city}">
-														</div>
-													</div>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Quận Huyện</h6>
-														</div>
-														<div class="col-sm-9 text-secondary">
-															<input name="distric" type="text" class="form-control"
-																value="${distric}">
-														</div>
-													</div>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Phường xã</h6>
-														</div>
-														<div class="col-sm-9 text-secondary">
-															<input name="ward" type="text" class="form-control"
-																value="${ward}">
-														</div>
-													</div>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Số nhà</h6>
-														</div>
-														<div class="col-sm-9 text-secondary">
-															<input name="address" class="form-control" type="text"
-																value="${address}">
-														</div>
-													</div>
-													<button class="btn btn-outline-primary">Lưu thông
-														tin</button>
+													<button class="btn btn-outline-primary">Đổi Mật
+														Khẩu</button>
 													<a href="profile" class="btn btn-outline-warning"
 														style="margin-left: 10px;">Hủy</a>
 												</div>
@@ -357,24 +276,21 @@ https://templatemo.com/tm-573-eduwell
             checkSection();
         });
     </script>
-	<!-- upload image -->
+	<!-- Kiểm tra mật khẩu nhập -->
 	<script>
-        function previewImage() {
-            var preview = document.getElementById('imagePreview'); // Lấy phần tử hình ảnh preview
-            var fileInput = document.getElementById('imageUpload'); // Lấy phần tử input chứa file hình ảnh
+        document.addEventListener("DOMContentLoaded", function () {
+            var newPasswordInput = document.querySelector('input[name="newPassword"]');
+            var reNewPasswordInput = document.querySelector('input[name="reNewPassword"]');
+            var form = document.querySelector('form[action="change-password"]');
 
-            var file = fileInput.files[0]; // Lấy file hình ảnh từ input
+            form.addEventListener("submit", function (event) {
+                if (newPasswordInput.value !== reNewPasswordInput.value) {
+                    event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu
+                    alert("Mật khẩu mới và mật khẩu nhập lại không khớp.");
+                }
+            });
+        });
 
-            var reader = new FileReader(); // Tạo một đối tượng FileReader
-
-            reader.onload = function (e) {
-                // Đặt src của phần tử hình ảnh preview bằng dữ liệu base64 của hình ảnh đã chọn
-                preview.src = e.target.result;
-            }
-
-            // Đọc file hình ảnh dưới dạng URL base64
-            reader.readAsDataURL(file);
-        }
     </script>
 </body>
 

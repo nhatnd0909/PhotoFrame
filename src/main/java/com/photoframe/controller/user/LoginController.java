@@ -46,21 +46,21 @@ public class LoginController {
 			if (userID != null) {
 				model.addAttribute("logged", "1");
 			}
-
 			return "/user/login";
 		}
 		Customer customer = customerServie.getCustomerByUsername(username);
-//		lưu dữ liệu user sau khi đăng nhập
+//			lưu dữ liệu user sau khi đăng nhập
 		HttpSession session = request.getSession();
 		session.setAttribute("userID", customer.getCustomerID().toString());
-//		
+//			
 		String userID = (String) session2.getAttribute("userID");
 		model.addAttribute("logged", "0");
 		if (userID != null) {
 			model.addAttribute("logged", "1");
 		}
-//		lưu thông tin user khi đã đăng nhập
+//			lưu thông tin user khi đã đăng nhập
 		model.addAttribute("username", customer.getAccount().getUserName());
+
 		return "/user/index";
 	}
 }

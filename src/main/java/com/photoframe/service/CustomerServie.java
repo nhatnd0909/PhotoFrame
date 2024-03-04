@@ -23,7 +23,7 @@ public class CustomerServie {
 		customer.setAddress("");
 		customer.setCreateDate(new Date());
 		customer.setDateOfBirth(new Date());
-		customer.setGender("Nam");
+		customer.setGender("Male");
 		customer.setPhoneNumber("");
 		customer.setEmail("");
 		customer.setUrlImage("avatar.webp");

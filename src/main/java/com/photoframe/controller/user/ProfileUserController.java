@@ -30,15 +30,24 @@ public class ProfileUserController {
 //			lưu thông tin user khi đã đăng nhập
 			Customer customer = customerServie.getCustomerByID(userID);
 			model.addAttribute("username", customer.getAccount().getUserName());
+		} else {
+			return "redirect:/";
 		}
 
 		Customer user = customerServie.getCustomerByID(userID);
 		model.addAttribute("user", user);
-		String[] addressUser = user.getAddress().split("/");
-		model.addAttribute("address", addressUser[0]);
-		model.addAttribute("ward", addressUser[1]);
-		model.addAttribute("distric", addressUser[2]);
-		model.addAttribute("city", addressUser[3]);
+		if (user.getAddress().isEmpty()) {
+			model.addAttribute("address", "");
+			model.addAttribute("ward", "");
+			model.addAttribute("distric", "");
+			model.addAttribute("city", "");
+		} else {
+			String[] addressUser = user.getAddress().split("/");
+			model.addAttribute("address", addressUser[0]);
+			model.addAttribute("ward", addressUser[1]);
+			model.addAttribute("distric", addressUser[2]);
+			model.addAttribute("city", addressUser[3]);
+		}
 		return "/user/profile";
 	}
 
