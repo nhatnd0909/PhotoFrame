@@ -111,7 +111,7 @@ https://templatemo.com/tm-573-eduwell
 											<div class="card-body">
 												<div
 													class="d-flex flex-column align-items-center text-center">
-													<form action="changeavatar" method="get">
+													<form action="change-avatar" method="post" enctype="multipart/form-data">
 														<div class="avatar-upload">
 															<div class="avatar-preview">
 																<img id="imagePreview" src="assets/images/${user.getUrlImage()}"
@@ -119,7 +119,7 @@ https://templatemo.com/tm-573-eduwell
 																	style="border-radius: 50%; max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 1; border: 7px solid #FF9999 !important;margin-bottom: 20px">
 															</div>
 															<div class="avatar-edit">
-																<input name="urlimage" type='file' id="imageUpload"
+																<input name="avatar" type='file' id="imageUpload"
 																	accept="image/*" onchange="previewImage()" /> <label
 																	for="imageUpload"></label>
 															</div>

@@ -74,4 +74,10 @@ public class CustomerServie {
 		customer.setPhoneNumber(customerUpdate.getPhoneNumber());
 		customerRepository.save(customer);
 	}
+
+	public void updateAvatar(String idUser, String urlImage) {
+		Customer customer = getCustomerByID(idUser);
+		customer.setUrlImage(urlImage);
+		customerRepository.save(customer);
+	}
 }
