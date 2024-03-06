@@ -70,7 +70,7 @@
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li class="scroll-to-section"><a href="" class="active">Trang
+							<li class="scroll-to-section"><a href="/" class="active">Trang
 									Chủ</a></li>
 							<li class=""><a href="template">Dịch Vụ</a></li>
 							<li class=""><a href="contact-us">Liên hệ</a></li>
@@ -241,7 +241,7 @@
 													elit sed do eiusmod te incididunt</p>
 												<div class="d-flex justify-content-between flex-lg-wrap">
 													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
-													<a href="detail-template"
+													<a href="detail-template?idProduct=4"
 														class="btn border border-secondary rounded-pill px-3 text-primary"><i
 														class="fa fa-eye me-2 text-primary"></i>Xem chi tiết</a>
 												</div>
@@ -264,7 +264,7 @@
 													elit sed do eiusmod te incididunt</p>
 												<div class="d-flex justify-content-between flex-lg-wrap">
 													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
-													<a href="detail-template"
+													<a href="detail-template?idProduct=4"
 														class="btn border border-secondary rounded-pill px-3 text-primary"><i
 														class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>
 												</div>
@@ -287,7 +287,7 @@
 													elit sed do eiusmod te incididunt</p>
 												<div class="d-flex justify-content-between flex-lg-wrap">
 													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
-													<a href="detail-template"
+													<a href="detail-template?idProduct=4"
 														class="btn border border-secondary rounded-pill px-3 text-primary"><i
 														class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>
 												</div>

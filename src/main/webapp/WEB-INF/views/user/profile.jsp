@@ -54,7 +54,7 @@ https://templatemo.com/tm-573-eduwell
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li class="scroll-to-section"><a href="index" class="active">Trang
+							<li class="scroll-to-section"><a href="/" class="active">Trang
 									Chủ</a></li>
 							<!-- <li class="has-sub">
                                 <a href="javascript:void(0)">Dịch Vụ</a>

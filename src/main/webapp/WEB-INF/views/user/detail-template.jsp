@@ -98,52 +98,47 @@
 					<div class="row g-4">
 						<div class="col-lg-6">
 							<div class="border rounded">
-								<img src="assets/images/template1.png" class="img-fluid rounded"
-									alt="Image">
+								<img src="assets/images/${product.getMainImg()}"
+									class="img-fluid rounded" alt="Image">
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<h4 class="fw-bold mb-3">Sản phẩm 1</h4>
-							<p class="mb-3">Phân loại: Gia đình</p>
-							<h5 class="fw-bold mb-3">180.000 Đ</h5>
+							<h4 class="fw-bold mb-3">${product.getName()}</h4>
+							<p class="mb-3">Phân loại: ${product.getType()}</p>
+							<h5 class="fw-bold mb-3">${product.getPrice()}Đ</h5>
 							<div class="d-flex mb-4">
 								<i class="fa fa-star text-secondary"></i> <i
 									class="fa fa-star text-secondary"></i> <i
 									class="fa fa-star text-secondary"></i> <i
 									class="fa fa-star text-secondary"></i> <i class="fa fa-star"></i>
 							</div>
-							<p class="mb-4">The generated Lorem Ipsum is therefore always
-								free from repetition injected humour, or non-characteristic
-								words etc.</p>
-							<p class="mb-4">Susp endisse ultricies nisi vel quam
-								suscipit. Sabertooth peacock flounder; chain pickerel
-								hatchetfish, pencilfish snailfish</p>
-							<a href="edit-template"
+							<p class="mb-4">${product.getDescrible()}</p>
+							<a href="edit-template?id=${product.getProductID()}"
 								class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
 								class="fa fa-shopping-bag me-2 text-primary"></i>Chọn mẫu này</a>
 						</div>
 						<div class="row" style="margin-top: 20px;">
 							<div class="col-lg-3 col-sm-6">
 								<div class="border rounded">
-									<img src="assets/images/template1.png"
+									<img src="assets/images/${product.getImg1()}"
 										class="img-fluid rounded" alt="Image">
 								</div>
 							</div>
 							<div class="col-lg-3 col-sm-6">
 								<div class="border rounded">
-									<img src="assets/images/template1.png"
+									<img src="assets/images/${product.getImg2()}"
 										class="img-fluid rounded" alt="Image">
 								</div>
 							</div>
 							<div class="col-lg-3 col-sm-6">
 								<div class="border rounded">
-									<img src="assets/images/template1.png"
+									<img src="assets/images/${product.getImg3()}"
 										class="img-fluid rounded" alt="Image">
 								</div>
 							</div>
 							<div class="col-lg-3 col-sm-6">
 								<div class="border rounded">
-									<img src="assets/images/template1.png"
+									<img src="assets/images/${product.getImg4()}"
 										class="img-fluid rounded" alt="Image">
 								</div>
 							</div>
@@ -166,13 +161,7 @@
 							<div class="tab-content mb-5">
 								<div class="tab-pane active" id="nav-about" role="tabpanel"
 									aria-labelledby="nav-about-tab">
-									<p>The generated Lorem Ipsum is therefore always free from
-										repetition injected humour, or non-characteristic words etc.
-										Susp endisse ultricies nisi vel quam suscipit</p>
-									<p>Sabertooth peacock flounder; chain pickerel hatchetfish,
-										pencilfish snailfish filefish Antarctic icefish goldeye
-										aholehole trumpetfish pilot fish airbreathing catfish,
-										electric ray sweeper.</p>
+									<p>${product.getDescrible()}</p>
 									<div class="px-2">
 										<div class="row g-4">
 											<div class="col-6">
@@ -182,7 +171,7 @@
 														<p class="mb-0">Khối lượng</p>
 													</div>
 													<div class="col-6">
-														<p class="mb-0">1 kg</p>
+														<p class="mb-0">${product.getWeight()}kg</p>
 													</div>
 												</div>
 												<div
@@ -191,7 +180,7 @@
 														<p class="mb-0">Chiều dài</p>
 													</div>
 													<div class="col-6">
-														<p class="mb-0">15 cm</p>
+														<p class="mb-0">${product.getLength()}cm</p>
 													</div>
 												</div>
 												<div
@@ -200,7 +189,7 @@
 														<p class="mb-0">Chiều rộng</p>
 													</div>
 													<div class="col-6">
-														<p class="mb-0">15 cm</p>
+														<p class="mb-0">${product.getWidth()}cm</p>
 													</div>
 												</div>
 												<div
@@ -209,16 +198,7 @@
 														<p class="mb-0">Chất liệu</p>
 													</div>
 													<div class="col-6">
-														<p class="mb-0">Gỗ</p>
-													</div>
-												</div>
-												<div
-													class="row bg-light text-center align-items-center justify-content-center py-2">
-													<div class="col-6">
-														<p class="mb-0">Min Weight</p>
-													</div>
-													<div class="col-6">
-														<p class="mb-0">250 Kg</p>
+														<p class="mb-0">${product.getMaterial()}</p>
 													</div>
 												</div>
 											</div>
