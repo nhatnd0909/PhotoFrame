@@ -1,5 +1,7 @@
 package com.photoframe.controller.user;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,15 +16,15 @@ import com.photoframe.service.ProductService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-public class DetailTemplateController {
+public class TemplateController {
 	@Autowired
 	private ProductService productService;
 
 	@Autowired
 	private CustomerServie customerServie;
 
-	@GetMapping("/detail-template")
-	public String showDetaiTemplatePage(HttpSession session, Model model, @RequestParam String idProduct) {
+	@GetMapping("/template")
+	public String showDetaiTemplatePage(HttpSession session, Model model) {
 		String userID = (String) session.getAttribute("userID");
 //		kiểm tra user đăng nhập chưa
 		model.addAttribute("logged", "0");
@@ -32,8 +34,8 @@ public class DetailTemplateController {
 			Customer customer = customerServie.getCustomerByID(userID);
 			model.addAttribute("username", customer.getAccount().getUserName());
 		}
-		Product product = productService.getProductByID(idProduct);
-		model.addAttribute("product", product);
-		return "/user/detail-template";
+		List<Product> listAllProduct = productService.getAllProducts();
+		model.addAttribute("listAllProduct", listAllProduct);
+		return "/user/template";
 	}
 }

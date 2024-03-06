@@ -23,19 +23,19 @@ public class HomeController12 {
 //	public String showDefaultPage2(HttpSession session, Model model) {
 //		return "/user/index";
 //	}
-	@GetMapping("/template")
-	public String showTemplatePage(HttpSession session, Model model) {
-		String userID = (String) session.getAttribute("userID");
-//		kiểm tra user đăng nhập chưa
-		model.addAttribute("logged", "0");
-		if (userID != null) {
-			model.addAttribute("logged", "1");
-//			lưu thông tin user khi đã đăng nhập
-			Customer customer = customerServie.getCustomerByID(userID);
-			model.addAttribute("username", customer.getAccount().getUserName());
-		}
-		return "/user/template";
-	}
+//	@GetMapping("/template")
+//	public String showTemplatePage(HttpSession session, Model model) {
+//		String userID = (String) session.getAttribute("userID");
+////		kiểm tra user đăng nhập chưa
+//		model.addAttribute("logged", "0");
+//		if (userID != null) {
+//			model.addAttribute("logged", "1");
+////			lưu thông tin user khi đã đăng nhập
+//			Customer customer = customerServie.getCustomerByID(userID);
+//			model.addAttribute("username", customer.getAccount().getUserName());
+//		}
+//		return "/user/template";
+//	}
 
 	@GetMapping("/history-order")
 	public String showHistoryOrderPage(HttpSession session, Model model) {
