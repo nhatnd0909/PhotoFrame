@@ -282,6 +282,291 @@
     background: #005DD1;
 }
 
+/* 4 */
+.upload-file4 {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.img-area4 {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: #f0f0f0;
+    /* Màu nền của vùng chứa hình ảnh */
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-area4 .icon {
+    font-size: 100px;
+}
+
+.img-area4 h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.img-area4 p {
+    color: #999;
+}
+
+.img-area4 p span {
+    font-weight: 600;
+}
+
+.img-area4 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 100;
+}
+
+.img-area4::before {
+    content: attr(data-img);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s ease;
+    z-index: 200;
+}
+
+.img-area4.active:hover::before {
+    opacity: 1;
+}
+
+.select-image4 {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 15px;
+    background: #0071FF;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.select-image4:hover {
+    background: #005DD1;
+}
+
+/* 5 */
+.upload-file5 {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.img-area5 {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: #f0f0f0;
+    /* Màu nền của vùng chứa hình ảnh */
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-area5 .icon {
+    font-size: 100px;
+}
+
+.img-area5 h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.img-area5 p {
+    color: #999;
+}
+
+.img-area5 p span {
+    font-weight: 600;
+}
+
+.img-area5 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 100;
+}
+
+.img-area5::before {
+    content: attr(data-img);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s ease;
+    z-index: 200;
+}
+
+.img-area5.active:hover::before {
+    opacity: 1;
+}
+
+.select-image5 {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 15px;
+    background: #0071FF;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.select-image5:hover {
+    background: #005DD1;
+}
+
+/* 6 */
+.upload-file6 {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.img-area6 {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: #f0f0f0;
+    /* Màu nền của vùng chứa hình ảnh */
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-area6 .icon {
+    font-size: 100px;
+}
+
+.img-area6 h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.img-area6 p {
+    color: #999;
+}
+
+.img-area6 p span {
+    font-weight: 600;
+}
+
+.img-area6 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 100;
+}
+
+.img-area6::before {
+    content: attr(data-img);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s ease;
+    z-index: 200;
+}
+
+.img-area6.active:hover::before {
+    opacity: 1;
+}
+
+.select-image6 {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 15px;
+    background: #0071FF;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.select-image6:hover {
+    background: #005DD1;
+}
+
 /* Icon */
 .border {
     border: 1px solid #ccc;
