@@ -24,6 +24,9 @@ import com.photoframe.service.IconService;
 import com.photoframe.service.ProductService;
 import com.photoframe.service.UserOrderService;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -64,8 +67,8 @@ public class EditTemplateController {
 			@RequestParam(value = "image4", required = false) MultipartFile multipartFile4,
 			@RequestParam(value = "image5", required = false) MultipartFile multipartFile5,
 			@RequestParam(value = "image6", required = false) MultipartFile multipartFile6,
-			@RequestParam(value = "icon", required = false) String[] selectedIcons, HttpSession session)
-			throws IOException {
+			@RequestParam(value = "icon", required = false) String[] selectedIcons, HttpSession session,
+			HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// Lấy thông tin về sản phẩm và người dùng
 		Product product = productService.getProductByID(idProduct);
 
@@ -126,6 +129,12 @@ public class EditTemplateController {
 
 		UserOrder userOrder = new UserOrder(product, selectedIconList, imageUrls);
 		userOrderService.saveUserOrder(userOrder);
+		// Create a cookie to store user order id
+		String userOrderId = userOrder.getOrderID().toString();
+		Cookie userOrderCookie = new Cookie("userOrderId", userOrderId);
+		userOrderCookie.setMaxAge(24 * 60 * 60); // 1 day expiration time
+		userOrderCookie.setPath("/"); // Set cookie path
+		response.addCookie(userOrderCookie);
 		return "redirect:/payment";
 	}
 }

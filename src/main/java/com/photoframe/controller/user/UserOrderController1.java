@@ -30,12 +30,6 @@ public class UserOrderController1 {
 		return new ResponseEntity<>(userOrders, HttpStatus.OK);
 	}
 
-	@GetMapping("/{id}")
-	public ResponseEntity<UserOrder> getUserOrderById(@PathVariable("id") Long id) {
-		Optional<UserOrder> userOrder = userOrderService.getUserOrderById(id);
-		return userOrder.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-				.orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
-	}
 
 	@PostMapping
 	public ResponseEntity<UserOrder> saveUserOrder(@RequestBody UserOrder userOrder) {

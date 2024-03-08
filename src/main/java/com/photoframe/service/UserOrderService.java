@@ -23,8 +23,14 @@ public class UserOrderService {
 		return userOrderRepository.findAll();
 	}
 
-	public Optional<UserOrder> getUserOrderById(Long id) {
-		return userOrderRepository.findById(id);
+	public UserOrder getUserOrderById(String id) {
+		List<UserOrder> list = getAllUserOrders();
+		for (UserOrder u : list) {
+			if (u.getOrderID().equals(Long.parseLong(id))) {
+				return u;
+			}
+		}
+		return null;
 	}
 
 	public UserOrder saveUserOrder(UserOrder userOrder) {
