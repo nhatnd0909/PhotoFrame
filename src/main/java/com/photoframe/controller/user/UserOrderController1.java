@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.photoframe.model.Discount;
 import com.photoframe.model.UserOrder;
+import com.photoframe.service.DiscountService;
 import com.photoframe.service.UserOrderService;
 
 @RestController
@@ -23,13 +26,14 @@ import com.photoframe.service.UserOrderService;
 public class UserOrderController1 {
 	@Autowired
 	private UserOrderService userOrderService;
+	@Autowired
+	private DiscountService discountService;
 
 	@GetMapping
 	public ResponseEntity<List<UserOrder>> getAllUserOrders() {
 		List<UserOrder> userOrders = userOrderService.getAllUserOrders();
 		return new ResponseEntity<>(userOrders, HttpStatus.OK);
 	}
-
 
 	@PostMapping
 	public ResponseEntity<UserOrder> saveUserOrder(@RequestBody UserOrder userOrder) {
@@ -48,5 +52,15 @@ public class UserOrderController1 {
 	public ResponseEntity<Void> deleteUserOrder(@PathVariable("id") Long id) {
 		userOrderService.deleteUserOrder(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
+
+	@GetMapping("/discount")
+	public List<Discount> getDiscount() {
+		return discountService.getAllDiscount();
+	}
+
+	@PostMapping("/discount")
+	public Discount postDiscount(@RequestParam String value) {
+		return discountService.crateNewDiscount(value);
 	}
 }
