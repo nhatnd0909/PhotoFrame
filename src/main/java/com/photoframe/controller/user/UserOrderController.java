@@ -5,20 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.photoframe.model.Customer;
 import com.photoframe.model.Icon;
 import com.photoframe.model.Product;
 import com.photoframe.model.UserOrder;
-import com.photoframe.service.CustomerServie;
 import com.photoframe.service.FileUploadUtil;
 import com.photoframe.service.IconService;
 import com.photoframe.service.ProductService;
@@ -26,38 +22,50 @@ import com.photoframe.service.UserOrderService;
 
 import jakarta.servlet.http.HttpSession;
 
-@Controller
-public class EditTemplateController {
+@RestController
+public class UserOrderController {
 	@Autowired
-	private CustomerServie customerServie;
-	@Autowired
-	private IconService iconService;
+	private UserOrderService userOrderService;
 	@Autowired
 	private ProductService productService;
 	@Autowired
-	private UserOrderService userOrderService;
+	private IconService iconService;
 
-	@GetMapping("/edit-template")
-	public String showEditTemplatePage(HttpSession session, Model model, @RequestParam String id) {
-		String userID = (String) session.getAttribute("userID");
-//		kiểm tra user đăng nhập chưa
-		model.addAttribute("logged", "0");
-		if (userID != null) {
-			model.addAttribute("logged", "1");
-//			lưu thông tin user khi đã đăng nhập
-			Customer customer = customerServie.getCustomerByID(userID);
-			model.addAttribute("username", customer.getAccount().getUserName());
-		}
-//		
-		Product product = productService.getProductByID(id);
-		List<Icon> listIcon = iconService.getAllIcon();
-		model.addAttribute("product", product);
-		model.addAttribute("listIcon", listIcon);
-		return "/user/edit-template";
+	@GetMapping("/orders")
+	public List<UserOrder> getAllUserOrder() {
+		return userOrderService.getAllUserOrders();
 	}
 
-	@PostMapping("/edit-template")
-	public String createNewUserOrder(@RequestParam String idProduct,
+//	@PostMapping("/orders")
+//	public UserOrder createNewUserOrder(@RequestParam String idProduct, @RequestParam String idIcon1,
+//			@RequestParam String idIcon2, @RequestParam("image1") MultipartFile multipartFile1,
+//			@RequestParam("image2") MultipartFile multipartFile2) throws IOException {
+//
+//		String fileName1 = StringUtils.cleanPath(multipartFile1.getOriginalFilename());
+//		String filecode1 = FileUploadUtil.saveFile(fileName1, multipartFile1);
+//		String urlimage1 = filecode1 + "-" + fileName1;
+//
+//		String fileName2 = StringUtils.cleanPath(multipartFile2.getOriginalFilename());
+//		String filecode2 = FileUploadUtil.saveFile(fileName2, multipartFile2);
+//		String urlimage2 = filecode2 + "-" + fileName2;
+//
+//		Product product = productService.getProductByID(idProduct);
+//		System.out.println(product);
+//		Icon icon1 = iconService.getIconbyID(idIcon1);
+//		Icon icon2 = iconService.getIconbyID(idIcon2);
+//		System.out.println(icon1 + "/" + icon2);
+//		List<Icon> listIcon = new ArrayList<>();
+//		listIcon.add(icon1);
+//		listIcon.add(icon2);
+//		List<String> listImg = new ArrayList<>();
+//		listImg.add(urlimage1);
+//		listImg.add(urlimage2);
+//		UserOrder userOrder = new UserOrder(product, listIcon, listImg);
+//		return userOrderService.saveUserOrder(userOrder);
+//	}
+
+	@PostMapping("/orders")
+	public UserOrder createNewUserOrder(@RequestParam String idProduct,
 			@RequestParam(value = "image1", required = false) MultipartFile multipartFile1,
 			@RequestParam(value = "image2", required = false) MultipartFile multipartFile2,
 			@RequestParam(value = "image3", required = false) MultipartFile multipartFile3,
@@ -125,7 +133,7 @@ public class EditTemplateController {
 		// Tạo đối tượng UserOrder và lưu vào cơ sở dữ liệu
 
 		UserOrder userOrder = new UserOrder(product, selectedIconList, imageUrls);
-		userOrderService.saveUserOrder(userOrder);
-		return "redirect:/payment";
+		return userOrderService.saveUserOrder(userOrder);
 	}
+
 }

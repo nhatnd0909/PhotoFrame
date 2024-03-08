@@ -120,65 +120,11 @@
 							</div>
 							<p class="mb-4">${product.describle}</p>
 						</div>
-						<form action="">
-							<!-- <div class="row" style="margin-top: 20px;">
-								<h3 style="color: #FF9999; margin-bottom: 50px;">Chọn ảnh</h3>
-								<div class="col-lg-4 col-sm-6">
-									<div class="border rounded">
-										<div class="upload-file">
-											<input type="file" id="file" accept="image/*" name="image1"
-												hidden>
-											<div class="img-area" data-img="">
-												<i class='bx bxs-cloud-upload icon'></i>
-												<h3>Thêm ảnh 1</h3>
-												<p>
-													Kích thước hình ảnh phải nhỏ hơn <span>5MB</span>
-												</p>
-											</div>
-											<button class="select-image">Chọn ảnh</button>
-											<input type="button" name="" id="" class="select-image"
-												value="Chọn ảnh" style="background-color: #FF9999;">
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="border rounded">
-										<div class="upload-file2">
-											<input type="file" id="file2" accept="image/*" name="image2"
-												hidden>
-											<div class="img-area2" data-img="">
-												<i class='bx bxs-cloud-upload icon'></i>
-												<h3>Thêm ảnh 2</h3>
-												<p>
-													Kích thước hình ảnh phải nhỏ hơn <span>5MB</span>
-												</p>
-											</div>
-											<button class="select-image2">Chọn ảnh</button>
-											<input type="button" name="" id="" class="select-image2"
-												value="Chọn ảnh" style="background-color: #FF9999;">
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-sm-6">
-									<div class="border rounded">
-										<div class="upload-file3">
-											<input type="file" id="file3" accept="image/*" name="image3"
-												hidden>
-											<div class="img-area3" data-img="">
-												<i class='bx bxs-cloud-upload icon'></i>
-												<h3>Thêm ảnh 3</h3>
-												<p>
-													Kích thước hình ảnh phải nhỏ hơn <span>5MB</span>
-												</p>
-											</div>
-											<button class="select-image3">Chọn ảnh</button>
-											<input type="button" name="" id="" class="select-image3"
-												value="Chọn ảnh" style="background-color: #FF9999;">
-										</div>
-									</div>
-								</div>
-							</div>	 -->
+						<form id="orders" action=edit-template method="post"
+							enctype="multipart/form-data">
 
+							<input name="idProduct" value="${product.productID}" hidden="">
+							<input name="" value="${product.numberImgRequire}" hidden="">
 							<!--  -->
 							<c:if test="${product.numberImgRequire eq 1}">
 								<div class="row" style="margin-top: 20px;">
@@ -203,7 +149,7 @@
 									</div>
 								</div>
 							</c:if>
-							
+
 							<c:if test="${product.numberImgRequire eq 2}">
 								<div class="row" style="margin-top: 20px;">
 									<h3 style="color: #FF9999; margin-bottom: 50px;">Chọn ảnh</h3>
@@ -593,6 +539,7 @@
 									</div>
 								</div>
 							</c:if>
+
 							<!--  -->
 							<h3
 								style="color: #FF9999; margin-top: 30px; margin-bottom: 50px;">Chọn
@@ -614,6 +561,7 @@
 									aria-labelledby="nav-about-tab">
 									<div class="px-2">
 										<div class="row g-4">
+											<!--  -->
 											<div class="row" style="margin-top: 50px;">
 												<c:forEach var="icon" items="${listIcon}" varStatus="loop">
 													<div class="col-lg-2 col-sm-3" style="margin-bottom: 20px;">
@@ -857,6 +805,46 @@
 	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
 	<!-- Template Javascript -->
 	<script src="lib/js/main.js"></script>
+	<!-- Kiểm tra -->
+	<script type="text/javascript">
+	function validateImageInputs() {
+		const imageInputs = document.querySelectorAll('input[type="file"]');
+		let imageCount = 0;
+
+		imageInputs.forEach(input => {
+			if (input.files.length > 0) {
+				imageCount++;
+			}
+		});
+
+		if (imageCount < ${ product.numberImgRequire }) {
+			alert(`Vui lòng chọn ${product.numberImgRequire} hình ảnh.`);
+			return false;
+		}
+
+		return true;
+	}
+
+	// Add this function call where appropriate, such as when submitting the form
+	// For example:
+	const form = document.querySelector('form');
+	form.addEventListener('submit', function(event) {
+		if (!validateImageInputs()) {
+			event.preventDefault(); // Prevent form submission if validation fails
+		}
+	});
+	</script>
+	<!--  -->
+	<script type="text/javascript">
+	function validateIcons() {
+	    var checkedCheckboxes = document.querySelectorAll('input[name="icon"]:checked');
+	    if (checkedCheckboxes.length !== 3) {
+	        alert("Vui lòng chọn đủ 3 Icon!");
+	        return false;
+	    }
+	    return true;
+	}
+	</script>
 </body>
 
 </html>
