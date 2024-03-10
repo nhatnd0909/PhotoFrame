@@ -6,13 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.photoframe.model.Customer;
+import com.photoframe.model.DetailOrder;
 import com.photoframe.model.Discount;
 import com.photoframe.model.UserOrder;
 import com.photoframe.service.CustomerServie;
+import com.photoframe.service.DetailOrderService;
 import com.photoframe.service.DiscountService;
 import com.photoframe.service.UserOrderService;
 
@@ -28,6 +32,8 @@ public class PaymentController {
 	private UserOrderService userOrderService;
 	@Autowired
 	private DiscountService discountService;
+	@Autowired
+	private DetailOrderService detailOrderService;
 
 	@GetMapping("/payment")
 	public String showPaymentPage(HttpSession session, Model model, HttpServletRequest request) {
@@ -57,4 +63,35 @@ public class PaymentController {
 		return "/user/payment";
 	}
 
+	@PostMapping("/payment")
+	public String payment(HttpSession session, Model model, HttpServletRequest request, @RequestParam String name,
+			@RequestParam String email, @RequestParam String address, @RequestParam String phone,
+			@RequestParam String discount) {
+		String userID = (String) session.getAttribute("userID");
+		Customer customer = new Customer();
+		UserOrder userOrder = new UserOrder();
+//		kiểm tra user đăng nhập chưa
+		model.addAttribute("logged", "0");
+		if (userID != null) {
+			model.addAttribute("logged", "1");
+//			lưu thông tin user khi đã đăng nhập
+			customer = customerServie.getCustomerByID(userID);
+			model.addAttribute("username", customer.getAccount().getUserName());
+			model.addAttribute("customer", customer);
+		}
+//		
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals("userOrderId")) {
+					String userOrderId = cookie.getValue();
+					userOrder = userOrderService.getUserOrderById(userOrderId);
+					model.addAttribute("userOrder", userOrder);
+				}
+			}
+		}
+		detailOrderService.createNewDetailOrder(customer, userOrder, discount, email, phone, address, name);
+		discountService.updateUsedDiscount(discountService.getDiscountByCode(discount).getDiscountID().toString());
+		return "redirect:/history-order";
+	}
 }

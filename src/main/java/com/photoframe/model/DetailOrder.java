@@ -38,6 +38,18 @@ public class DetailOrder {
 	@Column(name = "Status")
 	private String status;
 
+	@Column(name = "Address")
+	private String address;
+
+	@Column(name = "PhoneNumber")
+	private String phone;
+
+	@Column(name = "Email")
+	private String email;
+
+	@Column(name = "Name")
+	private String name;
+
 	public DetailOrder() {
 	}
 
@@ -60,6 +72,66 @@ public class DetailOrder {
 		this.totalPrice = totalPrice;
 		this.shippingFee = shippingFee;
 		this.status = status;
+	}
+
+	public DetailOrder(UserOrder userOrder, Customer customer, Discount discount, Long totalPrice, Long shippingFee,
+			String status, String address, String phone, String email) {
+		super();
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+	}
+
+	public DetailOrder(Long detailOrderID, UserOrder userOrder, Customer customer, Discount discount, Long totalPrice,
+			Long shippingFee, String status, String address, String phone, String email) {
+		super();
+		this.detailOrderID = detailOrderID;
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+	}
+
+	public DetailOrder(UserOrder userOrder, Customer customer, Discount discount, Long totalPrice, Long shippingFee,
+			String status, String address, String phone, String email, String name) {
+		super();
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+	}
+
+	public DetailOrder(Long detailOrderID, UserOrder userOrder, Customer customer, Discount discount, Long totalPrice,
+			Long shippingFee, String status, String address, String phone, String email, String name) {
+		super();
+		this.detailOrderID = detailOrderID;
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
 	}
 
 	public Long getDetailOrderID() {
@@ -118,11 +190,43 @@ public class DetailOrder {
 		this.status = status;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@Override
 	public String toString() {
 		return "DetailOrder [detailOrderID=" + detailOrderID + ", userOrder=" + userOrder + ", customer=" + customer
 				+ ", discount=" + discount + ", totalPrice=" + totalPrice + ", shippingFee=" + shippingFee + ", status="
-				+ status + "]";
+				+ status + ", address=" + address + ", phone=" + phone + ", email=" + email + ", name=" + name + "]";
 	}
 
 }

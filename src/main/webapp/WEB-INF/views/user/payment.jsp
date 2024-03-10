@@ -92,7 +92,7 @@
 				<h1 class="fw-bold mb-0" style="color: #FF9999 !important;">Chi
 					tiết đặt hàng</h1>
 			</div>
-			<form action="">
+			<form action="payment" method="post">
 				<div class="container d-lg-flex d-flex justify-content-center">
 					<div class="box-1 bg-light user">
 						<div class="d-flex align-items-center mb-3">
@@ -126,90 +126,86 @@
 								<p class="dis mb-3">Hoàn tất giao dịch mua hàng của bạn bằng
 									cách cung cấp chi tiết thanh toán của bạn</p>
 							</div>
-							<form action="payment" method="get">
-								<div class="mb-3">
-									<p class="dis fw-bold mb-2">Họ Và Tên</p>
-									<input class="form-control" type="text" name="name"
-										value="${customer.name}" required="required">
-								</div>
-								<div class="mb-3">
-									<p class="dis fw-bold mb-2">Email</p>
-									<input class="form-control" type="email" name="email"
-										value="${customer.email}">
-								</div>
-								<div class="mb-3">
-									<p class="dis fw-bold mb-2">Địa Chỉ</p>
-									<input class="form-control" type="text" name="address"
-										value="${customer.address}" required="required">
-								</div>
-								<div class="mb-3">
-									<p class="dis fw-bold mb-2">Số điện thoại</p>
-									<input class="form-control" type="number" name="phone"
-										value="${customer.phoneNumber}" required="required">
-								</div>
-								<div class="mb-3">
-									<p class="dis fw-bold mb-2">Mã giảm giá</p>
-									<input class="form-control" type="text" name="discount"
-										value=""> <input type="button"
-										class="btn btn-primary mt-2" value="Check">
-									<div style="display: none">
-										<c:forEach var="discount" items="${listDiscount}">
-											<div class="discount" id="${discount.discountID}">
-												<p>${discount.code}</p>
-												<p>${discount.discountValue}</p>
-											</div>
-										</c:forEach>
-									</div>
-								</div>
-								<div>
-									<div class="address">
-										<p class="dis fw-bold mb-3">Phương thức thanh toán</p>
-										<select class="form-select"
-											aria-label="Default select example">
-											<option selected hidden>Thanh toán trực tiếp</option>
-											<option value="1">Thanh toán VNPay</option>
-											<option value="2">Thanh toán trực tiếp</option>
-										</select>
-										<div class="d-flex flex-column dis">
-											<div
-												class="d-flex align-items-center justify-content-between mb-2">
-												<p>Tổng đơn hàng</p>
-												<p id="totalPrice">
-													<span class="fas fa-dollar-sign"></span>${userOrder.getProduct().getPrice()}
-													đ
-												</p>
-											</div>
-											<div
-												class="d-flex align-items-center justify-content-between mb-2">
-												<p>Phí Vận Chuyển</p>
-												<p id="shipment">
-													<span class="fas fa-dollar-sign"></span>30000 đ
-												</p>
-											</div>
-											<div
-												class="d-flex align-items-center justify-content-between mb-2">
-												<p id="valueDiscount">
-													Giảm giá <span>(0) %</span>
-												</p>
-												<p id="discountPrice">
-													<span class="fas fa-dollar-sign"></span>0 đ
-												</p>
-											</div>
-											<div
-												class="d-flex align-items-center justify-content-between mb-2">
-												<p class="fw-bold">Total</p>
-												<p class="fw-bold" id="priceAfterDiscount">
-													<span class="fas fa-dollar-sign"></span>${userOrder.getProduct().getPrice() + 30000}
-													đ
-												</p>
-											</div>
-											<button id="paymentButton" class="btn btn-primary mt-2">
-												Thanh toán<span class="fas fa-dollar-sign px-1"></span>${userOrder.getProduct().getPrice()+30000}đ
-											</button>
+							<div class="mb-3">
+								<p class="dis fw-bold mb-2">Họ Và Tên</p>
+								<input class="form-control" type="text" name="name"
+									value="${customer.name}" required="required">
+							</div>
+							<div class="mb-3">
+								<p class="dis fw-bold mb-2">Email</p>
+								<input class="form-control" type="email" name="email"
+									value="${customer.email}">
+							</div>
+							<div class="mb-3">
+								<p class="dis fw-bold mb-2">Địa Chỉ</p>
+								<input class="form-control" type="text" name="address"
+									value="${customer.address}" required="required">
+							</div>
+							<div class="mb-3">
+								<p class="dis fw-bold mb-2">Số điện thoại</p>
+								<input class="form-control" type="number" name="phone"
+									value="${customer.phoneNumber}" required="required">
+							</div>
+							<div class="mb-3">
+								<p class="dis fw-bold mb-2">Mã giảm giá</p>
+								<input class="form-control" type="text" name="discount" value="">
+								<input type="button" class="btn btn-primary mt-2" value="Check">
+								<div style="display: none">
+									<c:forEach var="discount" items="${listDiscount}">
+										<div class="discount" id="${discount.discountID}">
+											<p>${discount.code}</p>
+											<p>${discount.discountValue}</p>
 										</div>
+									</c:forEach>
+								</div>
+							</div>
+							<div>
+								<div class="address">
+									<p class="dis fw-bold mb-3">Phương thức thanh toán</p>
+									<select class="form-select" aria-label="Default select example">
+										<option selected hidden>Thanh toán trực tiếp</option>
+										<option value="1">Thanh toán VNPay</option>
+										<option value="2">Thanh toán trực tiếp</option>
+									</select>
+									<div class="d-flex flex-column dis">
+										<div
+											class="d-flex align-items-center justify-content-between mb-2">
+											<p>Tổng đơn hàng</p>
+											<p id="totalPrice">
+												<span class="fas fa-dollar-sign"></span>${userOrder.getProduct().getPrice()}
+												đ
+											</p>
+										</div>
+										<div
+											class="d-flex align-items-center justify-content-between mb-2">
+											<p>Phí Vận Chuyển</p>
+											<p id="shipment">
+												<span class="fas fa-dollar-sign"></span>30000 đ
+											</p>
+										</div>
+										<div
+											class="d-flex align-items-center justify-content-between mb-2">
+											<p id="valueDiscount">
+												Giảm giá <span>(0) %</span>
+											</p>
+											<p id="discountPrice">
+												<span class="fas fa-dollar-sign"></span>0 đ
+											</p>
+										</div>
+										<div
+											class="d-flex align-items-center justify-content-between mb-2">
+											<p class="fw-bold">Total</p>
+											<p class="fw-bold" id="priceAfterDiscount">
+												<span class="fas fa-dollar-sign"></span>${userOrder.getProduct().getPrice() + 30000}
+												đ
+											</p>
+										</div>
+										<button id="paymentButton" class="btn btn-primary mt-2">
+											Thanh toán<span class="fas fa-dollar-sign px-1"></span>${userOrder.getProduct().getPrice()+30000}đ
+										</button>
 									</div>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>

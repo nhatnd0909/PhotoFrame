@@ -68,11 +68,12 @@ public class UserOrderController1 {
 		return discountService.crateNewDiscount(value);
 	}
 
-	@PostMapping("/detailOder")
-	public DetailOrder create(@RequestParam String userID, @RequestParam String discountID,
-			@RequestParam String userOrderID, @RequestParam String shippingFee) {
-		return detailOrderService.createNewDetailOrder(userID, userOrderID, discountID, shippingFee);
-	}
+//	@PostMapping("/detailOder")
+//	public DetailOrder create(@RequestParam String userID, @RequestParam String userOrderID,
+//			@RequestParam String discountID, @RequestParam String email, @RequestParam String phone,
+//			@RequestParam String address) {
+//		return detailOrderService.createNewDetailOrder(userID, userOrderID, discountID, email, phone, address);
+//	}
 
 	@GetMapping("/detailOder")
 	public List<DetailOrder> getdetailOder() {

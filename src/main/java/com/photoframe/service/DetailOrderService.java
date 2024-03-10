@@ -16,19 +16,30 @@ public class DetailOrderService {
 	@Autowired
 	private DetailOrderRepository detailOrderRepository;
 	@Autowired
-	private CustomerServie customerServie;
-	@Autowired
-	private UserOrderService userOrderService;
-	@Autowired
 	private DiscountService discountService;
 
-	public DetailOrder createNewDetailOrder(String userID, String userOrderID, String discountID, String shippingFee) {
-		Customer customer = customerServie.getCustomerByID(userID);
-		UserOrder userOrder = userOrderService.getUserOrderById(userOrderID);
-		Discount discount = discountService.getDiscountByID(discountID);
-		Long totalPrice = userOrder.getProduct().getPrice() + Long.parseLong(shippingFee);
-		DetailOrder detailOrder = new DetailOrder(userOrder, customer, discount, totalPrice,
-				Long.parseLong(shippingFee), "Đang xử lý");
+	public DetailOrder createNewDetailOrder(Customer customer, UserOrder userOrder, String code, String email,
+			String phone, String address, String name) {
+		Discount discount = discountService.getDiscountByCode(code);
+		Long totalPrice = userOrder.getProduct().getPrice();
+		if (discount != null) {
+			totalPrice = totalPrice - (userOrder.getProduct().getPrice() / 100 * discount.getDiscountValue())
+					+ Long.parseLong("30000");
+
+		} else {
+			totalPrice = userOrder.getProduct().getPrice() + Long.parseLong("30000");
+		}
+		DetailOrder detailOrder = new DetailOrder();
+		detailOrder.setAddress(address);
+		detailOrder.setCustomer(customer);
+		detailOrder.setDiscount(discount);
+		detailOrder.setEmail(email);
+		detailOrder.setPhone(phone);
+		detailOrder.setShippingFee(Long.parseLong("30000"));
+		detailOrder.setStatus("Đang xử lý");
+		detailOrder.setTotalPrice(totalPrice);
+		detailOrder.setUserOrder(userOrder);
+		detailOrder.setName(name);
 		return detailOrderRepository.save(detailOrder);
 	}
 
@@ -45,5 +56,5 @@ public class DetailOrderService {
 		}
 		return null;
 	}
-			
+
 }

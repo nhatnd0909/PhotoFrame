@@ -71,4 +71,14 @@ public class DiscountService {
 		discount.setStatus(false);
 		return discountRepository.save(discount);
 	}
+
+	public Discount getDiscountByCode(String code) {
+		List<Discount> list = getAllDiscount();
+		for (Discount d : list) {
+			if (d.getCode().equals(code)) {
+				return d;
+			}
+		}
+		return null;
+	}
 }
