@@ -57,25 +57,25 @@ public class HomeController12 {
 //
 //	}
 
-	@GetMapping("/detail-order")
-	public String showDetailOrderPage(HttpSession session, Model model) {
-		String userID = (String) session.getAttribute("userID");
-//		kiểm tra user đăng nhập chưa
-		model.addAttribute("logged", "0");
-		if (userID != null) {
-			model.addAttribute("logged", "1");
-//			lưu thông tin user khi đã đăng nhập
-			Customer customer = customerServie.getCustomerByID(userID);
-			model.addAttribute("username", customer.getAccount().getUserName());
-		} else {
-			return "redirect:/";
-		}
-
-		Customer user = customerServie.getCustomerByID(userID);
-		model.addAttribute("user", user);
-		return "/user/detail-order";
-
-	}
+//	@GetMapping("/detail-order")
+//	public String showDetailOrderPage(HttpSession session, Model model) {
+//		String userID = (String) session.getAttribute("userID");
+////		kiểm tra user đăng nhập chưa
+//		model.addAttribute("logged", "0");
+//		if (userID != null) {
+//			model.addAttribute("logged", "1");
+////			lưu thông tin user khi đã đăng nhập
+//			Customer customer = customerServie.getCustomerByID(userID);
+//			model.addAttribute("username", customer.getAccount().getUserName());
+//		} else {
+//			return "redirect:/";
+//		}
+//
+//		Customer user = customerServie.getCustomerByID(userID);
+//		model.addAttribute("user", user);
+//		return "/user/detail-order";
+//
+//	}
 
 	@GetMapping("/contact-us")
 	public String showContactUsPage(HttpSession session, Model model) {

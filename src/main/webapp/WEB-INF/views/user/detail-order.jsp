@@ -1,37 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+	integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>EduWell - Education HTML5 Template</title>
+<title>EduWell - Education HTML5 Template</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-eduwell-style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/lightbox.css">
-    <link href="/adminAssets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+<!-- Additional CSS Files -->
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-eduwell-style.css">
+<link rel="stylesheet" href="assets/css/owl.css">
+<link rel="stylesheet" href="assets/css/lightbox.css">
+<link
+	href="/adminAssets/vendor/datatables/dataTables.bootstrap4.min.css"
+	rel="stylesheet">
 </head>
 
 <body>
 
 
-    	<!-- ***** Header Area Start ***** -->
+	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
 			<div class="row">
@@ -73,184 +80,188 @@
 	</header>
 	<!-- ***** Header Area End ***** -->
 
-    <!-- ***** Main Banner Area Start ***** -->
-    <section class="main-banner" id="top">
-        <div class="container">
-            <div class="row">
-                <div class="grids-main py-5">
-                    <div class="container py-lg-3">
-                        <div class="headerhny-title"></div>
-                        <div class="container">
-                            <div class="main-body">
-                                <div class="row">
-                                    <h3 class="fw-bold" style="color: #FF9999 !important; margin-bottom: 30px;">
-                                        Chi tiết đơn hàng
-                                    </h3>
-                                    <div class="col-lg-4">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="d-flex flex-column align-items-center text-center">
-                                                    <div class="avatar-upload">
-                                                        <div class="avatar-preview">
-                                                            <img id="imagePreview" src="assets/images/avatar.webp"
-                                                                alt="Avatar Preview"
-                                                                style="border-radius: 50%; max-width: 100%; max-height: 100%;width: auto;height: auto;aspect-ratio: 1;">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mt-3">
-                                                        <h4>User Name</h4>
-                                                        <p class="text-muted font-size-sm">Đà Nẵng
-                                                        </p>
-                                                    </div>
+	<!-- ***** Main Banner Area Start ***** -->
+	<section class="main-banner" id="top">
+		<div class="container">
+			<div class="row">
+				<div class="grids-main py-5">
+					<div class="container py-lg-3">
+						<div class="headerhny-title"></div>
+						<div class="container">
+							<div class="main-body">
+								<div class="row">
+									<h3 class="fw-bold"
+										style="color: #FF9999 !important; margin-bottom: 30px;">
+										Chi tiết đơn hàng</h3>
+									<div class="col-lg-4">
+										<div class="card">
+											<div class="card-body">
+												<div
+													class="d-flex flex-column align-items-center text-center">
+													<div class="avatar-upload">
+														<div class="avatar-preview">
+															<img id="imagePreview"
+																src="assets/images/${user.urlImage}"
+																alt="Avatar Preview"
+																style="border-radius: 50%; max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 1;">
+														</div>
+													</div>
+													<div class="mt-3">
+														<h4>${user.name}</h4>
+														<p class="text-muted font-size-sm">Đà Nẵng</p>
+													</div>
 
-                                                </div>
-                                                <hr class="my-4">
-                                                <ul class="list-group list-group-flush">
-                                                    <li
-                                                        class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                                        <h6 class="mb-0">
-                                                            <i class="fa-solid fa-user"></i>
-                                                            <a href="profile" class="text-muted font-size-sm">Thông
-                                                                tin cá
-                                                                nhân</a>
-                                                        </h6>
-                                                    </li>
-                                                    <li
-                                                        class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                                        <h6 class="mb-0">
-                                                            <svg width="20px" height="20px" viewBox="0 0 16 16"
-                                                                xmlns="http://www.w3.org/2000/svg">
+												</div>
+												<hr class="my-4">
+												<ul class="list-group list-group-flush">
+													<li
+														class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+														<h6 class="mb-0">
+															<i class="fa-solid fa-user"></i> <a href="profile"
+																class="text-muted font-size-sm">Thông tin cá nhân</a>
+														</h6>
+													</li>
+													<li
+														class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+														<h6 class="mb-0">
+															<svg width="20px" height="20px" viewBox="0 0 16 16"
+																xmlns="http://www.w3.org/2000/svg">
                                                                 <path
-                                                                    d="m 6 1 c -2.761719 0 -5 2.238281 -5 5 s 2.238281 5 5 5 c 0.832031 -0.003906 1.652344 -0.214844 2.382812 -0.617188 l 0.617188 0.617188 v 2 h 2 v 2 h 4 v -3 l -4.308594 -4.308594 c 0.199219 -0.542968 0.304688 -1.113281 0.308594 -1.691406 c 0 -2.761719 -2.238281 -5 -5 -5 z m -1 3 c 0.550781 0 1 0.449219 1 1 s -0.449219 1 -1 1 s -1 -0.449219 -1 -1 s 0.449219 -1 1 -1 z m 0 0"
-                                                                    fill="#2e3436" />
+																	d="m 6 1 c -2.761719 0 -5 2.238281 -5 5 s 2.238281 5 5 5 c 0.832031 -0.003906 1.652344 -0.214844 2.382812 -0.617188 l 0.617188 0.617188 v 2 h 2 v 2 h 4 v -3 l -4.308594 -4.308594 c 0.199219 -0.542968 0.304688 -1.113281 0.308594 -1.691406 c 0 -2.761719 -2.238281 -5 -5 -5 z m -1 3 c 0.550781 0 1 0.449219 1 1 s -0.449219 1 -1 1 s -1 -0.449219 -1 -1 s 0.449219 -1 1 -1 z m 0 0"
+																	fill="#2e3436" />
                                                             </svg>
-                                                            <a href="change-password"
-                                                                class="text-muted font-size-sm">Đổi mật
-                                                                khẩu</a>
-                                                        </h6>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <form action="" method="get">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="row mb-4">
-                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">ID đơn hàng</h6>
-                                                        </div>
-                                                        <div class="col-sm-9 text-secondary">
-                                                            <input name="name" type="text" class="form-control"
-                                                                value="#1111" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">Trạng thái</h6>
-                                                        </div>
-                                                        <div class="col-sm-9 text-secondary">
-                                                            <input name="name" type="text" class="form-control"
-                                                                value="Đang xử lý" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">Ngày đặt</h6>
-                                                        </div>
-                                                        <div class="col-sm-9 text-secondary">
-                                                            <input name="date" type="date" class="form-control"
-                                                                value="2002-09-09" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">Ảnh mẫu</h6>
-                                                        </div>
-                                                        <div class="col-sm-9 text-secondary">
-                                                            <img src="assets/images/template1.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">Ảnh tải lên</h6>
-                                                        </div>
-                                                        <div class="col-sm-3 text-secondary">
-                                                            <img src="assets/images/avatar.webp" alt="">
-                                                        </div>
-                                                        <div class="col-sm-3 text-secondary">
-                                                            <img src="assets/images/avatar.webp" alt="">
-                                                        </div>
-                                                        <div class="col-sm-3 text-secondary">
-                                                            <img src="assets/images/avatar.webp" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">Icon đã chọn</h6>
-                                                        </div>
-                                                        <div class="col-sm-3 text-secondary">
-                                                            <img src="assets/images/avatar.webp" alt="">
-                                                        </div>
-                                                        <div class="col-sm-3 text-secondary">
-                                                            <img src="assets/images/avatar.webp" alt="">
-                                                        </div>
-                                                        <div class="col-sm-3 text-secondary">
-                                                            <img src="assets/images/avatar.webp" alt="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">Địa chỉ nhận hàng</h6>
-                                                        </div>
-                                                        <div class="col-sm-9 text-secondary">
-                                                            <input name="distric" type="text" class="form-control"
-                                                                value="77 đào trí/ hòa cường nam/ đà nẵng" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb-4">
-                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">Tổng đơn hàng</h6>
-                                                        </div>
-                                                        <div class="col-sm-9 text-secondary">
-                                                            <input name="city" type="text" class="form-control"
-                                                                value="180.000đ" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <button class="btn btn-outline-primary">Lưu thông tin</button>
-                                                    <a href="profile" class="btn btn-outline-warning"
-                                                        style="margin-left: 10px;">Hủy</a>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Main Banner Area End ***** -->
+															<a href="change-password" class="text-muted font-size-sm">Đổi
+																mật khẩu</a>
+														</h6>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-8">
+										<form action="" method="get">
+											<div class="card">
+												<div class="card-body">
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">ID đơn hàng</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<input name="name" type="text" class="form-control"
+																value="${detailOrder.detailOrderID}" readonly>
+														</div>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">${detailOrder.status}</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<input name="name" type="text" class="form-control"
+																value="Đang xử lý" readonly>
+														</div>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Người nhận</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<input name="date" type="text" class="form-control"
+																value="${detailOrder.name}" readonly>
+														</div>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Số điện thoại</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<input name="distric" type="text" class="form-control"
+																value="${detailOrder.phone}" readonly>
+														</div>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Địa chỉ nhận hàng</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<input name="distric" type="text" class="form-control"
+																value="${detailOrder.address}" readonly>
+														</div>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Ảnh mẫu</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<img
+																src="assets/images/${detailOrder.getUserOrder().getProduct().getMainImg()}"
+																alt="">
+														</div>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Ảnh tải lên</h6>
+														</div>
+														<c:forEach items="${listImg}" var="img">
+															<div class="col-sm-3 text-secondary">
+																<img src="assets/images/${img}" alt="">
+															</div>
+														</c:forEach>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Icon đã chọn</h6>
+														</div>
+														<c:forEach items="${listIcon}" var="icon">
+															<div class="col-sm-3 text-secondary">
+																<img src="assets/images/${icon.urlIcon}" alt="">
+															</div>
+														</c:forEach>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Tổng đơn hàng</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<input name="city" type="text" class="form-control"
+																value="${detailOrder.totalPrice}đ" readonly>
+														</div>
+													</div>
+													<button class="btn btn-outline-primary">Lưu thông
+														tin</button>
+													<a href="profile" class="btn btn-outline-warning"
+														style="margin-left: 10px;">Hủy</a>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ***** Main Banner Area End ***** -->
 
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/province.js"></script>
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/lightbox.js"></script>
-    <script src="assets/js/tabs.js"></script>
-    <script src="assets/js/video.js"></script>
-    <script src="assets/js/slick-slider.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script>
+	<!-- Scripts -->
+	<!-- Bootstrap core JavaScript -->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+		referrerpolicy="no-referrer"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/province.js"></script>
+	<script src="assets/js/isotope.min.js"></script>
+	<script src="assets/js/owl-carousel.js"></script>
+	<script src="assets/js/lightbox.js"></script>
+	<script src="assets/js/tabs.js"></script>
+	<script src="assets/js/video.js"></script>
+	<script src="assets/js/slick-slider.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');
 
@@ -297,8 +308,8 @@
             checkSection();
         });
     </script>
-    <!-- Kiểm tra mật khẩu nhập -->
-    <script>
+	<!-- Kiểm tra mật khẩu nhập -->
+	<script>
         document.addEventListener("DOMContentLoaded", function () {
             var newPasswordInput = document.querySelector('input[name="newPassword"]');
             var reNewPasswordInput = document.querySelector('input[name="reNewPassword"]');
@@ -313,9 +324,10 @@
         });
 
     </script>
-    <script src="/adminAssets/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/adminAssets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-    <script>
+	<script src="/adminAssets/vendor/datatables/jquery.dataTables.min.js"></script>
+	<script
+		src="/adminAssets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+	<script>
         $(document).ready(function () {
             $('#dataTable').DataTable(); // ID From dataTable 
             $('#dataTableHover').DataTable(); // ID From dataTable with Hover
