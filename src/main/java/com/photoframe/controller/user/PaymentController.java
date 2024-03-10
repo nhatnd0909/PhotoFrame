@@ -90,8 +90,11 @@ public class PaymentController {
 				}
 			}
 		}
+
 		detailOrderService.createNewDetailOrder(customer, userOrder, discount, email, phone, address, name);
-		discountService.updateUsedDiscount(discountService.getDiscountByCode(discount).getDiscountID().toString());
+		if (!discount.isEmpty()) {
+			discountService.updateUsedDiscount(discount);
+		}
 		return "redirect:/history-order";
 	}
 }

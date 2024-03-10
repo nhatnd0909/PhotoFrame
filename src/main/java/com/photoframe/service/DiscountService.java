@@ -66,10 +66,13 @@ public class DiscountService {
 		return listValid;
 	}
 
-	public Discount updateUsedDiscount(String id) {
-		Discount discount = getDiscountByID(id);
-		discount.setStatus(false);
-		return discountRepository.save(discount);
+	public Discount updateUsedDiscount(String code) {
+		if (code != null) {
+			Discount discount = getDiscountByCode(code);
+			discount.setStatus(false);
+			return discountRepository.save(discount);
+		}
+		return null;
 	}
 
 	public Discount getDiscountByCode(String code) {

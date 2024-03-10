@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +100,8 @@
 													class="d-flex flex-column align-items-center text-center">
 													<div class="avatar-upload">
 														<div class="avatar-preview">
-															<img id="imagePreview" src="assets/images/${user.getUrlImage()}"
+															<img id="imagePreview"
+																src="assets/images/${user.getUrlImage()}"
 																alt="Avatar Preview"
 																style="border-radius: 50%; max-width: 100%; max-height: 100%; width: auto; height: auto; aspect-ratio: 1; border: 7px solid #FF9999 !important; margin-bottom: 20px">
 														</div>
@@ -158,42 +160,19 @@
 														</tr>
 													</thead>
 													<tbody>
-														<tr>
-															<td>#1111</td>
-															<td>Mẫu 1</td>
-															<td>Gia đình</td>
-															<td>180.000đ</td>
-															<td>Đang xử lý</td>
-															<td><a href="detail-order" style="text-decoration: none;">Chi
-																	tiết</a></td>
-														</tr>
-														<tr>
-															<td>#1112</td>
-															<td>Mẫu 2</td>
-															<td>Gia đình</td>
-															<td>140.000đ</td>
-															<td>Đã giao</td>
-															<td><a href="detail-order" style="text-decoration: none;">Chi
-																	tiết</a></td>
-														</tr>
-														<tr>
-															<td>#1111</td>
-															<td>Mẫu 1</td>
-															<td>Gia đình</td>
-															<td>180.000đ</td>
-															<td>Đang xử lý</td>
-															<td><a href="detail-order" style="text-decoration: none;">Chi
-																	tiết</a></td>
-														</tr>
-														<tr>
-															<td>#1111</td>
-															<td>Mẫu 1</td>
-															<td>Gia đình</td>
-															<td>180.000đ</td>
-															<td>Đang xử lý</td>
-															<td><a href="detail-order" style="text-decoration: none;">Chi
-																	tiết</a></td>
-														</tr>
+														<c:forEach items="${listDetailOrder}" var="detailOrder">
+															<tr>
+																<td>${detailOrder.detailOrderID}</td>
+																<td>${detailOrder.getUserOrder().getProduct().getName()}</td>
+																<td>${detailOrder.getUserOrder().getProduct().getType()}</td>
+
+																<td>${detailOrder.totalPrice}</td>
+																<td>${detailOrder.status}</td>
+																<td><a
+																	href="detail-order?id=${detailOrder.detailOrderID}">Chi
+																		tiết</a></td>
+															</tr>
+														</c:forEach>
 													</tbody>
 												</table>
 											</div>
