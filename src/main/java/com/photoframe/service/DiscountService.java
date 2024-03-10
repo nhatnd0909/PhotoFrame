@@ -1,5 +1,6 @@
 package com.photoframe.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -15,7 +16,7 @@ public class DiscountService {
 	private DiscountRepository discountRepository;
 
 	public Discount crateNewDiscount(String value) {
-		Discount discount = new Discount(generateCode(), Integer.parseInt(value), false);
+		Discount discount = new Discount(generateCode(), Integer.parseInt(value), true);
 		return discountRepository.save(discount);
 	}
 
@@ -52,5 +53,22 @@ public class DiscountService {
 			}
 		}
 		return false;
+	}
+
+	public List<Discount> getDiscountValid() {
+		List<Discount> list = getAllDiscount();
+		List<Discount> listValid = new ArrayList<>();
+		for (Discount d : list) {
+			if (d.isStatus()) {
+				listValid.add(d);
+			}
+		}
+		return listValid;
+	}
+
+	public Discount updateUsedDiscount(String id) {
+		Discount discount = getDiscountByID(id);
+		discount.setStatus(false);
+		return discountRepository.save(discount);
 	}
 }

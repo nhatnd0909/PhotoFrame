@@ -86,110 +86,134 @@
 	</header>
 
 	<!-- Single Product Start -->
-
-
 	<div class="container-fluid py-5 mt-5">
 		<div class="container py-5">
 			<div style="margin-bottom: 100px; margin-top: 50px;">
 				<h1 class="fw-bold mb-0" style="color: #FF9999 !important;">Chi
 					tiết đặt hàng</h1>
 			</div>
-			
-			<div class="container d-lg-flex d-flex justify-content-center">
-				<div class="box-1 bg-light user">
-					<div class="d-flex align-items-center mb-3">
-						<img src="assets/images/${customer.urlImage}" class="pic rounded-circle"
-							alt="">
-						<p class="ps-2 name">${customer.name}</p>
-					</div>
-					<div class="box-inner-1 pb-3 mb-3 ">
-						<div class="d-flex justify-content-between mb-3 userdetails">
-							<p class="fw-bold">${userOrder.product.name}</p>
-							<p class="fw-lighter">
-								<span class="fas fa-dollar-sign"></span>${userOrder.product.price} đ
-							</p>
+			<form action="">
+				<div class="container d-lg-flex d-flex justify-content-center">
+					<div class="box-1 bg-light user">
+						<div class="d-flex align-items-center mb-3">
+							<img src="assets/images/${customer.urlImage}"
+								class="pic rounded-circle" alt="">
+							<p class="ps-2 name">${customer.name}</p>
 						</div>
-						<div id="my">
-							<div class="carousel-inner">
-								<div class="carousel-item active">
-									<img src="assets/images/${userOrder.product.mainImg}" class="d-block w-100">
-								</div>
+						<div class="box-inner-1 pb-3 mb-3 ">
+							<div class="d-flex justify-content-between mb-3 userdetails">
+								<p class="fw-bold">${userOrder.product.name}</p>
+								<p class="fw-lighter">
+									<span class="fas fa-dollar-sign"></span>${userOrder.product.price}
+									đ
+								</p>
 							</div>
-						</div>
-						
-					</div>
-				</div>
-				<div class="box-2">
-					<div class="box-inner-2">
-						<div>
-							<p class="fw-bold">Chi tiết đặt hàng</p>
-							<p class="dis mb-3">Hoàn tất giao dịch mua hàng của bạn bằng
-								cách cung cấp chi tiết thanh toán của bạn</p>
-						</div>
-						<form action="">
-							<div class="mb-3">
-								<p class="dis fw-bold mb-2">Họ Và Tên</p>
-								<input class="form-control" type="text" name="name" value="${customer.name}" required="required">
-							</div>
-							<div class="mb-3">
-								<p class="dis fw-bold mb-2">Email</p>
-								<input class="form-control" type="email" name="email" value="${customer.email}">
-							</div>
-							<div class="mb-3">
-								<p class="dis fw-bold mb-2">Địa Chỉ</p>
-								<input class="form-control" type="email" name="address" value="${customer.address}" required="required">
-							</div>
-							<div class="mb-3">
-								<p class="dis fw-bold mb-2">Số điện thoại</p>
-								<input class="form-control" type="number" name="phone" value="${customer.phoneNumber}" required="required">
-							</div>
-							<div class="mb-3">
-								<p class="dis fw-bold mb-2">Mã giảm giá</p>
-								<input class="form-control" type="text" name="discount" value="" required="required">
-								<input type="button" class="btn btn-primary mt-2" value="Check">
-							</div>
-							<div>
-								<div class="address">
-									<p class="dis fw-bold mb-3">Phương thức thanh toán</p>
-									<select class="form-select" aria-label="Default select example">
-										<option selected hidden>Thanh toán trực tiếp</option>
-										<option value="1">Thanh toán VNPay</option>
-										<option value="2">Thanh toán trực tiếp</option>
-									</select>
-									<div class="d-flex flex-column dis">
-										<div
-											class="d-flex align-items-center justify-content-between mb-2">
-											<p>Tổng đơn hàng</p>
-											<p>
-												<span class="fas fa-dollar-sign"></span>180.000đ
-											</p>
-										</div>
-										<div
-											class="d-flex align-items-center justify-content-between mb-2">
-											<p>
-												Giảm giá<span>(20%)</span>
-											</p>
-											<p>
-												<span class="fas fa-dollar-sign"></span>36,000đ
-											</p>
-										</div>
-										<div
-											class="d-flex align-items-center justify-content-between mb-2">
-											<p class="fw-bold">Total</p>
-											<p class="fw-bold">
-												<span class="fas fa-dollar-sign"></span>144.000đ
-											</p>
-										</div>
-										<div class="btn btn-primary mt-2">
-											Thanh toán<span class="fas fa-dollar-sign px-1"></span>144.000đ
-										</div>
+							<div id="my">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img src="assets/images/${userOrder.product.mainImg}"
+											class="d-block w-100">
 									</div>
 								</div>
 							</div>
-						</form>
+
+						</div>
+					</div>
+					<div class="box-2">
+						<div class="box-inner-2">
+							<div>
+								<p class="fw-bold">Chi tiết đặt hàng</p>
+								<p class="dis mb-3">Hoàn tất giao dịch mua hàng của bạn bằng
+									cách cung cấp chi tiết thanh toán của bạn</p>
+							</div>
+							<form action="payment" method="get">
+								<div class="mb-3">
+									<p class="dis fw-bold mb-2">Họ Và Tên</p>
+									<input class="form-control" type="text" name="name"
+										value="${customer.name}" required="required">
+								</div>
+								<div class="mb-3">
+									<p class="dis fw-bold mb-2">Email</p>
+									<input class="form-control" type="email" name="email"
+										value="${customer.email}">
+								</div>
+								<div class="mb-3">
+									<p class="dis fw-bold mb-2">Địa Chỉ</p>
+									<input class="form-control" type="text" name="address"
+										value="${customer.address}" required="required">
+								</div>
+								<div class="mb-3">
+									<p class="dis fw-bold mb-2">Số điện thoại</p>
+									<input class="form-control" type="number" name="phone"
+										value="${customer.phoneNumber}" required="required">
+								</div>
+								<div class="mb-3">
+									<p class="dis fw-bold mb-2">Mã giảm giá</p>
+									<input class="form-control" type="text" name="discount"
+										value=""> <input type="button"
+										class="btn btn-primary mt-2" value="Check">
+									<div style="display: none">
+										<c:forEach var="discount" items="${listDiscount}">
+											<div class="discount" id="${discount.discountID}">
+												<p>${discount.code}</p>
+												<p>${discount.discountValue}</p>
+											</div>
+										</c:forEach>
+									</div>
+								</div>
+								<div>
+									<div class="address">
+										<p class="dis fw-bold mb-3">Phương thức thanh toán</p>
+										<select class="form-select"
+											aria-label="Default select example">
+											<option selected hidden>Thanh toán trực tiếp</option>
+											<option value="1">Thanh toán VNPay</option>
+											<option value="2">Thanh toán trực tiếp</option>
+										</select>
+										<div class="d-flex flex-column dis">
+											<div
+												class="d-flex align-items-center justify-content-between mb-2">
+												<p>Tổng đơn hàng</p>
+												<p id="totalPrice">
+													<span class="fas fa-dollar-sign"></span>${userOrder.getProduct().getPrice()}
+													đ
+												</p>
+											</div>
+											<div
+												class="d-flex align-items-center justify-content-between mb-2">
+												<p>Phí Vận Chuyển</p>
+												<p id="shipment">
+													<span class="fas fa-dollar-sign"></span>30000 đ
+												</p>
+											</div>
+											<div
+												class="d-flex align-items-center justify-content-between mb-2">
+												<p id="valueDiscount">
+													Giảm giá <span>(0) %</span>
+												</p>
+												<p id="discountPrice">
+													<span class="fas fa-dollar-sign"></span>0 đ
+												</p>
+											</div>
+											<div
+												class="d-flex align-items-center justify-content-between mb-2">
+												<p class="fw-bold">Total</p>
+												<p class="fw-bold" id="priceAfterDiscount">
+													<span class="fas fa-dollar-sign"></span>${userOrder.getProduct().getPrice() + 30000}
+													đ
+												</p>
+											</div>
+											<button id="paymentButton" class="btn btn-primary mt-2">
+												Thanh toán<span class="fas fa-dollar-sign px-1"></span>${userOrder.getProduct().getPrice()+30000}đ
+											</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 	<!-- Single Product End -->
@@ -264,7 +288,67 @@
 	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
 	<!-- Template Javascript -->
 	<script src="lib/js/main.js"></script>
+	<!-- check Code -->
 
+	<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function() {
+	    var discountInput = document.querySelector('input[name="discount"]');
+	    var checkButton = document.querySelector('input[value="Check"]');
+	    var valueDiscount = document.getElementById('valueDiscount');
+	    var discountPrice = document.getElementById('discountPrice');
+	    var totalPriceElement = document.getElementById('totalPrice');
+	    var priceAfterDiscountElement = document.getElementById('priceAfterDiscount');
+	    var paymentButton = document.getElementById('paymentButton');
+	    var shipmentElement = document.getElementById('shipment');
+
+	    // Ẩn/Hiển thị nút check dựa trên việc nhập liệu
+	    discountInput.addEventListener('input', function() {
+	        if (discountInput.value.trim() === '') {
+	            checkButton.style.display = 'none';
+	        } else {
+	            checkButton.style.display = 'block';
+	        }
+	    });
+
+	    // Xử lý sự kiện khi ấn nút Check
+	    checkButton.addEventListener('click', function() {
+	        var inputValue = discountInput.value.trim();
+	        var discountList = document.querySelectorAll('.discount');
+	        var foundDiscount = false;
+	        var discountValue = 0;
+
+	        // Kiểm tra xem mã giảm giá có trong danh sách hay không
+	        discountList.forEach(function(discount) {
+	            var discountCode = discount.querySelector('p:first-child').textContent.trim();
+	            var discountValueElement = discount.querySelector('p:last-child').textContent.trim();
+
+	            if (discountCode === inputValue) {
+	                foundDiscount = true;
+	                discountValue = parseFloat(discountValueElement);
+	            }
+	        });
+
+	        // Cập nhật giá trị giảm giá và giá sau giảm giá
+	        if (foundDiscount) {
+	            valueDiscount.innerHTML = 'Giảm giá <span>(' + discountValue + ') %</span>';
+	            var totalPrice = parseFloat(totalPriceElement.textContent.replace('₫', '').replace(',', '').trim());
+	            var discountPriceValue = totalPrice / 100 * discountValue;
+	            discountPrice.innerHTML = '<span class="fas fa-dollar-sign"></span>' + discountPriceValue.toLocaleString() + 'đ';
+	            var priceAfterDiscountValue = totalPrice - discountPriceValue;
+	            var totalPriceWithShipping = priceAfterDiscountValue + 30000; // Giả sử phí vận chuyển là 30000đ
+	            priceAfterDiscountElement.innerHTML = '<span class="fas fa-dollar-sign"></span>' + totalPriceWithShipping.toLocaleString() + 'đ';
+	            paymentButton.innerHTML = 'Thanh toán<span class="fas fa-dollar-sign px-1"></span>' + totalPriceWithShipping.toLocaleString() + 'đ';
+	        } else {
+	            valueDiscount.innerHTML = 'Giảm giá <span>(0) %</span>';
+	            discountPrice.innerHTML = '<span class="fas fa-dollar-sign"></span>0 đ';
+	            var totalPriceWithShipping = parseFloat(totalPriceElement.textContent.replace('₫', '').replace(',', '').trim()) + 30000; // Giả sử phí vận chuyển là 30000đ
+	            priceAfterDiscountElement.innerHTML = '<span class="fas fa-dollar-sign"></span>' + totalPriceWithShipping.toLocaleString() + 'đ';
+	            paymentButton.innerHTML = 'Thanh toán<span class="fas fa-dollar-sign px-1"></span>' + totalPriceWithShipping.toLocaleString() + 'đ';
+	        }
+	    });
+	});
+
+	</script>
 </body>
 
 </html>

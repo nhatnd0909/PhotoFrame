@@ -1,13 +1,19 @@
 package com.photoframe.controller.user;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.photoframe.model.Customer;
+import com.photoframe.model.Discount;
 import com.photoframe.model.UserOrder;
 import com.photoframe.service.CustomerServie;
+import com.photoframe.service.DiscountService;
 import com.photoframe.service.UserOrderService;
 
 import jakarta.servlet.http.Cookie;
@@ -20,6 +26,8 @@ public class PaymentController {
 	private CustomerServie customerServie;
 	@Autowired
 	private UserOrderService userOrderService;
+	@Autowired
+	private DiscountService discountService;
 
 	@GetMapping("/payment")
 	public String showPaymentPage(HttpSession session, Model model, HttpServletRequest request) {
@@ -44,6 +52,9 @@ public class PaymentController {
 				}
 			}
 		}
+		List<Discount> listDiscount = discountService.getDiscountValid();
+		model.addAttribute("listDiscount", listDiscount);
 		return "/user/payment";
 	}
+
 }

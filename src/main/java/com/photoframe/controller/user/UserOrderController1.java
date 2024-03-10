@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.photoframe.model.DetailOrder;
 import com.photoframe.model.Discount;
 import com.photoframe.model.UserOrder;
+import com.photoframe.service.DetailOrderService;
 import com.photoframe.service.DiscountService;
 import com.photoframe.service.UserOrderService;
 
@@ -28,6 +30,8 @@ public class UserOrderController1 {
 	private UserOrderService userOrderService;
 	@Autowired
 	private DiscountService discountService;
+	@Autowired
+	private DetailOrderService detailOrderService;
 
 	@GetMapping
 	public ResponseEntity<List<UserOrder>> getAllUserOrders() {
@@ -63,4 +67,16 @@ public class UserOrderController1 {
 	public Discount postDiscount(@RequestParam String value) {
 		return discountService.crateNewDiscount(value);
 	}
+
+	@PostMapping("/detailOder")
+	public DetailOrder create(@RequestParam String userID, @RequestParam String discountID,
+			@RequestParam String userOrderID, @RequestParam String shippingFee) {
+		return detailOrderService.createNewDetailOrder(userID, userOrderID, discountID, shippingFee);
+	}
+
+	@GetMapping("/detailOder")
+	public List<DetailOrder> getdetailOder() {
+		return detailOrderService.getAllDetailOrder();
+	}
+
 }
