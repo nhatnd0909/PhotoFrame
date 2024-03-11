@@ -178,10 +178,10 @@ public class HomeController12 {
 		return "/admin/icon";
 	}
 
-	@GetMapping("/admin/order")
-	public String showIOrderPage(HttpSession session, Model model) {
-		return "/admin/order";
-	}
+//	@GetMapping("/admin/order")
+//	public String showIOrderPage(HttpSession session, Model model) {
+//		return "/admin/order";
+//	}
 
 	@GetMapping("/admin/revenue")
 	public String showIRevenuePage(HttpSession session, Model model) {

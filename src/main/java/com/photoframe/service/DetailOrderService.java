@@ -1,6 +1,7 @@
 package com.photoframe.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,8 @@ public class DetailOrderService {
 		detailOrder.setTotalPrice(totalPrice);
 		detailOrder.setUserOrder(userOrder);
 		detailOrder.setName(name);
+		detailOrder.setDateOrder(new Date());
+		detailOrder.setPaid(false);
 		return detailOrderRepository.save(detailOrder);
 	}
 
@@ -67,5 +70,43 @@ public class DetailOrderService {
 			}
 		}
 		return listReturn;
+	}
+
+	public List<DetailOrder> getDetailOrderByMonth(int month) {
+		List<DetailOrder> list = getAllDetailOrder();
+		List<DetailOrder> listReturn = new ArrayList<>();
+		for (DetailOrder d : list) {
+			if (d.getDateOrder().getMonth() + 1 == month) {
+				listReturn.add(d);
+			}
+
+		}
+		return listReturn;
+	}
+
+	public int countOrderByStatus(String status, int month) {
+		int count = 0;
+		List<DetailOrder> list = getDetailOrderByMonth(month);
+		for (DetailOrder d : list) {
+			if (d.getStatus().equals(status)) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	public void updateStatus(DetailOrder detailOrder, String status) {
+		detailOrder.setStatus(status);
+		detailOrderRepository.save(detailOrder);
+	}
+
+	public void updatePaid(DetailOrder detailOrder, String paid) {
+		if (paid.equals("0")) {
+			detailOrder.setPaid(false);
+		} else {
+			detailOrder.setPaid(true);
+		}
+
+		detailOrderRepository.save(detailOrder);
 	}
 }

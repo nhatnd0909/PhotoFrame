@@ -34,22 +34,23 @@
 			id="accordionSidebar">
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="/index">
+				href="/index.html">
 				<div class="sidebar-brand-icon">
 					<img src="/adminAssets/img/logo/logo2.png">
 				</div>
 				<div class="sidebar-brand-text mx-3">Sparkle Memo</div>
 			</a>
 			<hr class="sidebar-divider my-0">
-			<li class="nav-item active"><a class="nav-link" href="index">
-					<i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
-			</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				href="index.html"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span></a>
+			</li>
 			<hr class="sidebar-divider">
 			<div class="sidebar-heading">Tính Năng</div>
-			<li class="nav-item"><a class="nav-link" href="/admin/revenue">
-					<i class="fas fa-fw fa-chart-area"></i> <span>Doanh Thu</span>
+			<li class="nav-item"><a class="nav-link"
+				href="/admin/revenue.html"> <i class="fas fa-fw fa-chart-area"></i>
+					<span>Doanh Thu</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="user"> <i
+			<li class="nav-item"><a class="nav-link" href="user.html"> <i
 					class="fas fa-fw fa-user"></i> <span>Người Dùng</span>
 			</a></li>
 			<!--  -->
@@ -62,13 +63,13 @@
 					aria-labelledby="headingTable" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Mẫu có sẵn</h6>
-						<a class="collapse-item" href="template">Mẫu</a> <a
-							class="collapse-item" href="icon">Icon</a>
+						<a class="collapse-item" href="template.html">Mẫu</a> <a
+							class="collapse-item" href="icon.html">Icon</a>
 					</div>
 				</div></li>
 			<!--  -->
 			<li class="nav-item active"><a class="nav-link active"
-				href="order"> <i class="fas fa-fw fa-truck-fast"></i> <span
+				href="order.html"> <i class="fas fa-fw fa-truck-fast"></i> <span
 					style="color: #6777ef;">Đơn Hàng</span>
 			</a></li>
 			<hr class="sidebar-divider">
@@ -162,92 +163,13 @@
 				<div class="container-fluid" id="container-wrapper">
 					<div
 						class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">Đơn Hàng</h1>
+						<h1 class="h3 mb-0 text-gray-800">Chi Tiết Đơn Hàng</h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="./">Trang chủ</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Đơn
-								hàng</li>
+							<li class="breadcrumb-item"><a href="./">Đơn hàng</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Chi
+								Tiết Đơn Hàng</li>
 						</ol>
-					</div>
-
-					<div class="row mb-3">
-						<!-- Earnings (Monthly) Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card h-100">
-								<div class="card-body">
-									<div class="row align-items-center">
-										<div class="col mr-2">
-											<div class="text-xs font-weight-bold text-uppercase mb-1">Tổng
-												Đơn Hàng (Tháng ${currentMonth})</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">${listOrders.size()}
-												đơn</div>
-											<div class="mt-2 mb-0 text-muted text-xs">
-												<span class="text-success mr-2"><i
-													class="fa fa-arrow-up"></i> 3.48%</span> <span>So với tháng
-													trước</span>
-											</div>
-										</div>
-										<div class="col-auto">
-											<i class="fas fa-calendar fa-2x text-primary"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Earnings (Annual) Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card h-100">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div class="text-xs font-weight-bold text-uppercase mb-1">Chờ
-												xử lý</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">${process}
-												đơn</div>
-										</div>
-										<div class="col-auto">
-											<i class="fas fa-clock fa-2x text-warning"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- New User Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card h-100">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div class="text-xs font-weight-bold text-uppercase mb-1">Đơn
-												hàng thành công</div>
-											<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">${success}
-												đơn</div>
-										</div>
-										<div class="col-auto">
-											<i class="fas fa-check fa-2x text-success"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- chưa giải quyết Requests Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card h-100">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div class="text-xs font-weight-bold text-uppercase mb-1">Đơn
-												hàng thất bại</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">${fail}
-												đơn</div>
-										</div>
-										<div class="col-auto">
-											<i class="fas fa-comments fa-2x text-danger"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 					<!--Row-->
 
@@ -256,56 +178,161 @@
 						<div class="card mb-4">
 							<div
 								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-								<h6 class="m-0 font-weight-bold text-primary">Danh Sách Các
-									Mẫu</h6>
+								<h6 class="m-0 font-weight-bold text-primary">Chi tiết đơn
+									hàng #${detailOrder.getDetailOrderID()}</h6>
 							</div>
-							<div class="table-responsive p-3">
-								<table class="table align-items-center table-flush table-hover"
-									id="dataTableHover">
-									<thead class="thead-light">
-										<tr>
-											<th>ID Đơn hàng</th>
-											<th>Tên khách hàng</th>
-											<th>Tên Mẫu</th>
-											<th>Tổng hóa đơn</th>
-											<th>Trạng thái</th>
-											<th>#</th>
-										</tr>
-									</thead>
-									<tfoot>
-										<tr>
-											<th>ID Đơn hàng</th>
-											<th>Tên khách hàng</th>
-											<th>Tên Mẫu</th>
-											<th>Tổng hóa đơn</th>
-											<th>Trạng thái</th>
-											<th>#</th>
-										</tr>
-									</tfoot>
-									<tbody>
-										<c:forEach var="order" items="${listOrder}">
-											<tr>
-												<td>${order.getDetailOrderID()}</td>
-												<td>${order.getCustomer().getName()}</td>
-												<td>${order.getUserOrder().getProduct().getName()}</td>
-												<td>${order.getTotalPrice()}đ</td>
-												<c:if test="${order.status eq 'Đang xử lý'}">
-													<td><span class="badge badge-warning">${order.getStatus()}</span></td>
+							<form action="/admin/detail-order" method="post">
+								<div class="table-responsive p-3">
+									<div class="card">
+										<div class="card-body">
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">ID đơn hàng</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="id" type="text" class="form-control"
+														value="${detailOrder.getDetailOrderID()}" readonly>
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Trạng thái</h6>
+												</div>
+												<c:if test="${detailOrder.getStatus() eq 'Đang xử lý'}">
+													<div class="col-sm-9 text-secondary">
+														<select name="status" id="" class="form-control">
+															<option value="Đang xử lý">Đang xử lý</option>
+															<option value="Thành công">Thành công</option>
+															<option value="Thất bại">Thất bại</option>
+														</select>
+													</div>
 												</c:if>
-												<c:if test="${order.status eq 'Thành công'}">
-													<td><span class="badge badge-success">${order.getStatus()}</span></td>
+												<c:if test="${detailOrder.getStatus() eq 'Thành công'}">
+													<div class="col-sm-9 text-secondary">
+														<select name="status" id="" class="form-control">
+															<option value="Thành công">Thành công</option>
+															<option value="Đang xử lý">Đang xử lý</option>
+															<option value="Thất bại">Thất bại</option>
+														</select>
+													</div>
 												</c:if>
-												<c:if test="${order.status eq 'Thất bại'}">
-													<td><span class="badge badge-danger">${order.getStatus()}</span></td>
+												<c:if test="${detailOrder.getStatus() eq 'Thất bại'}">
+													<div class="col-sm-9 text-secondary">
+														<select name="status" id="" class="form-control">
+															<option value="Thất bại">Thất bại</option>
+															<option value="Đang xử lý">Đang xử lý</option>
+															<option value="Thành công">Thành công</option>
+														</select>
+													</div>
 												</c:if>
-												<td><a href="/admin/detail-order?id=${order.detailOrderID}" style="text-decoration: none;">Chi
-														tiết</a></td>
-											</tr>
-										</c:forEach>
-
-									</tbody>
-								</table>
-							</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Thanh toán</h6>
+												</div>
+												<c:if test="${detailOrder.getPaid()}">
+													<div class="col-sm-9 text-secondary">
+														<select name="paid" id="" class="form-control">
+															<option value="1">Đã thanh toán</option>
+															<option value="0">Chưa thanh toán</option>
+														</select>
+													</div>
+												</c:if>
+												<c:if test="${not detailOrder.getPaid()}">
+													<div class="col-sm-9 text-secondary">
+														<select name="paid" id="" class="form-control">
+															<option value="0">Chưa thanh toán</option>
+															<option value="1">Đã thanh toán</option>
+														</select>
+													</div>
+												</c:if>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Tên sản phẩm</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="" type="text" class="form-control"
+														value="${detailOrder.getUserOrder().getProduct().getName()}"
+														readonly>
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Ngày đặt</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="" type="date" class="form-control"
+														value="${detailOrder.getDateOrder().toString().substring(0,10)}"
+														readonly>
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Ảnh tải lên</h6>
+												</div>
+												<c:forEach items="${detailOrder.getUserOrder().getImages()}"
+													var="image">
+													<div class="col-sm-3 text-secondary">
+														<a href="/downloadFile/${image}"> <img src="../assets/images/${image}" alt=""
+															style="max-width: 90%">
+														</a>
+													</div>
+												</c:forEach>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Tên khác hàng</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="" type="text" class="form-control"
+														value="${detailOrder.getName()}" readonly>
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Số điện thoại</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="" type="text" class="form-control"
+														value="${detailOrder.getPhone()}" readonly>
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Email</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="" type="text" class="form-control"
+														value="${detailOrder.getEmail()}" readonly>
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Địa chỉ nhận hàng</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="" type="text" class="form-control"
+														value="${detailOrder.getAddress()}" readonly>
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Tổng đơn hàng</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="" type="text" class="form-control"
+														value="${detailOrder.getTotalPrice()}đ" readonly>
+												</div>
+											</div>
+											<button class="btn btn-outline-primary">Lưu thông
+												tin</button>
+											<a href="/admin/detail-order?id=${detailOrder.getDetailOrderID()}" class="btn btn-outline-warning"
+												style="margin-left: 10px;">Hủy</a>
+										</div>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 					<!-- Modal Logout -->
@@ -328,7 +355,7 @@
 								<div class="modal-footer">
 									<button type="button" class="btn btn-outline-primary"
 										data-dismiss="modal">Cancel</button>
-									<a href="login" class="btn btn-primary">Logout</a>
+									<a href="login.html" class="btn btn-primary">Logout</a>
 								</div>
 							</div>
 						</div>
@@ -366,6 +393,4 @@
 	</script>
 </body>
 
-</html>
-dy>
 </html>

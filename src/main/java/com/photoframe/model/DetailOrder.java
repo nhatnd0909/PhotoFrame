@@ -1,5 +1,7 @@
 package com.photoframe.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -49,6 +51,12 @@ public class DetailOrder {
 
 	@Column(name = "Name")
 	private String name;
+
+	@Column(name = "DayOrder")
+	private Date dateOrder;
+
+	@Column(name = "IsPaid")
+	private Boolean paid;
 
 	public DetailOrder() {
 	}
@@ -132,6 +140,75 @@ public class DetailOrder {
 		this.phone = phone;
 		this.email = email;
 		this.name = name;
+	}
+
+	public DetailOrder(UserOrder userOrder, Customer customer, Discount discount, Long totalPrice, Long shippingFee,
+			String status, String address, String phone, String email, String name, Boolean paid) {
+		super();
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+		this.paid = paid;
+	}
+
+	public DetailOrder(Long detailOrderID, UserOrder userOrder, Customer customer, Discount discount, Long totalPrice,
+			Long shippingFee, String status, String address, String phone, String email, String name, Boolean paid) {
+		super();
+		this.detailOrderID = detailOrderID;
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+		this.paid = paid;
+	}
+
+	public DetailOrder(UserOrder userOrder, Customer customer, Discount discount, Long totalPrice, Long shippingFee,
+			String status, String address, String phone, String email, String name, Date dateOrder, Boolean paid) {
+		super();
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+		this.dateOrder = dateOrder;
+		this.paid = paid;
+	}
+
+	public DetailOrder(Long detailOrderID, UserOrder userOrder, Customer customer, Discount discount, Long totalPrice,
+			Long shippingFee, String status, String address, String phone, String email, String name, Date dateOrder,
+			Boolean paid) {
+		super();
+		this.detailOrderID = detailOrderID;
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+		this.dateOrder = dateOrder;
+		this.paid = paid;
 	}
 
 	public Long getDetailOrderID() {
@@ -222,11 +299,28 @@ public class DetailOrder {
 		this.name = name;
 	}
 
+	public Boolean getPaid() {
+		return paid;
+	}
+
+	public void setPaid(Boolean paid) {
+		this.paid = paid;
+	}
+
+	public Date getDateOrder() {
+		return dateOrder;
+	}
+
+	public void setDateOrder(Date dateOrder) {
+		this.dateOrder = dateOrder;
+	}
+
 	@Override
 	public String toString() {
 		return "DetailOrder [detailOrderID=" + detailOrderID + ", userOrder=" + userOrder + ", customer=" + customer
 				+ ", discount=" + discount + ", totalPrice=" + totalPrice + ", shippingFee=" + shippingFee + ", status="
-				+ status + ", address=" + address + ", phone=" + phone + ", email=" + email + ", name=" + name + "]";
+				+ status + ", address=" + address + ", phone=" + phone + ", email=" + email + ", name=" + name
+				+ ", dateOrder=" + dateOrder + ", paid=" + paid + "]";
 	}
 
 }
