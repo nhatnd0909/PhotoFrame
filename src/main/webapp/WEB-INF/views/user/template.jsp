@@ -85,7 +85,7 @@
 								<c:if test="${logged eq 1}">
 									<span>
 										<li class="has-sub"><a href="javascript:void(0)"><i
-												class="fa-solid fa-user"></i> Hi! ${username}</a>
+												class="fa-solid fa-user"></i>${username}</a>
 											<ul class="sub-menu">
 												<li><a href="profile">Thông tin</a></li>
 												<li><a href="">Đăng Xuất</a></li>
@@ -433,7 +433,7 @@
 					<div class="col-lg-4 text-start">
 						<h1 style="color: #FF9999 !important;">Tất Cả Mẫu</h1>
 					</div>
-					<div class="col-lg-8 text-end">
+					<div class="col-lg-8 text-end" style="display: none">
 						<ul class="nav nav-pills d-inline-flex text-center mb-5">
 							<li class="nav-item"><a
 								class="d-flex m-2 py-2 bg-light rounded-pill active"

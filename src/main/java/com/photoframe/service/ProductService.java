@@ -1,5 +1,6 @@
 package com.photoframe.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,14 @@ public class ProductService {
 			}
 		}
 		return null;
+	}
+
+	public List<Product> get4product() {
+		List<Product> list = getAllProducts();
+		List<Product> listReturn = new ArrayList<>();
+		for (int i = 0; i <= 3; i++) {
+			listReturn.add(list.get(i));
+		}
+		return listReturn;
 	}
 }

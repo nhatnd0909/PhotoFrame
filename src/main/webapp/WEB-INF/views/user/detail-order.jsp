@@ -46,8 +46,9 @@
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
-							src="assets/images/logo.png" alt="EduWell Template" style="max-width: 50px">
-							<span style="font-size: 20px">Sparkle Memo</span>
+							src="assets/images/logo.png" alt="EduWell Template"
+							style="max-width: 50px"> <span style="font-size: 20px">Sparkle
+								Memo</span>
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
@@ -198,16 +199,33 @@
 																alt="">
 														</div>
 													</div>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Ảnh tải lên</h6>
-														</div>
-														<c:forEach items="${listImg}" var="img">
-															<div class="col-sm-3 text-secondary">
-																<img src="assets/images/${img}" alt="">
+													<c:choose>
+														<c:when test="${detailOrder.design}">
+															<div class="row mb-4">
+																<div class="col-sm-3">
+																	<h6 class="mb-0">Link chỉnh sửa</h6>
+																</div>
+																<div class="col-sm-3 text-secondary">
+																	<a
+																		href="${detailOrder.getUserOrder().getProduct().getUrlDesign()}"
+																		target="_blank"> Link chỉnh sửa </a>
+																</div>
 															</div>
-														</c:forEach>
-													</div>
+														</c:when>
+														<c:otherwise>
+															<div class="row mb-4">
+																<div class="col-sm-3">
+																	<h6 class="mb-0">Ảnh tải lên</h6>
+																</div>
+																<c:forEach items="${listImg}" var="img">
+																	<div class="col-sm-3 text-secondary">
+																		<img src="assets/images/${img}" alt="">
+																	</div>
+																</c:forEach>
+															</div>
+														</c:otherwise>
+													</c:choose>
+
 													<div class="row mb-4" style="display: none">
 														<div class="col-sm-3">
 															<h6 class="mb-0">Icon đã chọn</h6>

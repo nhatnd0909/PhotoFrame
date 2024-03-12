@@ -49,8 +49,9 @@ https://templatemo.com/tm-573-eduwell
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
-							src="assets/images/logo.png" alt="EduWell Template" style="max-width: 50px">
-							<span style="font-size: 20px">Sparkle Memo</span>
+							src="assets/images/logo.png" alt="EduWell Template"
+							style="max-width: 50px"> <span style="font-size: 20px">Sparkle
+								Memo</span>
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
@@ -124,48 +125,22 @@ https://templatemo.com/tm-573-eduwell
 				</div>
 				<div class="col-lg-12">
 					<div class="owl-service-item owl-carousel">
-						<div class="item" style="padding: 0px; margin: 0px;">
-							<div class="service-item">
-								<div
-									style="position: relative; width: 100%; height: 0; padding-top: 70.9459%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-									<iframe loading="lazy"
-										style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-										src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF6yTeS0Gs&#x2F;view?embed"
-										allowfullscreen="allowfullscreen" allow="fullscreen">
-									</iframe>
+						<c:forEach var="product" items="${listProduct}">
+							<div class="item" style="padding: 0px; margin: 0px;">
+								<div class="service-item">
+									<div
+										style="position: relative; width: 100%; height: 0; padding-top: 70.9459%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+										<iframe loading="lazy"
+											style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+											src="${product.urlCanva}"
+											allowfullscreen="allowfullscreen" allow="fullscreen">
+										</iframe>
+									</div>
+									<h4>${product.name}</h4>
+									<p>${product.describle}</p>
 								</div>
-								<h4>Title</h4>
-								<p>Detail</p>
 							</div>
-						</div>
-						<div class="item" style="padding: 0px; margin: 0px;">
-							<div class="service-item">
-								<div
-									style="position: relative; width: 100%; height: 0; padding-top: 70.9459%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-									<iframe loading="lazy"
-										style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-										src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF6yTeS0Gs&#x2F;view?embed"
-										allowfullscreen="allowfullscreen" allow="fullscreen">
-									</iframe>
-								</div>
-								<h4>Title</h4>
-								<p>Detail</p>
-							</div>
-						</div>
-						<div class="item" style="padding: 0px; margin: 0px;">
-							<div class="service-item">
-								<div
-									style="position: relative; width: 100%; height: 0; padding-top: 70.9459%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-									<iframe loading="lazy"
-										style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-										src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF6yTeS0Gs&#x2F;view?embed"
-										allowfullscreen="allowfullscreen" allow="fullscreen">
-									</iframe>
-								</div>
-								<h4>Title</h4>
-								<p>Detail</p>
-							</div>
-						</div>
+						</c:forEach>
 						<!-- <div class="item">
               <div class="service-item">
                 <div class="icon">

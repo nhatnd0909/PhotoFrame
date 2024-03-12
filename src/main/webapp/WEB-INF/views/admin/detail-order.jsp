@@ -267,19 +267,38 @@
 														readonly>
 												</div>
 											</div>
-											<div class="row mb-4">
-												<div class="col-sm-3">
-													<h6 class="mb-0">Ảnh tải lên</h6>
-												</div>
-												<c:forEach items="${detailOrder.getUserOrder().getImages()}"
-													var="image">
-													<div class="col-sm-3 text-secondary">
-														<a href="/downloadFile/${image}"> <img src="../assets/images/${image}" alt=""
-															style="max-width: 90%">
-														</a>
+											<c:choose>
+												<c:when test="${detailOrder.design}">
+													<!-- người dùng tự chỉnh sửa -->
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Link chỉnh sửa</h6>
+														</div>
+														<div class="col-sm-3 text-secondary">
+															<a
+																href="${detailOrder.getUserOrder().getProduct().getUrlDesign()}"
+																target="_blank"> Link chỉnh sửa </a>
+														</div>
 													</div>
-												</c:forEach>
-											</div>
+												</c:when>
+												<c:otherwise>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Ảnh tải lên</h6>
+														</div>
+														<c:forEach
+															items="${detailOrder.getUserOrder().getImages()}"
+															var="image">
+															<div class="col-sm-3 text-secondary">
+																<a href="/downloadFile/${image}"> <img
+																	src="../assets/images/${image}" alt=""
+																	style="max-width: 90%">
+																</a>
+															</div>
+														</c:forEach>
+													</div>
+												</c:otherwise>
+											</c:choose>
 											<div class="row mb-4">
 												<div class="col-sm-3">
 													<h6 class="mb-0">Tên khác hàng</h6>
@@ -327,8 +346,9 @@
 											</div>
 											<button class="btn btn-outline-primary">Lưu thông
 												tin</button>
-											<a href="/admin/detail-order?id=${detailOrder.getDetailOrderID()}" class="btn btn-outline-warning"
-												style="margin-left: 10px;">Hủy</a>
+											<a
+												href="/admin/detail-order?id=${detailOrder.getDetailOrderID()}"
+												class="btn btn-outline-warning" style="margin-left: 10px;">Hủy</a>
 										</div>
 									</div>
 								</div>

@@ -44,6 +44,35 @@ public class DetailOrderService {
 		detailOrder.setName(name);
 		detailOrder.setDateOrder(new Date());
 		detailOrder.setPaid(false);
+		detailOrder.setDesign(false);
+		return detailOrderRepository.save(detailOrder);
+	}
+
+	public DetailOrder createNewDetailOrderDesign(Customer customer, UserOrder userOrder, String code, String email,
+			String phone, String address, String name) {
+		Discount discount = discountService.getDiscountByCode(code);
+		Long totalPrice = userOrder.getProduct().getPrice();
+		if (discount != null && discount.isStatus()) {
+			totalPrice = totalPrice - (userOrder.getProduct().getPrice() / 100 * discount.getDiscountValue())
+					+ Long.parseLong("30000");
+
+		} else {
+			totalPrice = userOrder.getProduct().getPrice() + Long.parseLong("30000");
+		}
+		DetailOrder detailOrder = new DetailOrder();
+		detailOrder.setAddress(address);
+		detailOrder.setCustomer(customer);
+		detailOrder.setDiscount(discount);
+		detailOrder.setEmail(email);
+		detailOrder.setPhone(phone);
+		detailOrder.setShippingFee(Long.parseLong("30000"));
+		detailOrder.setStatus("Đang xử lý");
+		detailOrder.setTotalPrice(totalPrice);
+		detailOrder.setUserOrder(userOrder);
+		detailOrder.setName(name);
+		detailOrder.setDateOrder(new Date());
+		detailOrder.setPaid(false);
+		detailOrder.setDesign(true);
 		return detailOrderRepository.save(detailOrder);
 	}
 

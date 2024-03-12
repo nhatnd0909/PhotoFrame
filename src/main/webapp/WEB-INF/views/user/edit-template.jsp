@@ -108,7 +108,6 @@
 									src="${product.urlCanva}" allowfullscreen="allowfullscreen"
 									allow="fullscreen"> </iframe>
 							</div>
-
 						</div>
 						<div class="col-lg-6">
 							<h4 class="fw-bold mb-3">${product.name}</h4>
@@ -121,10 +120,16 @@
 									class="fa fa-star text-secondary"></i> <i class="fa fa-star"></i>
 							</div>
 							<p class="mb-4">${product.describle}</p>
-
-							<a href="${product.urlDesign}"
+							<p class="mb-4">
+								Nếu bạn muốn tự thiết kế sản phẩm theo sở thích của mình dựa
+								trên mẫu này <br> <a href="${product.urlDesign}"
+									target="_blank">Click vào đây</a>
+							</p>
+							<p>Nếu bạn hoành thành xong phần chỉnh sửa hãy thực hiện bước
+								đặt hàng</p>
+							<a href="designPayment?id=${product.productID}"
 								class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
-								class="fa fa-pen me-2 text-primary"></i>Tự thiết kế</a>
+								class="fa fa-pen me-2 text-primary"></i>Đặt hàng</a>
 						</div>
 						<form id="orders" action=edit-template method="post"
 							enctype="multipart/form-data">

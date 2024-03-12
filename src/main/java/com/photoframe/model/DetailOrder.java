@@ -58,6 +58,9 @@ public class DetailOrder {
 	@Column(name = "IsPaid")
 	private Boolean paid;
 
+	@Column(name = "Design")
+	private Boolean design;
+
 	public DetailOrder() {
 	}
 
@@ -211,6 +214,45 @@ public class DetailOrder {
 		this.paid = paid;
 	}
 
+	public DetailOrder(UserOrder userOrder, Customer customer, Discount discount, Long totalPrice, Long shippingFee,
+			String status, String address, String phone, String email, String name, Date dateOrder, Boolean paid,
+			Boolean design) {
+		super();
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+		this.dateOrder = dateOrder;
+		this.paid = paid;
+		this.design = design;
+	}
+
+	public DetailOrder(Long detailOrderID, UserOrder userOrder, Customer customer, Discount discount, Long totalPrice,
+			Long shippingFee, String status, String address, String phone, String email, String name, Date dateOrder,
+			Boolean paid, Boolean design) {
+		super();
+		this.detailOrderID = detailOrderID;
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+		this.dateOrder = dateOrder;
+		this.paid = paid;
+		this.design = design;
+	}
+
 	public Long getDetailOrderID() {
 		return detailOrderID;
 	}
@@ -315,12 +357,20 @@ public class DetailOrder {
 		this.dateOrder = dateOrder;
 	}
 
+	public Boolean getDesign() {
+		return design;
+	}
+
+	public void setDesign(Boolean design) {
+		this.design = design;
+	}
+
 	@Override
 	public String toString() {
 		return "DetailOrder [detailOrderID=" + detailOrderID + ", userOrder=" + userOrder + ", customer=" + customer
 				+ ", discount=" + discount + ", totalPrice=" + totalPrice + ", shippingFee=" + shippingFee + ", status="
 				+ status + ", address=" + address + ", phone=" + phone + ", email=" + email + ", name=" + name
-				+ ", dateOrder=" + dateOrder + ", paid=" + paid + "]";
+				+ ", dateOrder=" + dateOrder + ", paid=" + paid + ", design=" + design + "]";
 	}
 
 }

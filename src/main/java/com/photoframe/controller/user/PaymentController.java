@@ -18,6 +18,7 @@ import com.photoframe.model.UserOrder;
 import com.photoframe.service.CustomerServie;
 import com.photoframe.service.DetailOrderService;
 import com.photoframe.service.DiscountService;
+import com.photoframe.service.ProductService;
 import com.photoframe.service.UserOrderService;
 
 import jakarta.servlet.http.Cookie;
@@ -34,6 +35,8 @@ public class PaymentController {
 	private DiscountService discountService;
 	@Autowired
 	private DetailOrderService detailOrderService;
+	@Autowired
+	private ProductService proService;
 
 	@GetMapping("/payment")
 	public String showPaymentPage(HttpSession session, Model model, HttpServletRequest request) {
@@ -92,6 +95,55 @@ public class PaymentController {
 		}
 
 		detailOrderService.createNewDetailOrder(customer, userOrder, discount, email, phone, address, name);
+		if (!discount.isEmpty()) {
+			discountService.updateUsedDiscount(discount);
+		}
+		return "redirect:/history-order";
+	}
+
+	@GetMapping("/designPayment")
+	public String showDesignPaymentPage(HttpSession session, Model model, HttpServletRequest request,
+			@RequestParam String id) {
+		String userID = (String) session.getAttribute("userID");
+//		kiểm tra user đăng nhập chưa
+		model.addAttribute("logged", "0");
+		if (userID != null) {
+			model.addAttribute("logged", "1");
+//			lưu thông tin user khi đã đăng nhập
+			Customer customer = customerServie.getCustomerByID(userID);
+			model.addAttribute("username", customer.getAccount().getUserName());
+			model.addAttribute("customer", customer);
+		}
+//
+		UserOrder userOrder = new UserOrder();
+		userOrder.setProduct(proService.getProductByID(id));
+		userOrderService.saveUserOrder(userOrder);
+		model.addAttribute("userOrder", userOrder);
+		List<Discount> listDiscount = discountService.getDiscountValid();
+		model.addAttribute("listDiscount", listDiscount);
+		return "/user/design-payment";
+	}
+
+	@PostMapping("/design-payment")
+	public String designPayment(HttpSession session, Model model, HttpServletRequest request, @RequestParam String name,
+			@RequestParam String email, @RequestParam String address, @RequestParam String phone,
+			@RequestParam String discount, @RequestParam String userOrderID) {
+		String userID = (String) session.getAttribute("userID");
+		Customer customer = new Customer();
+		UserOrder userOrder = new UserOrder();
+//		kiểm tra user đăng nhập chưa
+		model.addAttribute("logged", "0");
+		if (userID != null) {
+			model.addAttribute("logged", "1");
+//			lưu thông tin user khi đã đăng nhập
+			customer = customerServie.getCustomerByID(userID);
+			model.addAttribute("username", customer.getAccount().getUserName());
+			model.addAttribute("customer", customer);
+		}
+//		
+
+		userOrder = userOrderService.getUserOrderById(userOrderID);
+		detailOrderService.createNewDetailOrderDesign(customer, userOrder, discount, email, phone, address, name);
 		if (!discount.isEmpty()) {
 			discountService.updateUsedDiscount(discount);
 		}

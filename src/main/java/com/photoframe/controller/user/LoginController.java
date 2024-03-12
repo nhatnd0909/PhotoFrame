@@ -61,6 +61,6 @@ public class LoginController {
 //			lưu thông tin user khi đã đăng nhập
 		model.addAttribute("username", customer.getAccount().getUserName());
 
-		return "/user/index";
+		return "redirect:/";
 	}
 }
