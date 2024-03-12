@@ -117,9 +117,6 @@
 							<a href="edit-template?id=${product.getProductID()}"
 								class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
 								class="fa fa-shopping-bag me-2 text-primary"></i>Chọn mẫu này</a>
-							<a href="${product.urlDesign}"
-								class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
-								class="fa fa-pen me-2 text-primary"></i>Thiết kế</a>
 						</div>
 						<div class="row" style="margin-top: 20px;">
 							<div class="col-lg-3 col-sm-6">

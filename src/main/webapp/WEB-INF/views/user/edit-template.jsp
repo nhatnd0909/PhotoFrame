@@ -54,8 +54,9 @@
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
-							src="assets/images/logo.png" alt="EduWell Template" style="max-width: 50px">
-							<span style="font-size: 20px">Sparkle Memo</span>
+							src="assets/images/logo.png" alt="EduWell Template"
+							style="max-width: 50px"> <span style="font-size: 20px">Sparkle
+								Memo</span>
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
@@ -120,6 +121,10 @@
 									class="fa fa-star text-secondary"></i> <i class="fa fa-star"></i>
 							</div>
 							<p class="mb-4">${product.describle}</p>
+
+							<a href="${product.urlDesign}"
+								class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
+								class="fa fa-pen me-2 text-primary"></i>Tự thiết kế</a>
 						</div>
 						<form id="orders" action=edit-template method="post"
 							enctype="multipart/form-data">
@@ -541,96 +546,56 @@
 								</div>
 							</c:if>
 
-							<!--  -->
-							<h3
-								style="color: #FF9999; margin-top: 30px; margin-bottom: 50px;">Chọn
-								Icon</h3>
-							<nav>
-								<div class="nav nav-tabs mb-3">
-									<input type="button"
-										class="nav-link active border-white border-bottom-0"
-										type="button" role="tab" id="nav-about-tab"
-										data-bs-toggle="tab" data-bs-target="#nav-about"
-										aria-controls="nav-about" aria-selected="true"
-										value="Tất cả Icon">
-								</div>
-							</nav>
+							<!-- Chọn icon -->
+							<div style="display: none">
+								<!--  -->
+								<h3
+									style="color: #FF9999; margin-top: 30px; margin-bottom: 50px;">Chọn
+									Icon</h3>
+								<nav>
+									<div class="nav nav-tabs mb-3">
+										<input type="button"
+											class="nav-link active border-white border-bottom-0"
+											type="button" role="tab" id="nav-about-tab"
+											data-bs-toggle="tab" data-bs-target="#nav-about"
+											aria-controls="nav-about" aria-selected="true"
+											value="Tất cả Icon">
+									</div>
+								</nav>
 
-							<div class="tab-content mb-5">
-								<!--  -->
-								<div class="tab-pane active" id="nav-about" role="tabpanel"
-									aria-labelledby="nav-about-tab">
-									<div class="px-2">
-										<div class="row g-4">
-											<!--  -->
-											<div class="row" style="margin-top: 50px;">
-												<c:forEach var="icon" items="${listIcon}" varStatus="loop">
-													<div class="col-lg-2 col-sm-3" style="margin-bottom: 20px;">
-														<div class="border rounded">
-															<label for="icon${loop.index}" class="img-container"
-																onclick="toggleCheckbox('icon${loop.index}')"> <input
-																type="checkbox" id="icon${loop.index}" name="icon"
-																value="${icon.iconID}" hidden> <img
-																src="assets/images/${icon.urlIcon}"
-																class="img-fluid rounded" alt="Image">
-															</label>
+								<div class="tab-content mb-5">
+									<!--  -->
+									<div class="tab-pane active" id="nav-about" role="tabpanel"
+										aria-labelledby="nav-about-tab">
+										<div class="px-2">
+											<div class="row g-4">
+												<!--  -->
+												<div class="row" style="margin-top: 50px;">
+													<c:forEach var="icon" items="${listIcon}" varStatus="loop">
+														<div class="col-lg-2 col-sm-3"
+															style="margin-bottom: 20px;">
+															<div class="border rounded">
+																<label for="icon${loop.index}" class="img-container"
+																	onclick="toggleCheckbox('icon${loop.index}')">
+																	<input type="checkbox" id="icon${loop.index}"
+																	name="icon" value="${icon.iconID}" hidden> <img
+																	src="assets/images/${icon.urlIcon}"
+																	class="img-fluid rounded" alt="Image">
+																</label>
+															</div>
 														</div>
-													</div>
-												</c:forEach>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--  -->
-								<div class="tab-pane" id="nav-mission" role="tabpanel"
-									aria-labelledby="nav-mission-tab">
-									<div class="px-2">
-										<div class="row g-4">
-											<div class="row" style="margin-top: 50px;">
-												<div class="col-lg-2 col-sm-3" style="margin-bottom: 20px;">
-													<div class="border rounded">
-														<img src="assets/images/template1.png"
-															class="img-fluid rounded" alt="Image">
-													</div>
-												</div>
-												<div class="col-lg-2 col-sm-3" style="margin-bottom: 20px;">
-													<div class="border rounded">
-														<img src="assets/images/template1.png"
-															class="img-fluid rounded" alt="Image">
-													</div>
-												</div>
-												<div class="col-lg-2 col-sm-3" style="margin-bottom: 20px;">
-													<div class="border rounded">
-														<img src="assets/images/template1.png"
-															class="img-fluid rounded" alt="Image">
-													</div>
-												</div>
-												<div class="col-lg-2 col-sm-3" style="margin-bottom: 20px;">
-													<div class="border rounded">
-														<img src="assets/images/template1.png"
-															class="img-fluid rounded" alt="Image">
-													</div>
-												</div>
-												<div class="col-lg-2 col-sm-3" style="margin-bottom: 20px;">
-													<div class="border rounded">
-														<img src="assets/images/template1.png"
-															class="img-fluid rounded" alt="Image">
-													</div>
-												</div>
-												<div class="col-lg-2 col-sm-3" style="margin-bottom: 20px;">
-													<div class="border rounded">
-														<img src="assets/images/template1.png"
-															class="img-fluid rounded" alt="Image">
-													</div>
+													</c:forEach>
 												</div>
 											</div>
 										</div>
 									</div>
+									<!--  -->
 								</div>
 							</div>
+
 							<button
-								class="btn border border-secondary rounded-pill px-5 py-3 mb-5 text-primary">Đặt
-								Hàng</button>
+								class="btn border border-secondary rounded-pill px-5 py-3 mb-5 text-primary"
+								style="margin-top: 20px">Đặt Hàng</button>
 							<!-- <a href="payment"
 									class="btn border border-secondary rounded-pill px-5 py-3 mb-5 text-primary">Đặt
 									Hàng</a> -->

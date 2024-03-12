@@ -45,7 +45,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="user">
+        <a class="nav-link" href="admin/user">
           <i class="fas fa-fw fa-user"></i>
           <span>Người Dùng</span>
         </a>
@@ -60,14 +60,14 @@
         <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Mẫu có sẵn</h6>
-            <a class="collapse-item" href="template">Mẫu</a>
-            <a class="collapse-item" href="icon">Icon</a>
+            <a class="collapse-item" href="admin/template">Mẫu</a>
+            <a class="collapse-item" href="admin/icon">Icon</a>
           </div>
         </div>
       </li>
       <!--  -->
       <li class="nav-item">
-        <a class="nav-link" href="order">
+        <a class="nav-link" href="admin/order">
           <i class="fas fa-fw fa-truck-fast"></i>
           <span>Đơn Hàng</span>
         </a>

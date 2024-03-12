@@ -69,7 +69,7 @@
 							<c:if test="${logged eq 1}">
 								<span>
 									<li class="has-sub"><a href="javascript:void(0)"><i
-											class="fa-solid fa-user"></i> Người Dùng</a>
+											class="fa-solid fa-user"></i>Hi! ${username}</a>
 										<ul class="sub-menu">
 											<li><a href="profile">Thông tin</a></li>
 											<li><a href="">Đăng Xuất</a></li>

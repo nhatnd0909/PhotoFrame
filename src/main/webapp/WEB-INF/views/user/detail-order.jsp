@@ -208,7 +208,7 @@
 															</div>
 														</c:forEach>
 													</div>
-													<div class="row mb-4">
+													<div class="row mb-4" style="display: none">
 														<div class="col-sm-3">
 															<h6 class="mb-0">Icon đã chọn</h6>
 														</div>
