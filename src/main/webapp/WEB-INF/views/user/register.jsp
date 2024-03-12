@@ -37,8 +37,9 @@
 						<nav class="main-nav">
 							<!-- ***** Logo Start ***** -->
 							<a href="index" class="logo"> <img
-								src="assets/images/templatemo-eduwell.png"
-								alt="EduWell Template">
+								src="assets/images/logo.png" alt="EduWell Template"
+								style="max-width: 50px"> <span style="font-size: 20px">Sparkle
+									Memo</span>
 							</a>
 							<!-- ***** Logo End ***** -->
 							<!-- ***** Menu Start ***** -->

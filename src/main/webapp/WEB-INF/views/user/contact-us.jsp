@@ -50,19 +50,14 @@ https://templatemo.com/tm-573-eduwell
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
-							src="assets/images/templatemo-eduwell.png" alt="EduWell Template">
+							src="assets/images/logo.png" alt="EduWell Template" style="max-width: 50px">
+							<span style="font-size: 20px">Sparkle Memo</span>
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li class=""><a href="index">Trang Chủ</a></li>
-							<li class="has-sub"><a href="javascript:void(0)">Dịch Vụ</a>
-								<ul class="sub-menu">
-									<li><a href="">Gia Dình</a></li>
-									<li><a href="">Người Yêu</a></li>
-									<li><a href="">Bạn Bè</a></li>
-									<li><a href="">Người Thân</a></li>
-								</ul></li>
+							<li class=""><a href="template">Dịch Vụ</a></li>
 							<li class=""><a href="#contact-us" class="active">Liên
 									hệ</a></li>
 							<c:if test="${logged eq 0}">

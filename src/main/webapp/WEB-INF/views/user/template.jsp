@@ -61,36 +61,42 @@
 	<header class="header-area header-sticky">
 		<div class="container">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-12 d-flex">
 					<nav class="main-nav">
-						<!-- ***** Logo Start ***** -->
-						<a href="index" class="logo"> <img
-							src="assets/images/templatemo-eduwell.png" alt="EduWell Template">
-						</a>
-						<!-- ***** Logo End ***** -->
-						<!-- ***** Menu Start ***** -->
-						<ul class="nav">
-							<li class="scroll-to-section"><a href="/" class="active">Trang
-									Chủ</a></li>
-							<li class=""><a href="template">Dịch Vụ</a></li>
-							<li class=""><a href="contact-us">Liên hệ</a></li>
-							<c:if test="${logged eq 0}">
-								<li class=""><a href="login">Đăng Nhập</a></li>
-							</c:if>
-							<c:if test="${logged eq 1}">
-								<span>
-									<li class="has-sub"><a href="javascript:void(0)"><i
-											class="fa-solid fa-user"></i> Người Dùng</a>
-										<ul class="sub-menu">
-											<li><a href="profile">Thông tin</a></li>
-											<li><a href="">Đăng Xuất</a></li>
-										</ul></li>
-								</span>
-							</c:if>
-						</ul>
-						<a class='menu-trigger'> <span>Menu</span>
-						</a>
-						<!-- ***** Menu End ***** -->
+						<div class="">
+							<!-- ***** Logo Start ***** -->
+							<a href="index" class="logo"> <img
+								src="assets/images/logo.png" alt="EduWell Template"
+								style="max-width: 50px"> <span style="font-size: 20px">Sparkle
+									Memo</span>
+							</a>
+							<!-- ***** Logo End ***** -->
+						</div>
+						<div class="" style="margin-left: 500px">
+							<!-- ***** Menu Start ***** -->
+							<ul class="nav">
+								<li class="scroll-to-section"><a href="/" class="active">Trang
+										Chủ</a></li>
+								<li class=""><a href="template">Dịch Vụ</a></li>
+								<li class=""><a href="contact-us">Liên hệ</a></li>
+								<c:if test="${logged eq 0}">
+									<li class=""><a href="login">Đăng Nhập</a></li>
+								</c:if>
+								<c:if test="${logged eq 1}">
+									<span>
+										<li class="has-sub"><a href="javascript:void(0)"><i
+												class="fa-solid fa-user"></i> Người Dùng</a>
+											<ul class="sub-menu">
+												<li><a href="profile">Thông tin</a></li>
+												<li><a href="">Đăng Xuất</a></li>
+											</ul></li>
+									</span>
+								</c:if>
+							</ul>
+							<a class='menu-trigger'> <span>Menu</span>
+							</a>
+							<!-- ***** Menu End ***** -->
+						</div>
 					</nav>
 				</div>
 			</div>

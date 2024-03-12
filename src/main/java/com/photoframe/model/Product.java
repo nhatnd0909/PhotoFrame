@@ -44,6 +44,8 @@ public class Product {
 	private String urlCanva;
 	@Column(name = "Material")
 	private String material;
+	@Column(name = "URLDesign")
+	private String urlDesign;
 
 	public Product() {
 	}
@@ -89,6 +91,51 @@ public class Product {
 		this.weight = weight;
 		this.urlCanva = urlCanva;
 		this.material = material;
+	}
+
+	public Product(String name, Long price, String type, String describle, String mainImg, String img1, String img2,
+			String img3, String img4, int numberImgRequire, int length, int width, int weight, String urlCanva,
+			String material, String urlDesign) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.type = type;
+		this.describle = describle;
+		this.mainImg = mainImg;
+		this.img1 = img1;
+		this.img2 = img2;
+		this.img3 = img3;
+		this.img4 = img4;
+		this.numberImgRequire = numberImgRequire;
+		this.length = length;
+		this.width = width;
+		this.weight = weight;
+		this.urlCanva = urlCanva;
+		this.material = material;
+		this.urlDesign = urlDesign;
+	}
+
+	public Product(Long productID, String name, Long price, String type, String describle, String mainImg, String img1,
+			String img2, String img3, String img4, int numberImgRequire, int length, int width, int weight,
+			String urlCanva, String material, String urlDesign) {
+		super();
+		this.productID = productID;
+		this.name = name;
+		this.price = price;
+		this.type = type;
+		this.describle = describle;
+		this.mainImg = mainImg;
+		this.img1 = img1;
+		this.img2 = img2;
+		this.img3 = img3;
+		this.img4 = img4;
+		this.numberImgRequire = numberImgRequire;
+		this.length = length;
+		this.width = width;
+		this.weight = weight;
+		this.urlCanva = urlCanva;
+		this.material = material;
+		this.urlDesign = urlDesign;
 	}
 
 	public Long getProductID() {
@@ -219,12 +266,21 @@ public class Product {
 		this.img4 = img4;
 	}
 
+	public String getUrlDesign() {
+		return urlDesign;
+	}
+
+	public void setUrlDesign(String urlDesign) {
+		this.urlDesign = urlDesign;
+	}
+
 	@Override
 	public String toString() {
 		return "Product [productID=" + productID + ", name=" + name + ", price=" + price + ", type=" + type
 				+ ", describle=" + describle + ", mainImg=" + mainImg + ", img1=" + img1 + ", img2=" + img2 + ", img3="
 				+ img3 + ", img4=" + img4 + ", numberImgRequire=" + numberImgRequire + ", length=" + length + ", width="
-				+ width + ", weight=" + weight + ", urlCanva=" + urlCanva + ", material=" + material + "]";
+				+ width + ", weight=" + weight + ", urlCanva=" + urlCanva + ", material=" + material + ", urlDesign="
+				+ urlDesign + "]";
 	}
 
 }
