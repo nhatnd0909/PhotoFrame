@@ -61,6 +61,9 @@ public class DetailOrder {
 	@Column(name = "Design")
 	private Boolean design;
 
+	@Column(name = "PaymentMethod")
+	private String paymentMethod;
+
 	public DetailOrder() {
 	}
 
@@ -253,6 +256,47 @@ public class DetailOrder {
 		this.design = design;
 	}
 
+	public DetailOrder(UserOrder userOrder, Customer customer, Discount discount, Long totalPrice, Long shippingFee,
+			String status, String address, String phone, String email, String name, Date dateOrder, Boolean paid,
+			Boolean design, String paymentMethod) {
+		super();
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+		this.dateOrder = dateOrder;
+		this.paid = paid;
+		this.design = design;
+		this.paymentMethod = paymentMethod;
+	}
+
+	public DetailOrder(Long detailOrderID, UserOrder userOrder, Customer customer, Discount discount, Long totalPrice,
+			Long shippingFee, String status, String address, String phone, String email, String name, Date dateOrder,
+			Boolean paid, Boolean design, String paymentMethod) {
+		super();
+		this.detailOrderID = detailOrderID;
+		this.userOrder = userOrder;
+		this.customer = customer;
+		this.discount = discount;
+		this.totalPrice = totalPrice;
+		this.shippingFee = shippingFee;
+		this.status = status;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+		this.dateOrder = dateOrder;
+		this.paid = paid;
+		this.design = design;
+		this.paymentMethod = paymentMethod;
+	}
+
 	public Long getDetailOrderID() {
 		return detailOrderID;
 	}
@@ -365,12 +409,21 @@ public class DetailOrder {
 		this.design = design;
 	}
 
+	public String getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(String paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
+
 	@Override
 	public String toString() {
 		return "DetailOrder [detailOrderID=" + detailOrderID + ", userOrder=" + userOrder + ", customer=" + customer
 				+ ", discount=" + discount + ", totalPrice=" + totalPrice + ", shippingFee=" + shippingFee + ", status="
 				+ status + ", address=" + address + ", phone=" + phone + ", email=" + email + ", name=" + name
-				+ ", dateOrder=" + dateOrder + ", paid=" + paid + ", design=" + design + "]";
+				+ ", dateOrder=" + dateOrder + ", paid=" + paid + ", design=" + design + ", paymentMethod="
+				+ paymentMethod + "]";
 	}
 
 }

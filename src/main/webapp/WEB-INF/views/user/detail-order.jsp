@@ -238,6 +238,34 @@
 													</div>
 													<div class="row mb-4">
 														<div class="col-sm-3">
+															<h6 class="mb-0">Phương thức thanh toán</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<input name="city" type="text" class="form-control"
+																value="${detailOrder.paymentMethod}" readonly>
+														</div>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Trạng thái thanh toán</h6>
+														</div>
+														<c:choose>
+															<c:when test="${detailOrder.paid}}">
+																<div class="col-sm-9 text-secondary">
+																	<input name="city" type="text" class="form-control"
+																		value="Đã thanh toán" readonly>
+																</div>
+															</c:when>
+															<c:otherwise>
+																<div class="col-sm-9 text-secondary">
+																	<input name="city" type="text" class="form-control"
+																		value="Chưa thanh toán" readonly>
+																</div>
+															</c:otherwise>
+														</c:choose>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
 															<h6 class="mb-0">Tổng đơn hàng</h6>
 														</div>
 														<div class="col-sm-9 text-secondary">

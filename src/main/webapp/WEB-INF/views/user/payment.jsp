@@ -53,8 +53,9 @@
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
-							src="assets/images/logo.png" alt="EduWell Template" style="max-width: 50px">
-							<span style="font-size: 20px">Sparkle Memo</span>
+							src="assets/images/logo.png" alt="EduWell Template"
+							style="max-width: 50px"> <span style="font-size: 20px">Sparkle
+								Memo</span>
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
@@ -96,18 +97,15 @@
 			<form action="payment" method="post">
 				<div class="container d-lg-flex d-flex justify-content-center">
 					<div class="box-1 bg-light user">
-						<div class="d-flex align-items-center mb-3">
+						<%-- <div class="d-flex align-items-center mb-3">
 							<img src="assets/images/${customer.urlImage}"
 								class="pic rounded-circle" alt="">
 							<p class="ps-2 name">${customer.name}</p>
-						</div>
-						<div class="box-inner-1 pb-3 mb-3 ">
+						</div> --%>
+						<div class="box-inner-1 pb-3 mb-3 " style="margin-top: 50px">
 							<div class="d-flex justify-content-between mb-3 userdetails">
 								<p class="fw-bold">${userOrder.product.name}</p>
-								<p class="fw-lighter">
-									<span class="fas fa-dollar-sign"></span>${userOrder.product.price}
-									đ
-								</p>
+								<p class="fw-lighter">${userOrder.product.price}đ</p>
 							</div>
 							<div id="my">
 								<div class="carousel-inner">
@@ -163,47 +161,43 @@
 							<div>
 								<div class="address">
 									<p class="dis fw-bold mb-3">Phương thức thanh toán</p>
-									<select class="form-select" aria-label="Default select example">
-										<option selected hidden>Thanh toán trực tiếp</option>
-										<option value="1">Thanh toán VNPay</option>
-										<option value="2">Thanh toán trực tiếp</option>
+									<select class="form-select" aria-label="Default select example"
+										name="paymentMethod">
+										<option value="1">Thanh toán trực tiếp</option>
+										<option value="2">Thanh toán VNPay</option>
 									</select>
 									<div class="d-flex flex-column dis">
 										<div
 											class="d-flex align-items-center justify-content-between mb-2">
 											<p>Tổng đơn hàng</p>
-											<p id="totalPrice">
-												<span class="fas fa-dollar-sign"></span>${userOrder.getProduct().getPrice()}
-												đ
+											<p id="totalPrice">${userOrder.getProduct().getPrice()}đ
 											</p>
 										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mb-2">
 											<p>Phí Vận Chuyển</p>
-											<p id="shipment">
-												<span class="fas fa-dollar-sign"></span>30000 đ
-											</p>
+											<p id="shipment">30000 đ</p>
 										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mb-2">
 											<p id="valueDiscount">
 												Giảm giá <span>(0) %</span>
 											</p>
-											<p id="discountPrice">
-												<span class="fas fa-dollar-sign"></span>0 đ
-											</p>
+											<p id="discountPrice">0 đ</p>
 										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mb-2">
-											<p class="fw-bold">Total</p>
+											<p class="fw-bold">Tổng đơn hàng</p>
 											<p class="fw-bold" id="priceAfterDiscount">
-												<span class="fas fa-dollar-sign"></span>${userOrder.getProduct().getPrice() + 30000}
-												đ
-											</p>
+												${userOrder.getProduct().getPrice() + 30000} đ</p>
 										</div>
 										<button id="paymentButton" class="btn btn-primary mt-2">
-											Thanh toán<span class="fas fa-dollar-sign px-1"></span>${userOrder.getProduct().getPrice()+30000}đ
-										</button>
+											Thanh toán ${userOrder.getProduct().getPrice()+30000}đ</button>
+										<div style="margin-top: 20px">
+											<a href="edit-template?id=${userOrder.product.productID}">
+												<p>Quay lại</p>
+											</a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -330,17 +324,17 @@
 	            valueDiscount.innerHTML = 'Giảm giá <span>(' + discountValue + ') %</span>';
 	            var totalPrice = parseFloat(totalPriceElement.textContent.replace('₫', '').replace(',', '').trim());
 	            var discountPriceValue = totalPrice / 100 * discountValue;
-	            discountPrice.innerHTML = '<span class="fas fa-dollar-sign"></span>' + discountPriceValue.toLocaleString() + 'đ';
+	            discountPrice.innerHTML = '' + discountPriceValue.toLocaleString() + 'đ';
 	            var priceAfterDiscountValue = totalPrice - discountPriceValue;
 	            var totalPriceWithShipping = priceAfterDiscountValue + 30000; // Giả sử phí vận chuyển là 30000đ
-	            priceAfterDiscountElement.innerHTML = '<span class="fas fa-dollar-sign"></span>' + totalPriceWithShipping.toLocaleString() + 'đ';
-	            paymentButton.innerHTML = 'Thanh toán<span class="fas fa-dollar-sign px-1"></span>' + totalPriceWithShipping.toLocaleString() + 'đ';
+	            priceAfterDiscountElement.innerHTML = '' + totalPriceWithShipping.toLocaleString() + 'đ';
+	            paymentButton.innerHTML = 'Thanh toán' + totalPriceWithShipping.toLocaleString() + 'đ';
 	        } else {
 	            valueDiscount.innerHTML = 'Giảm giá <span>(0) %</span>';
-	            discountPrice.innerHTML = '<span class="fas fa-dollar-sign"></span>0 đ';
+	            discountPrice.innerHTML = '0 đ';
 	            var totalPriceWithShipping = parseFloat(totalPriceElement.textContent.replace('₫', '').replace(',', '').trim()) + 30000; // Giả sử phí vận chuyển là 30000đ
-	            priceAfterDiscountElement.innerHTML = '<span class="fas fa-dollar-sign"></span>' + totalPriceWithShipping.toLocaleString() + 'đ';
-	            paymentButton.innerHTML = 'Thanh toán<span class="fas fa-dollar-sign px-1"></span>' + totalPriceWithShipping.toLocaleString() + 'đ';
+	            priceAfterDiscountElement.innerHTML = '' + totalPriceWithShipping.toLocaleString() + 'đ';
+	            paymentButton.innerHTML = 'Thanh toán ' + totalPriceWithShipping.toLocaleString() + 'đ';
 	        }
 	    });
 	});

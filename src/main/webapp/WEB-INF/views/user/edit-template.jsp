@@ -597,13 +597,11 @@
 									<!--  -->
 								</div>
 							</div>
-
-							<button
-								class="btn border border-secondary rounded-pill px-5 py-3 mb-5 text-primary"
-								style="margin-top: 20px">Đặt Hàng</button>
-							<!-- <a href="payment"
-									class="btn border border-secondary rounded-pill px-5 py-3 mb-5 text-primary">Đặt
-									Hàng</a> -->
+							<div class="d-flex justify-content-center">
+								<button
+									class="btn border border-secondary rounded-pill px-5 py-3 mb-5 text-primary"
+									style="margin-top: 20px">Đặt Hàng</button>
+							</div>
 					</div>
 					</form>
 				</div>

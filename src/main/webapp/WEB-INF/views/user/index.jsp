@@ -53,6 +53,7 @@ https://templatemo.com/tm-573-eduwell
 							style="max-width: 50px"> <span style="font-size: 20px">Sparkle
 								Memo</span>
 						</a>
+
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
@@ -132,9 +133,8 @@ https://templatemo.com/tm-573-eduwell
 										style="position: relative; width: 100%; height: 0; padding-top: 70.9459%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
 										<iframe loading="lazy"
 											style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
-											src="${product.urlCanva}"
-											allowfullscreen="allowfullscreen" allow="fullscreen">
-										</iframe>
+											src="${product.urlCanva}" allowfullscreen="allowfullscreen"
+											allow="fullscreen"> </iframe>
 									</div>
 									<h4>${product.name}</h4>
 									<p>${product.describle}</p>

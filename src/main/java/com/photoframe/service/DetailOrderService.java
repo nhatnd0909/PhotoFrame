@@ -21,7 +21,7 @@ public class DetailOrderService {
 	private DiscountService discountService;
 
 	public DetailOrder createNewDetailOrder(Customer customer, UserOrder userOrder, String code, String email,
-			String phone, String address, String name) {
+			String phone, String address, String name, String paymentMethod) {
 		Discount discount = discountService.getDiscountByCode(code);
 		Long totalPrice = userOrder.getProduct().getPrice();
 		if (discount != null && discount.isStatus()) {
@@ -45,11 +45,16 @@ public class DetailOrderService {
 		detailOrder.setDateOrder(new Date());
 		detailOrder.setPaid(false);
 		detailOrder.setDesign(false);
+		if (paymentMethod.equals("1")) {
+			detailOrder.setPaymentMethod("Thanh toán trực tiếp");
+		} else {
+			detailOrder.setPaymentMethod("Thanh toán VNPay");
+		}
 		return detailOrderRepository.save(detailOrder);
 	}
 
 	public DetailOrder createNewDetailOrderDesign(Customer customer, UserOrder userOrder, String code, String email,
-			String phone, String address, String name) {
+			String phone, String address, String name, String paymentMethod) {
 		Discount discount = discountService.getDiscountByCode(code);
 		Long totalPrice = userOrder.getProduct().getPrice();
 		if (discount != null && discount.isStatus()) {
@@ -73,6 +78,11 @@ public class DetailOrderService {
 		detailOrder.setDateOrder(new Date());
 		detailOrder.setPaid(false);
 		detailOrder.setDesign(true);
+		if (paymentMethod.equals("1")) {
+			detailOrder.setPaymentMethod("Thanh toán trực tiếp");
+		} else {
+			detailOrder.setPaymentMethod("Thanh toán VNPay");
+		}
 		return detailOrderRepository.save(detailOrder);
 	}
 

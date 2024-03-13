@@ -69,7 +69,7 @@ public class PaymentController {
 	@PostMapping("/payment")
 	public String payment(HttpSession session, Model model, HttpServletRequest request, @RequestParam String name,
 			@RequestParam String email, @RequestParam String address, @RequestParam String phone,
-			@RequestParam String discount) {
+			@RequestParam String discount, @RequestParam String paymentMethod) {
 		String userID = (String) session.getAttribute("userID");
 		Customer customer = new Customer();
 		UserOrder userOrder = new UserOrder();
@@ -94,7 +94,8 @@ public class PaymentController {
 			}
 		}
 
-		detailOrderService.createNewDetailOrder(customer, userOrder, discount, email, phone, address, name);
+		detailOrderService.createNewDetailOrder(customer, userOrder, discount, email, phone, address, name,
+				paymentMethod);
 		if (!discount.isEmpty()) {
 			discountService.updateUsedDiscount(discount);
 		}
@@ -127,7 +128,7 @@ public class PaymentController {
 	@PostMapping("/design-payment")
 	public String designPayment(HttpSession session, Model model, HttpServletRequest request, @RequestParam String name,
 			@RequestParam String email, @RequestParam String address, @RequestParam String phone,
-			@RequestParam String discount, @RequestParam String userOrderID) {
+			@RequestParam String discount, @RequestParam String userOrderID, @RequestParam String paymentMethod) {
 		String userID = (String) session.getAttribute("userID");
 		Customer customer = new Customer();
 		UserOrder userOrder = new UserOrder();
@@ -143,7 +144,8 @@ public class PaymentController {
 //		
 
 		userOrder = userOrderService.getUserOrderById(userOrderID);
-		detailOrderService.createNewDetailOrderDesign(customer, userOrder, discount, email, phone, address, name);
+		detailOrderService.createNewDetailOrderDesign(customer, userOrder, discount, email, phone, address, name,
+				paymentMethod);
 		if (!discount.isEmpty()) {
 			discountService.updateUsedDiscount(discount);
 		}
