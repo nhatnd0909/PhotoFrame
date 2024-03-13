@@ -1,13 +1,16 @@
 package com.photoframe.controller.user;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,9 +23,11 @@ import com.photoframe.service.DetailOrderService;
 import com.photoframe.service.DiscountService;
 import com.photoframe.service.ProductService;
 import com.photoframe.service.UserOrderService;
+import com.photoframe.service.VNPayService;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -37,6 +42,8 @@ public class PaymentController {
 	private DetailOrderService detailOrderService;
 	@Autowired
 	private ProductService proService;
+	@Autowired
+	private VNPayService vnPayService;
 
 	@GetMapping("/payment")
 	public String showPaymentPage(HttpSession session, Model model, HttpServletRequest request) {
@@ -93,11 +100,24 @@ public class PaymentController {
 				}
 			}
 		}
+		if (paymentMethod.equals("2")) {
+			DetailOrder detailOrder = detailOrderService.createNewDetailOrder2(customer, userOrder, discount, email,
+					phone, address, name, paymentMethod);
 
-		detailOrderService.createNewDetailOrder(customer, userOrder, discount, email, phone, address, name,
-				paymentMethod);
-		if (!discount.isEmpty()) {
-			discountService.updateUsedDiscount(discount);
+			String baseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
+			String vnpayUrl = vnPayService.createOrder(detailOrder.getTotalPrice().intValue(), "Thanh toan don hang",
+					baseUrl);
+			if (!discount.isEmpty()) {
+				discountService.updateUsedDiscount(discount);
+			}
+			session.setAttribute("detailOrder", detailOrder);
+			return "redirect:" + vnpayUrl;
+		} else {
+			detailOrderService.createNewDetailOrder(customer, userOrder, discount, email, phone, address, name,
+					paymentMethod);
+			if (!discount.isEmpty()) {
+				discountService.updateUsedDiscount(discount);
+			}
 		}
 		return "redirect:/history-order";
 	}
@@ -128,7 +148,8 @@ public class PaymentController {
 	@PostMapping("/design-payment")
 	public String designPayment(HttpSession session, Model model, HttpServletRequest request, @RequestParam String name,
 			@RequestParam String email, @RequestParam String address, @RequestParam String phone,
-			@RequestParam String discount, @RequestParam String userOrderID, @RequestParam String paymentMethod) {
+			@RequestParam String discount, @RequestParam String userOrderID, @RequestParam String paymentMethod,
+			HttpServletResponse response) {
 		String userID = (String) session.getAttribute("userID");
 		Customer customer = new Customer();
 		UserOrder userOrder = new UserOrder();
@@ -142,12 +163,48 @@ public class PaymentController {
 			model.addAttribute("customer", customer);
 		}
 //		
+		if (paymentMethod.equals("2")) {
+			userOrder = userOrderService.getUserOrderById(userOrderID);
+			userOrder.setIcons(null);
+			userOrder.setImages(null);
+			DetailOrder detailOrder = detailOrderService.createDetaiOrder(customer, userOrder, discount, email, phone,
+					address, name, paymentMethod);
+			if (!discount.isEmpty()) {
+				discountService.updateUsedDiscount(discount);
+			}
+			String baseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
+			String vnpayUrl = vnPayService.createOrder(detailOrder.getTotalPrice().intValue(), "Thanh toan don hang",
+					baseUrl);
+			session.setAttribute("detailOrder", detailOrder);
+			return "redirect:" + vnpayUrl;
+		} else {
+			userOrder = userOrderService.getUserOrderById(userOrderID);
+			detailOrderService.createNewDetailOrderDesign(customer, userOrder, discount, email, phone, address, name,
+					paymentMethod);
+			if (!discount.isEmpty()) {
+				discountService.updateUsedDiscount(discount);
+			}
+		}
+		return "redirect:/history-order";
+	}
 
-		userOrder = userOrderService.getUserOrderById(userOrderID);
-		detailOrderService.createNewDetailOrderDesign(customer, userOrder, discount, email, phone, address, name,
-				paymentMethod);
-		if (!discount.isEmpty()) {
-			discountService.updateUsedDiscount(discount);
+	@GetMapping("/vnPayPayment")
+	public String GetMapping(HttpSession session, HttpServletRequest request) {
+		int paymentStatus = vnPayService.orderReturn(request);
+		String orderInfo = request.getParameter("vnp_OrderInfo");
+		String paymentTime = request.getParameter("vnp_PayDate");
+		String transactionId = request.getParameter("vnp_TransactionNo");
+		String totalPrice = request.getParameter("vnp_Amount");
+		Map<String, Object> res = new HashMap<>();
+		res.put("orderId", orderInfo);
+		res.put("totalPrice", totalPrice);
+		res.put("paymentTime", paymentTime);
+		res.put("transactionId", transactionId);
+		DetailOrder detailOrder = (DetailOrder) session.getAttribute("detailOrder");
+		if (paymentStatus == 0) {
+			return "redirect:/template";
+		} else {
+			detailOrderService.saveDetaiOrder(detailOrder);
 		}
 		return "redirect:/history-order";
 	}

@@ -250,7 +250,7 @@
 															<h6 class="mb-0">Trạng thái thanh toán</h6>
 														</div>
 														<c:choose>
-															<c:when test="${detailOrder.paid}}">
+															<c:when test="${detailOrder.paid}">
 																<div class="col-sm-9 text-secondary">
 																	<input name="city" type="text" class="form-control"
 																		value="Đã thanh toán" readonly>
