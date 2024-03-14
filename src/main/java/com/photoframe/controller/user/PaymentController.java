@@ -202,10 +202,11 @@ public class PaymentController {
 		res.put("transactionId", transactionId);
 		DetailOrder detailOrder = (DetailOrder) session.getAttribute("detailOrder");
 		if (paymentStatus == 0) {
-			return "redirect:/template";
 		} else {
 			detailOrderService.saveDetaiOrder(detailOrder);
 		}
-		return "redirect:/history-order";
+		session.setAttribute("paymentStatus", paymentStatus);
+		session.setAttribute("detailOrder", detailOrder);
+		return "redirect:/payment-result";
 	}
 }
