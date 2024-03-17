@@ -186,7 +186,7 @@ public class DetailOrderService {
 		detailOrder.setPaid(true);
 		return detailOrderRepository.save(detailOrder);
 	}
-	
+
 	public DetailOrder createNewDetailOrder2(Customer customer, UserOrder userOrder, String code, String email,
 			String phone, String address, String name, String paymentMethod) {
 		Discount discount = discountService.getDiscountByCode(code);
@@ -218,5 +218,23 @@ public class DetailOrderService {
 			detailOrder.setPaymentMethod("Thanh toán VNPay");
 		}
 		return detailOrder;
+	}
+
+	public Long getRevenueCurentMonth(List<DetailOrder> list) {
+		Long revenue = (long) 0;
+		for (DetailOrder d : list) {
+			revenue += d.getTotalPrice();
+		}
+		return revenue;
+	}
+
+	public int getRequesOrderCurentMonth(List<DetailOrder> list) {
+		int sum = 0;
+		for (DetailOrder d : list) {
+			if (d.getStatus().equals("Đang xử lý")) {
+				sum += 1;
+			}
+		}
+		return sum;
 	}
 }

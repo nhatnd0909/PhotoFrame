@@ -123,11 +123,11 @@
 					<li>
 						<div class="slider-info banner-view bg bg2">
 							<div class="banner-info">
-								<h3>Wellcome to our shop</h3>
+								<h3>Chào Mừng Đến Với Shop Của Chúng Tôi</h3>
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.<span
-										class="over-para"> Consequuntur hic odio voluptatem
-										tenetur consequatur.</span>
+									Shop của chúng tôi bán những khung tranh được thiết kế sẵn. <span
+										class="over-para"> Khách hàng có thể lựa chọn sản phẩm
+										và thiết kế tùy ý.</span>
 								</p>
 								<a href="#small-dialog1" class="popup-with-zoom-anim play-view1">
 									<span class="video-play-icon"> <span class="fa fa-play"></span>
@@ -146,11 +146,11 @@
 					<li>
 						<div class="slider-info  banner-view banner-top1 bg bg2">
 							<div class="banner-info">
-								<h3>Latest Online Movies</h3>
+								<h3>Chào Mừng Đến Với Shop Của Chúng Tôi</h3>
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.<span
-										class="over-para"> Consequuntur hic odio voluptatem
-										tenetur consequatur.</span>
+									Shop của chúng tôi bán những khung tranh được thiết kế sẵn. <span
+										class="over-para"> Khách hàng có thể lựa chọn sản phẩm
+										và thiết kế tùy ý.</span>
 								</p>
 								<a href="#small-dialog2" class="popup-with-zoom-anim play-view1">
 									<span class="video-play-icon"> <span class="fa fa-play"></span>
@@ -169,11 +169,11 @@
 					<li>
 						<div class="slider-info banner-view banner-top2 bg bg2">
 							<div class="banner-info">
-								<h3>Latest Movie Trailers</h3>
+								<h3>Chào Mừng Đến Với Shop Của Chúng Tôi</h3>
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.<span
-										class="over-para"> Consequuntur hic odio voluptatem
-										tenetur consequatur.</span>
+									Shop của chúng tôi bán những khung tranh được thiết kế sẵn. <span
+										class="over-para"> Khách hàng có thể lựa chọn sản phẩm
+										và thiết kế tùy ý.</span>
 								</p>
 								<a href="#small-dialog3" class="popup-with-zoom-anim play-view1">
 									<span class="video-play-icon"> <span class="fa fa-play"></span>
@@ -192,11 +192,11 @@
 					<li>
 						<div class="slider-info banner-view banner-top3 bg bg2">
 							<div class="banner-info">
-								<h3>Latest Online Movies</h3>
+								<h3>Chào Mừng Đến Với Shop Của Chúng Tôi</h3>
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.<span
-										class="over-para"> Consequuntur hic odio voluptatem
-										tenetur consequatur.</span>
+									Shop của chúng tôi bán những khung tranh được thiết kế sẵn. <span
+										class="over-para"> Khách hàng có thể lựa chọn sản phẩm
+										và thiết kế tùy ý.</span>
 								</p>
 								<a href="#small-dialog4" class="popup-with-zoom-anim play-view1">
 									<span class="video-play-icon"> <span class="fa fa-play"></span>
@@ -246,7 +246,7 @@
 												<p>Lorem ipsum dolor sit amet consectetur adipisicing
 													elit sed do eiusmod te incididunt</p>
 												<div class="d-flex justify-content-between flex-lg-wrap">
-													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
+													<p class="text-dark fs-5 fw-bold mb-0">180.000đ</p>
 													<a href="detail-template?idProduct=4"
 														class="btn border border-secondary rounded-pill px-3 text-primary"><i
 														class="fa fa-eye me-2 text-primary"></i>Xem chi tiết</a>
@@ -262,14 +262,14 @@
 											</div>
 											<div
 												class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-												style="top: 10px; left: 10px;">Gia Đình</div>
+												style="top: 10px; left: 10px;">Người Thân</div>
 											<div
 												class="p-4 border border-secondary border-top-0 rounded-bottom">
-												<h4>Mẫu 1</h4>
+												<h4>Mẫu 2</h4>
 												<p>Lorem ipsum dolor sit amet consectetur adipisicing
 													elit sed do eiusmod te incididunt</p>
 												<div class="d-flex justify-content-between flex-lg-wrap">
-													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
+													<p class="text-dark fs-5 fw-bold mb-0">150.000đ</p>
 													<a href="detail-template?idProduct=4"
 														class="btn border border-secondary rounded-pill px-3 text-primary"><i
 														class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>
@@ -285,14 +285,14 @@
 											</div>
 											<div
 												class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-												style="top: 10px; left: 10px;">Gia Đình</div>
+												style="top: 10px; left: 10px;">Người Yêu</div>
 											<div
 												class="p-4 border border-secondary border-top-0 rounded-bottom">
-												<h4>Mẫu 1</h4>
+												<h4>Mẫu 3</h4>
 												<p>Lorem ipsum dolor sit amet consectetur adipisicing
 													elit sed do eiusmod te incididunt</p>
 												<div class="d-flex justify-content-between flex-lg-wrap">
-													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
+													<p class="text-dark fs-5 fw-bold mb-0">200.000đ</p>
 													<a href="detail-template?idProduct=4"
 														class="btn border border-secondary rounded-pill px-3 text-primary"><i
 														class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>
@@ -308,106 +308,14 @@
 											</div>
 											<div
 												class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-												style="top: 10px; left: 10px;">Gia Đình</div>
+												style="top: 10px; left: 10px;">Bạn Bè</div>
 											<div
 												class="p-4 border border-secondary border-top-0 rounded-bottom">
-												<h4>Mẫu 1</h4>
+												<h4>Mẫu 4</h4>
 												<p>Lorem ipsum dolor sit amet consectetur adipisicing
 													elit sed do eiusmod te incididunt</p>
 												<div class="d-flex justify-content-between flex-lg-wrap">
-													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
-													<a href="detail-template"
-														class="btn border border-secondary rounded-pill px-3 text-primary"><i
-														class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6 col-lg-4 col-xl-3">
-										<div class="rounded position-relative fruite-item">
-											<div class="fruite-img">
-												<img src="assets/images/template1.png"
-													class="img-fluid w-100 rounded-top" alt="">
-											</div>
-											<div
-												class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-												style="top: 10px; left: 10px;">Gia Đình</div>
-											<div
-												class="p-4 border border-secondary border-top-0 rounded-bottom">
-												<h4>Mẫu 1</h4>
-												<p>Lorem ipsum dolor sit amet consectetur adipisicing
-													elit sed do eiusmod te incididunt</p>
-												<div class="d-flex justify-content-between flex-lg-wrap">
-													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
-													<a href="detail-template"
-														class="btn border border-secondary rounded-pill px-3 text-primary"><i
-														class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6 col-lg-4 col-xl-3">
-										<div class="rounded position-relative fruite-item">
-											<div class="fruite-img">
-												<img src="assets/images/template1.png"
-													class="img-fluid w-100 rounded-top" alt="">
-											</div>
-											<div
-												class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-												style="top: 10px; left: 10px;">Gia Đình</div>
-											<div
-												class="p-4 border border-secondary border-top-0 rounded-bottom">
-												<h4>Mẫu 1</h4>
-												<p>Lorem ipsum dolor sit amet consectetur adipisicing
-													elit sed do eiusmod te incididunt</p>
-												<div class="d-flex justify-content-between flex-lg-wrap">
-													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
-													<a href="detail-template"
-														class="btn border border-secondary rounded-pill px-3 text-primary"><i
-														class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6 col-lg-4 col-xl-3">
-										<div class="rounded position-relative fruite-item">
-											<div class="fruite-img">
-												<img src="assets/images/template1.png"
-													class="img-fluid w-100 rounded-top" alt="">
-											</div>
-											<div
-												class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-												style="top: 10px; left: 10px;">Gia Đình</div>
-											<div
-												class="p-4 border border-secondary border-top-0 rounded-bottom">
-												<h4>Mẫu 1</h4>
-												<p>Lorem ipsum dolor sit amet consectetur adipisicing
-													elit sed do eiusmod te incididunt</p>
-												<div class="d-flex justify-content-between flex-lg-wrap">
-													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
-													<a href="detail-template"
-														class="btn border border-secondary rounded-pill px-3 text-primary"><i
-														class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6 col-lg-4 col-xl-3">
-										<div class="rounded position-relative fruite-item">
-											<div class="fruite-img">
-												<img src="assets/images/template1.png"
-													class="img-fluid w-100 rounded-top" alt="">
-											</div>
-											<div
-												class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-												style="top: 10px; left: 10px;">Gia Đình</div>
-											<div
-												class="p-4 border border-secondary border-top-0 rounded-bottom">
-												<h4>Mẫu 1</h4>
-												<p>Lorem ipsum dolor sit amet consectetur adipisicing
-													elit sed do eiusmod te incididunt</p>
-												<div class="d-flex justify-content-between flex-lg-wrap">
-													<p class="text-dark fs-5 fw-bold mb-0">100.000đ</p>
+													<p class="text-dark fs-5 fw-bold mb-0">180.000đ</p>
 													<a href="detail-template"
 														class="btn border border-secondary rounded-pill px-3 text-primary"><i
 														class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>

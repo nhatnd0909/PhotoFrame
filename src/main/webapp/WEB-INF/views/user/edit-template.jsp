@@ -93,8 +93,7 @@
 	<div class="container-fluid py-5 mt-5">
 		<div class="container py-5">
 			<div style="margin-bottom: 50px; margin-top: 50px;">
-				<h1 class="fw-bold mb-0" style="color: #FF9999 !important;">Chỉnh
-					Sửa Sản Phẩm</h1>
+				<h1 class="fw-bold mb-0" style="color: #FF9999 !important;">Đặt Mua Sản Phẩm</h1>
 			</div>
 			<div class="row g-4 mb-5">
 				<div class="col-lg-12 col-xl-12">

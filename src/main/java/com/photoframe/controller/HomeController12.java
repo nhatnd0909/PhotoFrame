@@ -163,15 +163,15 @@ public class HomeController12 {
 		return "/admin/index";
 	}
 
-	@GetMapping("/admin/user")
-	public String showUserPage(HttpSession session, Model model) {
-		return "/admin/user";
-	}
+//	@GetMapping("/admin/user")
+//	public String showUserPage(HttpSession session, Model model) {
+//		return "/admin/user";
+//	}
 
-	@GetMapping("/admin/template")
-	public String showTemplateAdminPage(HttpSession session, Model model) {
-		return "/admin/template";
-	}
+//	@GetMapping("/admin/template")
+//	public String showTemplateAdminPage(HttpSession session, Model model) {
+//		return "/admin/template";
+//	}
 
 	@GetMapping("/admin/icon")
 	public String showIconPage(HttpSession session, Model model) {
@@ -183,9 +183,9 @@ public class HomeController12 {
 //		return "/admin/order";
 //	}
 
-	@GetMapping("/admin/revenue")
-	public String showIRevenuePage(HttpSession session, Model model) {
-		return "/admin/revenue";
-	}
+//	@GetMapping("/admin/revenue")
+//	public String showIRevenuePage(HttpSession session, Model model) {
+//		return "/admin/revenue";
+//	}
 
 }

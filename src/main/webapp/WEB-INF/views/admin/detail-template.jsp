@@ -41,36 +41,34 @@
 				<div class="sidebar-brand-text mx-3">Sparkle Memo</div>
 			</a>
 			<hr class="sidebar-divider my-0">
-			<li class="nav-item active"><a class="nav-link"
-				href="/admin"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span></a>
-			</li>
+			<li class="nav-item active"><a class="nav-link" href="/admin">
+					<i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
+			</a></li>
 			<hr class="sidebar-divider">
 			<div class="sidebar-heading">Tính Năng</div>
-			<li class="nav-item"><a class="nav-link"
-				href="/admin/revenue"> <i class="fas fa-fw fa-chart-area"></i>
-					<span>Doanh Thu</span>
+			<li class="nav-item"><a class="nav-link" href="/admin/revenue">
+					<i class="fas fa-fw fa-chart-area"></i> <span>Doanh Thu</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="user"> <i
 					class="fas fa-fw fa-user"></i> <span>Người Dùng</span>
 			</a></li>
 			<!--  -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapseTable"
+			<li class="nav-item active"><a class="nav-link collapsed"
+				href="#" data-toggle="collapse" data-target="#collapseTable"
 				aria-expanded="true" aria-controls="collapseTable"> <i
-					class="fas fa-fw fa-pen-to-square"></i> <span>Sản Phẩm</span>
+					class="fas fa-fw fa-pen-to-square"></i> <span style="color: #6777ef;">Sản Phẩm</span>
 			</a>
 				<div id="collapseTable" class="collapse"
 					aria-labelledby="headingTable" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Mẫu có sẵn</h6>
-						<a class="collapse-item" href="template">Mẫu</a> <a
+						<a class="collapse-item active" href="template">Mẫu</a> <a
 							class="collapse-item" href="icon">Icon</a>
 					</div>
 				</div></li>
 			<!--  -->
-			<li class="nav-item active"><a class="nav-link active"
-				href="order"> <i class="fas fa-fw fa-truck-fast"></i> <span
-					style="color: #6777ef;">Đơn Hàng</span>
+			<li class="nav-item "><a class="nav-link" href="order"> <i
+					class="fas fa-fw fa-truck-fast"></i> <span>Đơn Hàng</span>
 			</a></li>
 			<hr class="sidebar-divider">
 
@@ -163,12 +161,12 @@
 				<div class="container-fluid" id="container-wrapper">
 					<div
 						class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">Chi Tiết Đơn Hàng</h1>
+						<h1 class="h3 mb-0 text-gray-800">Chi Tiết Sản Phẩm</h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="./">Trang chủ</a></li>
-							<li class="breadcrumb-item"><a href="./">Đơn hàng</a></li>
+							<li class="breadcrumb-item"><a href="./">Sản phẩm</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Chi
-								Tiết Đơn Hàng</li>
+								Tiết Sản Phẩm</li>
 						</ol>
 					</div>
 					<!--Row-->
@@ -178,8 +176,8 @@
 						<div class="card mb-4">
 							<div
 								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-								<h6 class="m-0 font-weight-bold text-primary">Chi tiết đơn
-									hàng #${detailOrder.getDetailOrderID()}</h6>
+								<h6 class="m-0 font-weight-bold text-primary">Chi tiết sản
+									phẩm</h6>
 							</div>
 							<form action="/admin/detail-order" method="post">
 								<div class="table-responsive p-3">
@@ -187,65 +185,12 @@
 										<div class="card-body">
 											<div class="row mb-4">
 												<div class="col-sm-3">
-													<h6 class="mb-0">ID đơn hàng</h6>
+													<h6 class="mb-0">ID Sản Phẩm</h6>
 												</div>
 												<div class="col-sm-9 text-secondary">
 													<input name="id" type="text" class="form-control"
-														value="${detailOrder.getDetailOrderID()}" readonly>
+														value="${product.productID}" readonly>
 												</div>
-											</div>
-											<div class="row mb-4">
-												<div class="col-sm-3">
-													<h6 class="mb-0">Trạng thái</h6>
-												</div>
-												<c:if test="${detailOrder.getStatus() eq 'Đang xử lý'}">
-													<div class="col-sm-9 text-secondary">
-														<select name="status" id="" class="form-control">
-															<option value="Đang xử lý">Đang xử lý</option>
-															<option value="Thành công">Thành công</option>
-															<option value="Thất bại">Thất bại</option>
-														</select>
-													</div>
-												</c:if>
-												<c:if test="${detailOrder.getStatus() eq 'Thành công'}">
-													<div class="col-sm-9 text-secondary">
-														<select name="status" id="" class="form-control">
-															<option value="Thành công">Thành công</option>
-															<option value="Đang xử lý">Đang xử lý</option>
-															<option value="Thất bại">Thất bại</option>
-														</select>
-													</div>
-												</c:if>
-												<c:if test="${detailOrder.getStatus() eq 'Thất bại'}">
-													<div class="col-sm-9 text-secondary">
-														<select name="status" id="" class="form-control">
-															<option value="Thất bại">Thất bại</option>
-															<option value="Đang xử lý">Đang xử lý</option>
-															<option value="Thành công">Thành công</option>
-														</select>
-													</div>
-												</c:if>
-											</div>
-											<div class="row mb-4">
-												<div class="col-sm-3">
-													<h6 class="mb-0">Thanh toán</h6>
-												</div>
-												<c:if test="${detailOrder.getPaid()}">
-													<div class="col-sm-9 text-secondary">
-														<select name="paid" id="" class="form-control">
-															<option value="1">Đã thanh toán</option>
-															<option value="0">Chưa thanh toán</option>
-														</select>
-													</div>
-												</c:if>
-												<c:if test="${not detailOrder.getPaid()}">
-													<div class="col-sm-9 text-secondary">
-														<select name="paid" id="" class="form-control">
-															<option value="0">Chưa thanh toán</option>
-															<option value="1">Đã thanh toán</option>
-														</select>
-													</div>
-												</c:if>
 											</div>
 											<div class="row mb-4">
 												<div class="col-sm-3">
@@ -253,102 +198,109 @@
 												</div>
 												<div class="col-sm-9 text-secondary">
 													<input name="" type="text" class="form-control"
-														value="${detailOrder.getUserOrder().getProduct().getName()}"
-														readonly>
+														value="${product.name}" readonly>
 												</div>
 											</div>
 											<div class="row mb-4">
 												<div class="col-sm-3">
-													<h6 class="mb-0">Ngày đặt</h6>
-												</div>
-												<div class="col-sm-9 text-secondary">
-													<input name="" type="date" class="form-control"
-														value="${detailOrder.getDateOrder().toString().substring(0,10)}"
-														readonly>
-												</div>
-											</div>
-											<c:choose>
-												<c:when test="${detailOrder.design}">
-													<!-- người dùng tự chỉnh sửa -->
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Link chỉnh sửa</h6>
-														</div>
-														<div class="col-sm-3 text-secondary">
-															<a
-																href="${detailOrder.getUserOrder().getProduct().getUrlDesign()}"
-																target="_blank"> Link chỉnh sửa </a>
-														</div>
-													</div>
-												</c:when>
-												<c:otherwise>
-													<div class="row mb-4">
-														<div class="col-sm-3">
-															<h6 class="mb-0">Ảnh tải lên</h6>
-														</div>
-														<c:forEach
-															items="${detailOrder.getUserOrder().getImages()}"
-															var="image">
-															<div class="col-sm-3 text-secondary">
-																<a href="/downloadFile/${image}"> <img
-																	src="../assets/images/${image}" alt=""
-																	style="max-width: 90%">
-																</a>
-															</div>
-														</c:forEach>
-													</div>
-												</c:otherwise>
-											</c:choose>
-											<div class="row mb-4">
-												<div class="col-sm-3">
-													<h6 class="mb-0">Tên khác hàng</h6>
+													<h6 class="mb-0">Giá bán</h6>
 												</div>
 												<div class="col-sm-9 text-secondary">
 													<input name="" type="text" class="form-control"
-														value="${detailOrder.getName()}" readonly>
+														value="${product.price}" readonly>
+												</div>
+											</div>
+
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Thể loại</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="" type="text" class="form-control"
+														value="${product.type}" readonly>
 												</div>
 											</div>
 											<div class="row mb-4">
 												<div class="col-sm-3">
-													<h6 class="mb-0">Số điện thoại</h6>
+													<h6 class="mb-0">Mô tả</h6>
 												</div>
 												<div class="col-sm-9 text-secondary">
-													<input name="" type="text" class="form-control"
-														value="${detailOrder.getPhone()}" readonly>
+													<textarea class="form-control" id="w3review"
+														name="describle" rows="4" cols="50">
+													${product.describle}
+													</textarea>
 												</div>
 											</div>
 											<div class="row mb-4">
 												<div class="col-sm-3">
-													<h6 class="mb-0">Email</h6>
+													<h6 class="mb-0">Số ảnh cần thiết</h6>
 												</div>
 												<div class="col-sm-9 text-secondary">
-													<input name="" type="text" class="form-control"
-														value="${detailOrder.getEmail()}" readonly>
+													<input name="" type="number" class="form-control"
+														value="${product.numberImgRequire}" readonly>
 												</div>
 											</div>
 											<div class="row mb-4">
 												<div class="col-sm-3">
-													<h6 class="mb-0">Địa chỉ nhận hàng</h6>
+													<h6 class="mb-0">Chất liệu</h6>
 												</div>
 												<div class="col-sm-9 text-secondary">
 													<input name="" type="text" class="form-control"
-														value="${detailOrder.getAddress()}" readonly>
+														value="${product.material}" readonly>
 												</div>
 											</div>
 											<div class="row mb-4">
 												<div class="col-sm-3">
-													<h6 class="mb-0">Tổng đơn hàng</h6>
+													<h6 class="mb-0">ULR Canva</h6>
 												</div>
 												<div class="col-sm-9 text-secondary">
 													<input name="" type="text" class="form-control"
-														value="${detailOrder.getTotalPrice()}đ" readonly>
+														value="${product.urlCanva}" readonly>
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">ULR Design</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<input name="" type="text" class="form-control"
+														value="${product.urlDesign}" readonly>
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Ảnh chính</h6>
+												</div>
+												<div class="col-sm-9 text-secondary">
+													<img src="../assets/images/${product.mainImg}"
+														alt="EduWell Template" style="max-width: 300px">
+												</div>
+											</div>
+											<div class="row mb-4">
+												<div class="col-sm-3">
+													<h6 class="mb-0">Ảnh phụ</h6>
+												</div>
+												<div class="col-sm-2 text-secondary">
+													<img src="../assets/images/${product.img1}"
+														alt="EduWell Template" style="max-width: 90%">
+												</div>
+												<div class="col-sm-2 text-secondary">
+													<img src="../assets/images/${product.img2}"
+														alt="EduWell Template" style="max-width: 90%"">
+												</div>
+												<div class="col-sm-2 text-secondary">
+													<img src="../assets/images/${product.img3}"
+														alt="EduWell Template" style="max-width: 90%"">
+												</div>
+												<div class="col-sm-2 text-secondary">
+													<img src="../assets/images/${product.img4}"
+														alt="EduWell Template" style="max-width: 90%"">
 												</div>
 											</div>
 											<button class="btn btn-outline-primary">Lưu thông
 												tin</button>
-											<a
-												href="/admin/detail-order?id=${detailOrder.getDetailOrderID()}"
-												class="btn btn-outline-warning" style="margin-left: 10px;">Hủy</a>
+											<a href="/admin" class="btn btn-outline-warning"
+												style="margin-left: 10px;">Hủy</a>
 										</div>
 									</div>
 								</div>

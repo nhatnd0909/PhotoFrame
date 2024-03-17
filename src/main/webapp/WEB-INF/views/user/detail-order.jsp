@@ -159,7 +159,7 @@
 														</div>
 														<div class="col-sm-9 text-secondary">
 															<input name="name" type="text" class="form-control"
-																value="Đang xử lý" readonly>
+																value="${detailOrder.status}" readonly>
 														</div>
 													</div>
 													<div class="row mb-4">
@@ -201,7 +201,7 @@
 													</div>
 													<c:choose>
 														<c:when test="${detailOrder.design}">
-															<div class="row mb-4">
+															<%-- <div class="row mb-4">
 																<div class="col-sm-3">
 																	<h6 class="mb-0">Link chỉnh sửa</h6>
 																</div>
@@ -210,7 +210,7 @@
 																		href="${detailOrder.getUserOrder().getProduct().getUrlDesign()}"
 																		target="_blank"> Link chỉnh sửa </a>
 																</div>
-															</div>
+															</div> --%>
 														</c:when>
 														<c:otherwise>
 															<div class="row mb-4">
