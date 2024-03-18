@@ -92,14 +92,14 @@ h1 {
 /*float:right để lật ngược các ngôi sao lại đúng theo thứ tự trong thực tế*/
 /*thêm màu cho sao đã chọn và các ngôi sao phía trước*/
 #rating>input:checked ~label, #rating:not(:checked)>label:hover, #rating:not(:checked)>label:hover
-	~label {
+	 ~label {
 	color: #FFD700;
 }
 
 /* Hover vào các sao phía trước ngôi sao đã chọn*/
 #rating>input:checked+label:hover, #rating>input:checked ~label:hover,
 	#rating>label:hover ~input:checked ~label, #rating>input:checked ~label:hover
-	~label {
+	 ~label {
 	color: #FFED85;
 }
 </style>
@@ -273,48 +273,67 @@ h1 {
 								</div>
 								<div class="tab-pane" id="nav-mission" role="tabpanel"
 									aria-labelledby="nav-mission-tab">
-									<div class="d-flex">
-										<img src="assets/images/avatar.webp"
-											class="img-fluid rounded-circle p-3"
-											style="width: 100px; height: 100px;" alt="">
-										<div class="">
-											<p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
-											<div class="d-flex justify-content-between">
-												<h5>Nguyễn Đình Nhật</h5>
-												<div class="d-flex mb-3">
-													<i class="fa fa-star text-secondary"></i> <i
-														class="fa fa-star text-secondary"></i> <i
-														class="fa fa-star text-secondary"></i> <i
-														class="fa fa-star text-secondary"></i> <i
-														class="fa fa-star"></i>
+									<c:forEach items="${listComment}" var="comment">
+										<div class="d-flex">
+											<img
+												src="assets/images/${comment.getCustomer().getUrlImage()}"
+												class="img-fluid rounded-circle p-3"
+												style="width: 100px; height: 100px;" alt="">
+											<div class="">
+												<p class="mb-2" style="font-size: 14px;">${comment.getDate()}</p>
+												<div class="d-flex justify-content-between">
+													<h5>${comment.getCustomer().getName()}</h5>
+													<c:choose>
+														<c:when test="${comment.rating == 1}">
+															<div class="d-flex mb-3" style="margin-left: 50px">
+																<i class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star "></i> <i class="fa fa-star "></i> <i
+																	class="fa fa-star "></i> <i class="fa fa-star"></i>
+															</div>
+														</c:when>
+														<c:when test="${comment.rating == 2}">
+															<div class="d-flex mb-3" style="margin-left: 50px">
+																<i class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star "></i> <i class="fa fa-star "></i> <i
+																	class="fa fa-star "></i> <i class="fa fa-star"></i>
+															</div>
+														</c:when>
+														<c:when test="${comment.rating == 3}">
+															<div class="d-flex mb-3" style="margin-left: 50px">
+																<i class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star "></i> <i class="fa fa-star"></i>
+															</div>
+														</c:when>
+														<c:when test="${comment.rating == 4}">
+															<div class="d-flex mb-3" style="margin-left: 50px">
+																<i class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star"></i>
+															</div>
+														</c:when>
+														<c:when test="${comment.rating == 5}">
+															<div class="d-flex mb-3" style="margin-left: 50px">
+																<i class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star text-secondary"></i> <i
+																	class="fa fa-star text-secondary"></i>
+															</div>
+														</c:when>
+														<c:otherwise>
+															<p>Rating: Unknown</p>
+														</c:otherwise>
+													</c:choose>
 												</div>
+												<p>${comment.content}</p>
 											</div>
-											<p>The generated Lorem Ipsum is therefore always free
-												from repetition injected humour, or non-characteristic words
-												etc. Susp endisse ultricies nisi vel quam suscipit</p>
 										</div>
-									</div>
-									<div class="d-flex">
-										<img src="assets/images/avatar.webp"
-											class="img-fluid rounded-circle p-3"
-											style="width: 100px; height: 100px;" alt="">
-										<div class="">
-											<p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
-											<div class="d-flex justify-content-between">
-												<h5>Nguyễn Đình Nhật</h5>
-												<div class="d-flex mb-3">
-													<i class="fa fa-star text-secondary"></i> <i
-														class="fa fa-star text-secondary"></i> <i
-														class="fa fa-star text-secondary"></i> <i
-														class="fa fa-star"></i> <i class="fa fa-star"></i>
-												</div>
-											</div>
-											<p class="text-dark">The generated Lorem Ipsum is
-												therefore always free from repetition injected humour, or
-												non-characteristic words etc. Susp endisse ultricies nisi
-												vel quam suscipit</p>
-										</div>
-									</div>
+									</c:forEach>
+
 								</div>
 								<div class="tab-pane" id="nav-vision" role="tabpanel">
 									<p class="text-dark">Tempor erat elitr rebum at clita. Diam
@@ -325,24 +344,27 @@ h1 {
 								</div>
 							</div>
 						</div>
-						<form action="#">
+						<form action="comment" method="post">
 							<h4 class="mb-5 fw-bold">Đánh giá sản phẩm</h4>
 							<div class="row g-4">
+								<input name="productId" type="text" value="${product.productID}"
+									hidden="">
+
 								<div class="col-lg-6">
 									<div class="border-bottom rounded">
-										<input type="text" class="form-control border-0 me-4"
-											placeholder="Họ và tên *">
+										<input name="name" type="text"
+											class="form-control border-0 me-4" placeholder="Họ và tên *">
 									</div>
 								</div>
 								<div class="col-lg-6">
 									<div class="border-bottom rounded">
-										<input type="email" class="form-control border-0"
+										<input name="email" type="email" class="form-control border-0"
 											placeholder="Email *">
 									</div>
 								</div>
 								<div class="col-lg-12">
 									<div class="border-bottom rounded my-4">
-										<textarea name="" id="" class="form-control border-0"
+										<textarea name="comment" id="" class="form-control border-0"
 											cols="30" rows="8" placeholder="Ý kiến của bạn *"
 											spellcheck="false"></textarea>
 									</div>
@@ -364,9 +386,19 @@ h1 {
 													class="full" for="star1" title="Sucks big time - 1 star"></label>
 											</div>
 										</div>
-										<a href="#"
-											class="btn border border-secondary text-primary rounded-pill px-4 py-3">
-											Đăng bình luận</a>
+										<c:choose>
+											<c:when test="${checUserOrder eq true}">
+												<input
+													class="btn border border-secondary text-primary rounded-pill px-4 py-3"
+													type="submit" value="Đăng bình luận">
+											</c:when>
+											<c:otherwise>
+												<input
+													class="btn border border-secondary text-primary rounded-pill px-4 py-3"
+													type="submit" value="Đăng bình luận" disabled="disabled">
+											</c:otherwise>
+										</c:choose>
+
 									</div>
 								</div>
 							</div>

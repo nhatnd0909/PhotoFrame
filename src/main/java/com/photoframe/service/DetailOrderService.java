@@ -237,4 +237,15 @@ public class DetailOrderService {
 		}
 		return sum;
 	}
+
+	public boolean checkUserOrder(String userId, String productId) {
+		List<DetailOrder> list = getAllDetailOrder();
+		for (DetailOrder d : list) {
+			if (d.getCustomer().getCustomerID().equals(Long.parseLong(userId))
+					&& d.getUserOrder().getProduct().getProductID().equals(Long.parseLong(productId))) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

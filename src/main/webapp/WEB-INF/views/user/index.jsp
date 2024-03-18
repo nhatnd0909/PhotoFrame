@@ -165,8 +165,8 @@ https://templatemo.com/tm-573-eduwell
 						<h4>
 							Những Thứ Bạn Có Thể<em> Làm</em>
 						</h4>
-						<p>You just think about Result whenever you need free
-							templates for your idea will do it</p>
+						<p>Chỉ cần nghĩ đến kết quả, khi bạn cần các mẫu miễn phí cho
+							ý tưởng của mình, chúng tôi sẽ thực hiện!</p>
 					</div>
 				</div>
 				<div class="col-lg-12">
@@ -195,26 +195,24 @@ https://templatemo.com/tm-573-eduwell
 											<div>
 												<div class="left-image">
 													<img src="assets/images/family.png" alt="">
-													<div class="price">
+													<!-- <div class="price">
 														<h6>$128</h6>
-													</div>
+													</div> -->
 												</div>
 
 												<div class="right-content">
-													<h4>Web Development</h4>
+													<h4>Chủ đề gia đình</h4>
 													<p>
-														Did you know that you can visit <a rel="nofollow"
-															href="https://www.toocss.com/" target="_blank">TooCSS
-															website</a> for latest listing of HTML templates and a
-														variety of useful templates. <br> <br>You just
-														need to go and visit that website right now. IF you have
-														any suggestion or comment about this template, you can
-														feel free to go to contact page for our email address.
+														Cùng chúng tôi tạo nên một bức tranh về gia đình của bạn.
+														Bằng cách kết hợp tâm huyết và kỹ thuật, chúng tôi đã tạo
+														ra những chiếc khung tranh chủ đề gia đình, mang đến không
+														gian ấm áp và ý nghĩa cho ngôi nhà của bạn <br> <br>Hãy
+														tạo ra một góc nhìn đặc biệt cho gia đình bạn với những
+														bức tranh chất lượng cao từ chúng tôi.
 													</p>
-													<span>36 Hours</span> <span>4 Weeks</span> <span
-														class="last-span">3 Certificates</span>
+
 													<div class="text-button">
-														<a href="contact-us">Subscribe Course</a>
+														<a href="template">Xem chi tiết</a>
 													</div>
 												</div>
 											</div>
@@ -223,23 +221,19 @@ https://templatemo.com/tm-573-eduwell
 											<div>
 												<div class="left-image">
 													<img src="assets/images/love.png" alt="">
-													<div class="price">
-														<h6>$156</h6>
-													</div>
 												</div>
 												<div class="right-content">
-													<h4>Creative Graphic Design</h4>
+													<h4>Chủ đề người yêu</h4>
 													<p>
-														You are not allowed to redistribute this template ZIP file
-														on any other website without a permission from us.<br>
-														<br>There are some unethical people on this world
-														copied and reposted our templates without any permission
-														from us. Their Karma will hit them really hard. Yeah!
+														Cho dù là những khoảnh khắc ngọt ngào của tình yêu mới nảy
+														nở, hay là những kỷ niệm đáng nhớ của quãng thời gian dài
+														bên nhau, chúng tôi hiểu rằng tình yêu luôn là một phần
+														quan trọng trong cuộc sống của bạn.<br> <br>Hãy
+														kỷ niệm những khoảnh khắc đặc biệt nhất của tình yêu của
+														bạn với những bức tranh độc đáo từ chúng tôi!
 													</p>
-													<span>48 Hours</span> <span>6 Weeks</span> <span
-														class="last-span">1 Certificate</span>
 													<div class="text-button">
-														<a href="contact-us">Subscribe Course</a>
+														<a href="template">Xem chi tiết</a>
 													</div>
 												</div>
 											</div>
@@ -248,23 +242,20 @@ https://templatemo.com/tm-573-eduwell
 											<div>
 												<div class="left-image">
 													<img src="assets/images/friend.png" alt="">
-													<div class="price">
-														<h6>$184</h6>
-													</div>
 												</div>
 												<div class="right-content">
-													<h4>Web Design</h4>
+													<h4>Chủ đề bạn bè</h4>
 													<p>
-														Quinoa roof party squid prism sustainable letterpress cray
-														hammock tumeric man bun mixtape tofu subway tile cronut.
-														Deep v ennui subway tile organic seitan.<br> <br>Kogi
-														VHS freegan bicycle rights try-hard green juice probably
-														haven't heard of them cliche la croix af chillwave.
+														Bạn bè là những người đồng hành, những người chia sẻ niềm
+														vui và nỗi buồn, những người luôn ở bên cạnh trong mọi thử
+														thách cuộc sống. Từ những cười đùa vui vẻ đến những cuộc
+														phiêu lưu khó quên, mỗi bức tranh là một cách tuyệt vời để
+														tưởng nhớ và đánh dấu tình bạn bền vững.<br> <br>Hãy
+														kỷ niệm những khoảnh khắc tuyệt vời nhất của bạn bè với
+														những bức tranh tuyệt đẹp từ chúng tôi!
 													</p>
-													<span>28 Hours</span> <span>4 Weeks</span> <span
-														class="last-span">1 Certificate</span>
 													<div class="text-button">
-														<a href="contact-us">Subscribe Course</a>
+														<a href="template">Xem chi tiết</a>
 													</div>
 												</div>
 											</div>
@@ -273,23 +264,19 @@ https://templatemo.com/tm-573-eduwell
 											<div>
 												<div class="left-image">
 													<img src="assets/images/relative.png" alt="">
-													<div class="price">
-														<h6>$76</h6>
-													</div>
 												</div>
 												<div class="right-content">
-													<h4>WordPress Introduction</h4>
+													<h4>Chủ đề bản thân</h4>
 													<p>
-														Quinoa roof party squid prism sustainable letterpress cray
-														hammock tumeric man bun mixtape tofu subway tile cronut.
-														Deep v ennui subway tile organic seitan.<br> <br>Kogi
-														VHS freegan bicycle rights try-hard green juice probably
-														haven't heard of them cliche la croix af chillwave.
+														Chúng ta là những người độc lập, có những giấc mơ, mục
+														tiêu và trải nghiệm riêng của mình. Với các bức tranh chủ
+														đề bản thân, chúng tôi tạo ra không gian đặc biệt để bạn
+														tôn vinh và kỷ niệm về bản thân mình.<br> <br>Hãy
+														kỷ niệm những khía cạnh độc đáo của bản thân với những bức
+														tranh tinh tế và ý nghĩa từ chúng tôi.!
 													</p>
-													<span>48 Hours</span> <span>4 Weeks</span> <span
-														class="last-span">2 Certificates</span>
 													<div class="text-button">
-														<a href="contact-us">Subscribe Course</a>
+														<a href="template">Xem chi tiết</a>
 													</div>
 												</div>
 											</div>
@@ -315,10 +302,9 @@ https://templatemo.com/tm-573-eduwell
 				<div class="col-lg-5 align-self-center">
 					<h6>Nhận ưu đãi ngay</h6>
 					<h4>Giảm 20% cho sản phẩm thứ 1+</h4>
-					<p>Kogi VHS freegan bicycle rights try-hard green juice
-						probably haven't heard of them cliche la croix af chillwave.</p>
+
 					<div class="white-button">
-						<a href="contact-us">Xem ưu đãi</a>
+						<a href="">Xem ưu đãi</a>
 					</div>
 				</div>
 			</div>
