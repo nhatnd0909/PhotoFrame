@@ -207,30 +207,33 @@
 						<div class="row g-4">
 							<div class="col-lg-12">
 								<div class="row g-4">
-									<div class="col-md-6 col-lg-4 col-xl-3">
-										<div class="rounded position-relative fruite-item">
-											<div class="fruite-img">
-												<img src="assets/images/template1.png"
-													class="img-fluid w-100 rounded-top" alt="">
-											</div>
-											<div
-												class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-												style="top: 10px; left: 10px;">Gia Đình</div>
-											<div
-												class="p-4 border border-secondary border-top-0 rounded-bottom">
-												<h4>Mẫu 1</h4>
-												<p>Lorem ipsum dolor sit amet consectetur adipisicing
-													elit sed do eiusmod te incididunt</p>
-												<div class="d-flex justify-content-between flex-lg-wrap">
-													<p class="text-dark fs-5 fw-bold mb-0">180.000đ</p>
-													<a href="detail-template?idProduct=4"
-														class="btn border border-secondary rounded-pill px-3 text-primary"><i
-														class="fa fa-eye me-2 text-primary"></i>Xem chi tiết</a>
+									<c:forEach items="${list4product}" var="product">
+										<div class="col-md-6 col-lg-4 col-xl-3">
+											<div class="rounded position-relative fruite-item">
+												<div class="fruite-img">
+													<img src="assets/images/${product.mainImg}"
+														class="img-fluid w-100 rounded-top" alt="">
+												</div>
+												<div
+													class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+													style="top: 10px; left: 10px;">${product.type}</div>
+												<div
+													class="p-4 border border-secondary border-top-0 rounded-bottom">
+													<h4>${product.name}</h4>
+													<p>${product.describle}</p>
+													<div class="d-flex justify-content-between flex-lg-wrap">
+														<p class="text-dark fs-5 fw-bold mb-0">${product.price}
+															đ</p>
+														<a href="detail-template?idProduct=${product.productID}"
+															class="btn border border-secondary rounded-pill px-3 text-primary"><i
+															class="fa fa-eye me-2 text-primary"></i> Xem chi tiết</a>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col-md-6 col-lg-4 col-xl-3">
+									</c:forEach>
+
+									<!-- <div class="col-md-6 col-lg-4 col-xl-3">
 										<div class="rounded position-relative fruite-item">
 											<div class="fruite-img">
 												<img src="assets/images/template1.png"
@@ -298,7 +301,7 @@
 												</div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>

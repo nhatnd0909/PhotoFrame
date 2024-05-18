@@ -18,6 +18,10 @@ public class Product {
 	private String name;
 	@Column(name = "Price")
 	private Long price;
+	@Column(name = "Price2")
+	private Long price2;
+	@Column(name = "Price3")
+	private Long price3;
 	@Column(name = "Type")
 	private String type;
 	@Column(name = "Decrible")
@@ -122,6 +126,31 @@ public class Product {
 		this.productID = productID;
 		this.name = name;
 		this.price = price;
+		this.type = type;
+		this.describle = describle;
+		this.mainImg = mainImg;
+		this.img1 = img1;
+		this.img2 = img2;
+		this.img3 = img3;
+		this.img4 = img4;
+		this.numberImgRequire = numberImgRequire;
+		this.length = length;
+		this.width = width;
+		this.weight = weight;
+		this.urlCanva = urlCanva;
+		this.material = material;
+		this.urlDesign = urlDesign;
+	}
+
+	public Product(Long productID, String name, Long price, Long price2, Long price3, String type, String describle,
+			String mainImg, String img1, String img2, String img3, String img4, int numberImgRequire, int length,
+			int width, int weight, String urlCanva, String material, String urlDesign) {
+		super();
+		this.productID = productID;
+		this.name = name;
+		this.price = price;
+		this.price2 = price2;
+		this.price3 = price3;
 		this.type = type;
 		this.describle = describle;
 		this.mainImg = mainImg;
@@ -274,13 +303,29 @@ public class Product {
 		this.urlDesign = urlDesign;
 	}
 
+	public Long getPrice2() {
+		return price2;
+	}
+
+	public void setPrice2(Long price2) {
+		this.price2 = price2;
+	}
+
+	public Long getPrice3() {
+		return price3;
+	}
+
+	public void setPrice3(Long price3) {
+		this.price3 = price3;
+	}
+
 	@Override
 	public String toString() {
-		return "Product [productID=" + productID + ", name=" + name + ", price=" + price + ", type=" + type
-				+ ", describle=" + describle + ", mainImg=" + mainImg + ", img1=" + img1 + ", img2=" + img2 + ", img3="
-				+ img3 + ", img4=" + img4 + ", numberImgRequire=" + numberImgRequire + ", length=" + length + ", width="
-				+ width + ", weight=" + weight + ", urlCanva=" + urlCanva + ", material=" + material + ", urlDesign="
-				+ urlDesign + "]";
+		return "Product [productID=" + productID + ", name=" + name + ", price=" + price + ", price2=" + price2
+				+ ", price3=" + price3 + ", type=" + type + ", describle=" + describle + ", mainImg=" + mainImg
+				+ ", img1=" + img1 + ", img2=" + img2 + ", img3=" + img3 + ", img4=" + img4 + ", numberImgRequire="
+				+ numberImgRequire + ", length=" + length + ", width=" + width + ", weight=" + weight + ", urlCanva="
+				+ urlCanva + ", material=" + material + ", urlDesign=" + urlDesign + "]";
 	}
 
 }

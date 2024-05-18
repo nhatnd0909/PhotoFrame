@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.photoframe.model.Customer;
 import com.photoframe.model.Product;
@@ -36,6 +35,8 @@ public class TemplateController {
 		}
 		List<Product> listAllProduct = productService.getAllProducts();
 		model.addAttribute("listAllProduct", listAllProduct);
+		List<Product> list4product = productService.get4product();
+		model.addAttribute("list4product", list4product);
 		return "/user/template";
 	}
 }

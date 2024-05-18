@@ -55,8 +55,8 @@
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
 							src="assets/images/logoSP.png" alt="EduWell Template"
-							style="max-width: 70px"> <span style="font-size: 20px;margin-left: -10px">Sparkle
-								Memo</span>
+							style="max-width: 70px"> <span
+							style="font-size: 20px; margin-left: -10px">Sparkle Memo</span>
 						</a>
 
 						<!-- ***** Logo End ***** -->
@@ -94,7 +94,8 @@
 	<div class="container-fluid py-5 mt-5">
 		<div class="container py-5">
 			<div style="margin-bottom: 50px; margin-top: 50px;">
-				<h1 class="fw-bold mb-0" style="color: #FF9999 !important;">Đặt Mua Sản Phẩm</h1>
+				<h1 class="fw-bold mb-0" style="color: #FF9999 !important;">Đặt
+					Mua Sản Phẩm</h1>
 			</div>
 			<div class="row g-4 mb-5">
 				<div class="col-lg-12 col-xl-12">
@@ -131,6 +132,7 @@
 								class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
 								class="fa fa-pen me-2 text-primary"></i>Đặt hàng</a>
 						</div>
+						
 						<form id="orders" action=edit-template method="post"
 							enctype="multipart/form-data">
 
@@ -602,8 +604,8 @@
 									class="btn border border-secondary rounded-pill px-5 py-3 mb-5 text-primary"
 									style="margin-top: 20px">Đặt Hàng</button>
 							</div>
+						</form>
 					</div>
-					</form>
 				</div>
 			</div>
 		</div>
