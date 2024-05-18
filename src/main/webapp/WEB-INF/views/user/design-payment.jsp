@@ -62,8 +62,7 @@
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li class=""><a href="index">Trang Chủ</a></li>
-							<li class=""><a href="detail-template" class="active">Dịch
-									vụ</a></li>
+							<li class=""><a href="detail-template" class="active">Sản Phẩm</a></li>
 							<li class=""><a href="contact-us" class="active">Liên hệ</a></li>
 							<c:if test="${logged eq 0}">
 								<li class=""><a href="login">Đăng Nhập</a></li>
@@ -120,7 +119,7 @@
 								name="userOrderID" hidden="">
 						</div>
 						<div class="box-inner-1 pb-3 mb-3 ">
-							<p>Khác hàng tự thiết kế sản phẩm của mình. Kiểm tra kỹ mẫu
+							<p>Khách hàng tự thiết kế sản phẩm của mình. Kiểm tra kỹ mẫu
 								thiết kế đã hoàn thiện chưa. Chúng tôi sẽ hoàn thành sản phẩm
 								của bạn sau khi nhận được đơn hàng</p>
 							<a href="${userOrder.getProduct().getUrlDesign()}"

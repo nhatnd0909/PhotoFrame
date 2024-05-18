@@ -78,7 +78,7 @@
 							<ul class="nav">
 								<li class="scroll-to-section"><a href="/" class="active">Trang
 										Chủ</a></li>
-								<li class=""><a href="template">Dịch Vụ</a></li>
+								<li class=""><a href="template">Sản Phẩm</a></li>
 								<li class=""><a href="contact-us">Liên hệ</a></li>
 								<c:if test="${logged eq 0}">
 									<li class=""><a href="login">Đăng Nhập</a></li>
@@ -113,7 +113,7 @@
 			<nav id="breadcrumbs" class="breadcrumbs">
 				<div class="container page-wrapper">
 					<a href="index">Trang chủ</a> » <span class="breadcrumb_last"
-						aria-current="page"> Dịch vụ</span>
+						aria-current="page"> Sản phẩm</span>
 				</div>
 			</nav>
 		</div>
@@ -126,15 +126,8 @@
 							<div class="banner-info">
 								<h3>Chào Mừng Đến Với Shop Của Chúng Tôi</h3>
 								<p>
-									Shop của chúng tôi bán những khung tranh được thiết kế sẵn. <span
-										class="over-para"> Khách hàng có thể lựa chọn sản phẩm
-										và thiết kế tùy ý.</span>
+									Giảm 10% cho 15 sản phẩm đầu tiên</span>
 								</p>
-								<a href="#small-dialog1" class="popup-with-zoom-anim play-view1">
-									<span class="video-play-icon"> <span class="fa fa-play"></span>
-								</span>
-									<h6>Watch Trailer</h6>
-								</a>
 								<div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
 									<iframe src="https://player.vimeo.com/video/358205676"
 										allow="autoplay; fullscreen" allowfullscreen=""></iframe>
@@ -149,15 +142,8 @@
 							<div class="banner-info">
 								<h3>Chào Mừng Đến Với Shop Của Chúng Tôi</h3>
 								<p>
-									Shop của chúng tôi bán những khung tranh được thiết kế sẵn. <span
-										class="over-para"> Khách hàng có thể lựa chọn sản phẩm
-										và thiết kế tùy ý.</span>
+									Giảm 10% cho 15 sản phẩm đầu tiên</span>
 								</p>
-								<a href="#small-dialog2" class="popup-with-zoom-anim play-view1">
-									<span class="video-play-icon"> <span class="fa fa-play"></span>
-								</span>
-									<h6>Watch Trailer</h6>
-								</a>
 								<div id="small-dialog2" class="zoom-anim-dialog mfp-hide">
 									<iframe src="https://player.vimeo.com/video/395376850"
 										allow="autoplay; fullscreen" allowfullscreen=""></iframe>
@@ -172,15 +158,9 @@
 							<div class="banner-info">
 								<h3>Chào Mừng Đến Với Shop Của Chúng Tôi</h3>
 								<p>
-									Shop của chúng tôi bán những khung tranh được thiết kế sẵn. <span
-										class="over-para"> Khách hàng có thể lựa chọn sản phẩm
-										và thiết kế tùy ý.</span>
+									Giảm 10% cho 15 sản phẩm đầu tiên</span>
 								</p>
-								<a href="#small-dialog3" class="popup-with-zoom-anim play-view1">
-									<span class="video-play-icon"> <span class="fa fa-play"></span>
-								</span>
-									<h6>Watch Trailer</h6>
-								</a>
+
 								<div id="small-dialog3" class="zoom-anim-dialog mfp-hide">
 									<iframe src="https://player.vimeo.com/video/389969665"
 										allow="autoplay; fullscreen" allowfullscreen=""></iframe>
@@ -199,11 +179,6 @@
 										class="over-para"> Khách hàng có thể lựa chọn sản phẩm
 										và thiết kế tùy ý.</span>
 								</p>
-								<a href="#small-dialog4" class="popup-with-zoom-anim play-view1">
-									<span class="video-play-icon"> <span class="fa fa-play"></span>
-								</span>
-									<h6>Watch Trailer</h6>
-								</a>
 								<div id="small-dialog4" class="zoom-anim-dialog mfp-hide">
 									<iframe src="https://player.vimeo.com/video/323491174"
 										allow="autoplay; fullscreen" allowfullscreen=""></iframe>
@@ -856,17 +831,17 @@
 									<div class="icon">
 										<i class="fa fa-phone"></i>
 									</div>
-									<h4>Phone</h4>
-									<span>010-020-0340</span>
+									<h4>Số Điện Thoại</h4>
+									<span>033 654 8705</span>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<div class="contact-info">
 									<div class="icon">
-										<i class="fa fa-phone"></i>
+										<i class="fa fa-envelope"></i>
 									</div>
-									<h4>Mobile</h4>
-									<span>090-080-0760</span>
+									<h4>Email</h4>
+									<span>sparklememoo@gmail.com</span>
 								</div>
 							</div>
 						</div>
@@ -877,36 +852,32 @@
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="section-heading">
-									<h6>Contact us</h6>
-									<h4>
-										Say <em>Hello</em>
-									</h4>
-									<p>IF you need a working contact form by PHP script, please
-										visit TemplateMo's contact page for more info.</p>
+									<h4>LIÊN HỆ CHÚNG TÔI</h4>
+									<p>Nếu bạn có ý kiến muốn phản hồi hãy để lại nội dung ở
+										mẫu dưới đây</p>
 								</div>
 							</div>
 							<div class="col-lg-12">
 								<fieldset>
 									<input type="name" name="name" id="name"
-										placeholder="Full Name" autocomplete="on" required>
+										placeholder="Họ và Tên" autocomplete="on" required>
 								</fieldset>
 							</div>
 							<div class="col-lg-12">
 								<fieldset>
 									<input type="text" name="email" id="email"
-										pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
+										pattern="[^ @]*@[^ @]*" placeholder="Email" required="">
 								</fieldset>
 							</div>
 							<div class="col-lg-12">
 								<fieldset>
-									<textarea name="message" id="message"
-										placeholder="Your Message"></textarea>
+									<textarea name="message" id="message" placeholder="Nội Dung"></textarea>
 								</fieldset>
 							</div>
 							<div class="col-lg-12">
 								<fieldset>
 									<button type="submit" id="form-submit"
-										class="main-gradient-button">Send Message</button>
+										class="main-gradient-button">Gửi</button>
 								</fieldset>
 							</div>
 						</div>
@@ -916,17 +887,17 @@
 					<ul class="social-icons">
 						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<!-- 						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 						<li><a href="#"><i class="fa fa-rss"></i></a></li>
-						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
 					</ul>
 				</div>
 				<div class="col-lg-12">
 					<p class="copyright">
 						Copyright © 2022 EduWell Co., Ltd. All Rights Reserved. <br>Design:
 						<a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
-						<br>Distribution: <a rel="sponsored"
-							href="https://themewagon.com" target="_blank">ThemeWagon</a>
+						<!-- 	<br>Distribution: <a rel="sponsored"
+							href="https://themewagon.com" target="_blank">ThemeWagon</a> -->
 					</p>
 				</div>
 			</div>

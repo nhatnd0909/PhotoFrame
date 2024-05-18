@@ -51,15 +51,15 @@ https://templatemo.com/tm-573-eduwell
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
 							src="assets/images/logoSP.png" alt="EduWell Template"
-							style="max-width: 70px"> <span style="font-size: 20px;margin-left: -10px">Sparkle
-								Memo</span>
+							style="max-width: 70px"> <span
+							style="font-size: 20px; margin-left: -10px">Sparkle Memo</span>
 						</a>
 
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li class=""><a href="index">Trang Chủ</a></li>
-							<li class=""><a href="template">Dịch Vụ</a></li>
+							<li class=""><a href="template">Sản Phẩm</a></li>
 							<li class=""><a href="#contact-us" class="active">Liên
 									hệ</a></li>
 							<c:if test="${logged eq 0}">
@@ -91,24 +91,25 @@ https://templatemo.com/tm-573-eduwell
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="left-image">
-						<img src="assets/images/about-left-image.png" alt="">
+						<img src="assets/images/logo_exe.png" alt=""
+							style="border-radius: 50%; width: 80%">
 					</div>
 				</div>
 				<div class="col-lg-6 align-self-center">
 					<div class="section-heading">
-						<h6>Get info</h6>
+						<!-- <h6>Get info</h6> -->
 						<h4>
-							Thông Tin Về <em>Chúng Tôi</em>
+							Về Chúng Tôi
+							<!-- <em>Chúng Tôi</em> -->
 						</h4>
 						<p>
-							You are allowed 100% to download and use our templates from
-							TemplateMo for your commercial or business websites. You are <strong>not
-								allowed</strong> to redistribute this template ZIP file on any other
-							website without a permission from us.<br> <br>There are
-							some unethical people on this planet earth who copied our
-							templates so easily without any permission from us and then
-							reposted on their websites. Their Karma will hit them really
-							hard. Yeah, that is right.
+							Chào mừng đến với cửa hàng khung tranh 3D handmade của chúng tôi!
+							Tại đây, chúng tôi tự hào giới thiệu những sản phẩm khung tranh
+							3D độc đáo và tinh xảo<br> <br>Mỗi chiếc khung tranh là
+							một tác phẩm nghệ thuật, mang đậm dấu ấn cá nhân và sự sáng tạo.
+							Chúng tôi sử dụng nguyên liệu chất lượng cao, thân thiện với môi
+							trường, nhằm đảm bảo tính bền vững và vẻ đẹp vượt thời gian cho
+							từng sản phẩm.
 						</p>
 					</div>
 					<div class="row">
@@ -117,9 +118,11 @@ https://templatemo.com/tm-573-eduwell
 								<div class="icon">
 									<img src="assets/images/service-icon-01.png" alt="">
 								</div>
-								<h4>Best Strategy</h4>
-								<p>Food & truck tumeric taxidermy hoodie chiasore bitters
-									retroed gentrify street portland.</p>
+								<h4>Sứ mệnh</h4>
+								<p>Tạo ra những tác phẩm ghi lại kỷ niệm quý báu bằng sự
+									sáng tạo, tỉ mỉ giúp câu chuyện trở nên sống động và cảm xúc
+									hơn.</p>
+								<p style="color: white;">tỉ mỉ giúp câu chuyện trở nêng</p>
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -127,9 +130,10 @@ https://templatemo.com/tm-573-eduwell
 								<div class="icon">
 									<img src="assets/images/service-icon-02.png" alt="">
 								</div>
-								<h4>Creative Ideas</h4>
-								<p>Food & truck tumeric taxidermy hoodie chiasore bitters
-									retroed gentrify street portland.</p>
+								<h4>Tầm nhìn</h4>
+								<p>Trở thành sự lựa chọn hàng đầu trong thị trường khung ảnh
+									3D handmade tại Việt Nam, nơi khách hàng đặt trọn niềm tin về
+									chất lượng, sáng tạo và sự hài lòng.</p>
 							</div>
 						</div>
 					</div>
@@ -138,7 +142,7 @@ https://templatemo.com/tm-573-eduwell
 		</div>
 	</section>
 
-	<section class="our-team">
+	<!-- 	<section class="our-team">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3">
@@ -298,7 +302,7 @@ https://templatemo.com/tm-573-eduwell
 			</div>
 		</div>
 	</section>
-
+ -->
 	<section class="testimonials">
 		<div class="container">
 			<div class="row">
@@ -314,60 +318,24 @@ https://templatemo.com/tm-573-eduwell
 					<div class="owl-testimonials owl-carousel"
 						style="position: relative; z-index: 5;">
 						<div class="item">
-							<p>“Food & truck tumeric hoodie chiasore bit- ters retroed
-								gentrify street portland.”</p>
-							<h4>Andrea Furistos</h4>
-							<span>CEO-FOUNDER</span> <img src="assets/images/quote.png"
-								alt="">
+							<p>Sản phẩm chất lượng. Giống mô tả</p>
+							<h4>Như Ý</h4>
+							<img src="assets/images/quote.png" alt="">
 						</div>
 						<div class="item">
-							<p>“Food & truck tumeric hoodie chiasore bit- ters retroed
-								gentrify street portland.”</p>
-							<h4>Andrea Furistos</h4>
-							<span>CEO-FOUNDER</span> <img src="assets/images/quote.png"
-								alt="">
+							<p>Sản phẩm chất lượng</p>
+							<h4>Nguyễn Đình Nhật</h4>
+							<img src="assets/images/quote.png" alt="">
 						</div>
 						<div class="item">
-							<p>“Food & truck tumeric hoodie chiasore bit- ters retroed
-								gentrify street portland.”</p>
-							<h4>Andrea Furistos</h4>
-							<span>CEO-FOUNDER</span> <img src="assets/images/quote.png"
-								alt="">
+							<p>Sản phẩm chắc chắn, giao hàng nhanh</p>
+							<h4>Quốc Nam</h4>
+							<img src="assets/images/quote.png" alt="">
 						</div>
 						<div class="item">
-							<p>“Food & truck tumeric hoodie chiasore bit- ters retroed
-								gentrify street portland.”</p>
-							<h4>Andrea Furistos</h4>
-							<span>CEO-FOUNDER</span> <img src="assets/images/quote.png"
-								alt="">
-						</div>
-						<div class="item">
-							<p>“Food & truck tumeric hoodie chiasore bit- ters retroed
-								gentrify street portland.”</p>
-							<h4>Andrea Furistos</h4>
-							<span>CEO-FOUNDER</span> <img src="assets/images/quote.png"
-								alt="">
-						</div>
-						<div class="item">
-							<p>“Food & truck tumeric hoodie chiasore bit- ters retroed
-								gentrify street portland.”</p>
-							<h4>Andrea Furistos</h4>
-							<span>CEO-FOUNDER</span> <img src="assets/images/quote.png"
-								alt="">
-						</div>
-						<div class="item">
-							<p>“Food & truck tumeric hoodie chiasore bit- ters retroed
-								gentrify street portland.”</p>
-							<h4>Andrea Furistos</h4>
-							<span>CEO-FOUNDER</span> <img src="assets/images/quote.png"
-								alt="">
-						</div>
-						<div class="item">
-							<p>“Food & truck tumeric hoodie chiasore bit- ters retroed
-								gentrify street portland.”</p>
-							<h4>Andrea Furistos</h4>
-							<span>CEO-FOUNDER</span> <img src="assets/images/quote.png"
-								alt="">
+							<p>Sản phẩm giống mô tả, giá cả hợp lý</p>
+							<h4>Nhật Phong</h4>
+							<img src="assets/images/quote.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -457,16 +425,16 @@ https://templatemo.com/tm-573-eduwell
 										<i class="fa fa-phone"></i>
 									</div>
 									<h4>Số Điện Thoại</h4>
-									<span>010-020-0340</span>
+									<span>033 654 8705</span>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<div class="contact-info">
 									<div class="icon">
 										<i class="fa fa-envelope"></i>
 									</div>
 									<h4>Email</h4>
-									<span>asd@gmail.com</span>
+									<span>sparklememoo@gmail.com</span>
 								</div>
 							</div>
 						</div>
@@ -477,10 +445,8 @@ https://templatemo.com/tm-573-eduwell
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="section-heading">
-									<h6>LIÊN HỆ CHÚNG TÔI</h6>
-									<h4>
-										Say <em>Hello</em>
-									</h4>
+									<!-- <h6>LIÊN HỆ CHÚNG TÔI</h6> -->
+									<h4>LIÊN HỆ CHÚNG TÔI</h4>
 									<p>Nếu bạn có ý kiến muốn phản hồi hãy để lại nội dung ở
 										mẫu dưới đây</p>
 								</div>
@@ -513,11 +479,12 @@ https://templatemo.com/tm-573-eduwell
 				</div>
 				<div class="col-lg-12">
 					<ul class="social-icons">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://www.facebook.com/nhatnd99"><i
+								class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<!-- 						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 						<li><a href="#"><i class="fa fa-rss"></i></a></li>
-						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
 					</ul>
 				</div>
 				<div class="col-lg-12">

@@ -62,8 +62,7 @@
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li class=""><a href="index">Trang Chủ</a></li>
-							<li class=""><a href="detail-template" class="active">Dịch
-									vụ</a></li>
+							<li class=""><a href="detail-template" class="active">Sản Phẩm</a></li>
 							<li class=""><a href="contact-us" class="active">Liên hệ</a></li>
 							<c:if test="${logged eq 0}">
 								<li class=""><a href="login">Đăng Nhập</a></li>

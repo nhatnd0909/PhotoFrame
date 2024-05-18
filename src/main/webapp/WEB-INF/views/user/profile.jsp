@@ -69,7 +69,7 @@ https://templatemo.com/tm-573-eduwell
                                     </li>
                                 </ul>
                             </li> -->
-							<li class=""><a href="template">Dịch Vụ</a></li>
+							<li class=""><a href="template">Sản Phẩm</a></li>
 							<li class=""><a href="contact-us">Liên hệ</a></li>
 							<c:if test="${logged eq 0}">
 								<li class=""><a href="login">Đăng Nhập</a></li>

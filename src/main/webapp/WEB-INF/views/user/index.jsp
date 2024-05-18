@@ -50,8 +50,8 @@ https://templatemo.com/tm-573-eduwell
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
 							src="assets/images/logoSP.png" alt="EduWell Template"
-							style="max-width: 70px"> <span style="font-size: 20px;margin-left: -10px">Sparkle
-								Memo</span>
+							style="max-width: 70px"> <span
+							style="font-size: 20px; margin-left: -10px">Sparkle Memo</span>
 						</a>
 
 						<!-- ***** Logo End ***** -->
@@ -59,7 +59,7 @@ https://templatemo.com/tm-573-eduwell
 						<ul class="nav">
 							<li class="scroll-to-section"><a href="" class="active">Trang
 									Chủ</a></li>
-							<li class=""><a href="template">Dịch Vụ</a></li>
+							<li class=""><a href="template">Sản Phẩm</a></li>
 							<li class=""><a href="contact-us">Liên hệ</a></li>
 							<c:if test="${logged eq 0}">
 								<li class=""><a href="login">Đăng Nhập</a></li>
@@ -93,12 +93,12 @@ https://templatemo.com/tm-573-eduwell
 					<div class="header-text">
 						<h6>Chào mừng đến với cửa hàng của chúng tôi</h6>
 						<h2>
-							Nơi Để <em>Thiết Kế</em> <br> Ý Tưởng Của Bạn!
+							Khung tranh <em>3D</em> <br> Hand Made!
 						</h2>
 						<!-- <h2>Best Place To <em>Design</em> Your <br> Ideas!</h2> -->
 						<div class="main-button-gradient">
 							<div class="scroll-to-section">
-								<a href="#contact-section">Thiết kế ngay!</a>
+								<a href="template">Khám phá!</a>
 							</div>
 						</div>
 					</div>
@@ -161,12 +161,12 @@ https://templatemo.com/tm-573-eduwell
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3">
 					<div class="section-heading">
-						<h6>Dịch Vụ</h6>
 						<h4>
-							Những Thứ Bạn Có Thể<em> Làm</em>
+							Gợi ý Chủ Đề
+							<!--  <em> Làm</em> -->
 						</h4>
-						<p>Chỉ cần nghĩ đến kết quả, khi bạn cần các mẫu miễn phí cho
-							ý tưởng của mình, chúng tôi sẽ thực hiện!</p>
+						<!-- <p>Chỉ cần nghĩ đến kết quả, khi bạn cần các mẫu miễn phí cho
+							ý tưởng của mình, chúng tôi sẽ thực hiện!</p> -->
 					</div>
 				</div>
 				<div class="col-lg-12">
@@ -301,10 +301,10 @@ https://templatemo.com/tm-573-eduwell
 				</div>
 				<div class="col-lg-5 align-self-center">
 					<h6>Nhận ưu đãi ngay</h6>
-					<h4>Giảm 20% cho sản phẩm thứ 1+</h4>
+					<h4>Giảm 10% cho 15 sản phẩm đầu tiên</h4>
 
-					<div class="white-button">
-						<a href="">Xem ưu đãi</a>
+					<div class="white-button" style="margin-top: 50px">
+						<a href="template">Đặt Ngay</a>
 					</div>
 				</div>
 			</div>
@@ -316,9 +316,10 @@ https://templatemo.com/tm-573-eduwell
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="section-heading">
-						<h6>NHẬN XÉT</h6>
+						<!-- <h6>NHẬN XÉT</h6> -->
 						<h4>
-							Nhận Xét Từ <em>Khách Hàng</em>
+							Phản Hồi Từ Khách Hàng
+							<!-- <em>Khách Hàng</em> -->
 						</h4>
 					</div>
 				</div>
@@ -326,41 +327,26 @@ https://templatemo.com/tm-573-eduwell
 					<div class="owl-testimonials owl-carousel"
 						style="position: relative; z-index: 5;">
 						<div class="item">
-							<p>“just think about TemplateMo if you need free CSS
-								templates for your website”</p>
-							<h4>Catherine Walk</h4>
-							<span>CEO &amp; Founder</span> <img src="assets/images/quote.png"
-								alt="">
+							<p>Sản phẩm chất lượng. Giống mô tả</p>
+							<h4>Như Ý</h4>
+							<img src="assets/images/quote.png" alt="">
 						</div>
 						<div class="item">
-							<p>“think about our website first when you need free HTML
-								templates for your website”</p>
-							<h4>David Martin</h4>
-							<span>CTO of Tech Company</span> <img
-								src="assets/images/quote.png" alt="">
+							<p>Sản phẩm chất lượng</p>
+							<h4>Nguyễn Đình Nhật</h4>
+							<img src="assets/images/quote.png" alt="">
 						</div>
 						<div class="item">
-							<p>“just think about our website wherever you need free
-								templates for your website”</p>
-							<h4>Sophia Whity</h4>
-							<span>CEO and Co-Founder</span> <img
-								src="assets/images/quote.png" alt="">
+							<p>Sản phẩm chắc chắn, giao hàng nhanh</p>
+							<h4>Quốc Nam</h4>
+							<img src="assets/images/quote.png" alt="">
 						</div>
 						<div class="item">
-							<p>“Praesent accumsan condimentum arcu, id porttitor est
-								semper nec. Nunc diam lorem.”</p>
-							<h4>Helen Shiny</h4>
-							<span>Tech Officer</span> <img src="assets/images/quote.png"
-								alt="">
+							<p>Sản phẩm giống mô tả, giá cả hợp lý</p>
+							<h4>Nhật Phong</h4>
+							<img src="assets/images/quote.png" alt="">
 						</div>
-						<div class="item">
-							<p>“Praesent accumsan condimentum arcu, id porttitor est
-								semper nec. Nunc diam lorem.”</p>
-							<h4>George Soft</h4>
-							<span>Gadget Reviewer</span> <img src="assets/images/quote.png"
-								alt="">
-						</div>
-						<div class="item">
+						<!-- 						<div class="item">
 							<p>“Praesent accumsan condimentum arcu, id porttitor est
 								semper nec. Nunc diam lorem.”</p>
 							<h4>Andrew Hall</h4>
@@ -380,7 +366,7 @@ https://templatemo.com/tm-573-eduwell
 							<h4>Olivia Too</h4>
 							<span>Creative Designer</span> <img src="assets/images/quote.png"
 								alt="">
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -406,16 +392,16 @@ https://templatemo.com/tm-573-eduwell
 										<i class="fa fa-phone"></i>
 									</div>
 									<h4>Số Điện Thoại</h4>
-									<span>010-020-0340</span>
+									<span>033 654 8705</span>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<div class="contact-info">
 									<div class="icon">
 										<i class="fa fa-envelope"></i>
 									</div>
 									<h4>Email</h4>
-									<span>asd@gmail.com</span>
+									<span>sparklememoo@gmail.com</span>
 								</div>
 							</div>
 						</div>
@@ -426,10 +412,8 @@ https://templatemo.com/tm-573-eduwell
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="section-heading">
-									<h6>LIÊN HỆ CHÚNG TÔI</h6>
-									<h4>
-										Say <em>Hello</em>
-									</h4>
+									<!-- 	<h6>LIÊN HỆ CHÚNG TÔI</h6> -->
+									<h4>LIÊN HỆ CHÚNG TÔI</h4>
 									<p>Nếu bạn có ý kiến muốn phản hồi hãy để lại nội dung ở
 										mẫu dưới đây</p>
 								</div>
@@ -454,7 +438,7 @@ https://templatemo.com/tm-573-eduwell
 							<div class="col-lg-12">
 								<fieldset>
 									<button type="submit" id="form-submit"
-										class="main-gradient-button">Send Message</button>
+										class="main-gradient-button">Gửi</button>
 								</fieldset>
 							</div>
 						</div>
@@ -463,18 +447,18 @@ https://templatemo.com/tm-573-eduwell
 				<div class="col-lg-12">
 					<ul class="social-icons">
 						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<!-- 						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 						<li><a href="#"><i class="fa fa-rss"></i></a></li>
-						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
 					</ul>
 				</div>
 				<div class="col-lg-12">
 					<p class="copyright">
 						Copyright © 2022 EduWell Co., Ltd. All Rights Reserved. <br>Design:
 						<a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
-						<br>Distribution: <a rel="sponsored"
-							href="https://themewagon.com" target="_blank">ThemeWagon</a>
+						<!-- 	<br>Distribution: <a rel="sponsored"
+							href="https://themewagon.com" target="_blank">ThemeWagon</a> -->
 					</p>
 				</div>
 			</div>

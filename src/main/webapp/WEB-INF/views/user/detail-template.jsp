@@ -117,15 +117,15 @@ h1 {
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
 							src="assets/images/logoSP.png" alt="EduWell Template"
-							style="max-width: 70px"> <span style="font-size: 20px;margin-left: -10px">Sparkle
-								Memo</span>
+							style="max-width: 70px"> <span
+							style="font-size: 20px; margin-left: -10px">Sparkle Memo</span>
 						</a>
 
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li class=""><a href="/">Trang Chủ</a></li>
-							<li class=""><a href="template">Dịch Vụ</a></li>
+							<li class=""><a href="template">Sản Phẩm</a></li>
 							<li class=""><a href="contact-us">Liên hệ</a></li>
 							<c:if test="${logged eq 0}">
 								<li class=""><a href="login" class="active">Đăng Nhập</a></li>
@@ -539,16 +539,16 @@ h1 {
 										<i class="fa fa-phone"></i>
 									</div>
 									<h4>Số Điện Thoại</h4>
-									<span>010-020-0340</span>
+									<span>033 654 8705</span>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-lg-5">
 								<div class="contact-info">
 									<div class="icon">
-										<i class="fa fa-envelope"></i>
+										<i class="fa fa-phone"></i>
 									</div>
 									<h4>Email</h4>
-									<span>asd@gmail.com</span>
+									<span>sparklememoo@gmail.com</span>
 								</div>
 							</div>
 						</div>
@@ -559,10 +559,8 @@ h1 {
 						<div class="row">
 							<div class="col-lg-12">
 								<div class="section-heading">
-									<h6>LIÊN HỆ CHÚNG TÔI</h6>
-									<h4>
-										Say <em>Hello</em>
-									</h4>
+									<!-- <h6>LIÊN HỆ CHÚNG TÔI</h6> -->
+									<h4>LIÊN HỆ CHÚNG TÔI</h4>
 									<p>Nếu bạn có ý kiến muốn phản hồi hãy để lại nội dung ở
 										mẫu dưới đây</p>
 								</div>
@@ -587,7 +585,7 @@ h1 {
 							<div class="col-lg-12">
 								<fieldset>
 									<button type="submit" id="form-submit"
-										class="main-gradient-button">Send Message</button>
+										class="main-gradient-button">Gửi</button>
 								</fieldset>
 							</div>
 						</div>
@@ -604,8 +602,9 @@ h1 {
 				</div>
 				<div class="col-lg-12">
 					<p class="copyright">
-						Copyright © 2022 EduWell Co., Ltd. All Rights Reserved. <br>Design:
-						<a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+						Copyright © 2024 SPARKLE MEMO, Ltd. All Rights Reserved. <br>Design:
+						<a rel="sponsored" href="https://templatemo.com" target="_blank">SPARKLE
+							MEMO</a>
 					</p>
 				</div>
 			</div>
