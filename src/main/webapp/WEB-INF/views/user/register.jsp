@@ -37,10 +37,11 @@
 						<nav class="main-nav">
 							<!-- ***** Logo Start ***** -->
 							<a href="index" class="logo"> <img
-								src="assets/images/logo.png" alt="EduWell Template"
-								style="max-width: 50px"> <span style="font-size: 20px">Sparkle
-									Memo</span>
+								src="assets/images/logoSP.png" alt="EduWell Template"
+								style="max-width: 70px"> <span
+								style="font-size: 20px; margin-left: -10px">Sparkle Memo</span>
 							</a>
+
 							<!-- ***** Logo End ***** -->
 							<!-- ***** Menu Start ***** -->
 							<ul class="nav">
