@@ -36,6 +36,12 @@ public class UserOrder {
 	@Column(name = "ImageURL")
 	private List<String> images;
 
+	@Column(name = "Type")
+	private String type;
+
+	@Column(name = "Size")
+	private String size;
+
 	public UserOrder() {
 		super();
 	}
@@ -53,6 +59,25 @@ public class UserOrder {
 		this.product = product;
 		this.icons = icons;
 		this.images = images;
+	}
+
+	public UserOrder(Product product, List<Icon> icons, List<String> images, String type, String size) {
+		super();
+		this.product = product;
+		this.icons = icons;
+		this.images = images;
+		this.type = type;
+		this.size = size;
+	}
+
+	public UserOrder(Long orderID, Product product, List<Icon> icons, List<String> images, String type, String size) {
+		super();
+		this.orderID = orderID;
+		this.product = product;
+		this.icons = icons;
+		this.images = images;
+		this.type = type;
+		this.size = size;
 	}
 
 	public Long getOrderID() {
@@ -87,10 +112,26 @@ public class UserOrder {
 		this.images = images;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+
 	@Override
 	public String toString() {
 		return "UserOrder [orderID=" + orderID + ", product=" + product + ", icons=" + icons + ", images=" + images
-				+ "]";
+				+ ", type=" + type + ", size=" + size + "]";
 	}
 
 }

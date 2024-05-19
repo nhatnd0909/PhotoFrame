@@ -105,7 +105,11 @@
 						<div class="box-inner-1 pb-3 mb-3 " style="margin-top: 50px">
 							<div class="d-flex justify-content-between mb-3 userdetails">
 								<p class="fw-bold">${userOrder.product.name}</p>
-								<p class="fw-lighter">${userOrder.product.price}đ</p>
+								<p class="fw-lighter">${price}đ</p>
+							</div>
+							<div class="d-flex justify-content-between mb-3 userdetails">
+								<p class="fw-bold">${type}</p>
+								<p class="fw-lighter">Size: ${size} cm</p>
 							</div>
 							<div id="my">
 								<div class="carousel-inner">
@@ -170,7 +174,7 @@
 										<div
 											class="d-flex align-items-center justify-content-between mb-2">
 											<p>Tổng đơn hàng</p>
-											<p id="totalPrice">${userOrder.getProduct().getPrice()}đ
+											<p id="totalPrice">${price}đ
 											</p>
 										</div>
 										<div
@@ -189,10 +193,10 @@
 											class="d-flex align-items-center justify-content-between mb-2">
 											<p class="fw-bold">Tổng đơn hàng</p>
 											<p class="fw-bold" id="priceAfterDiscount">
-												${userOrder.getProduct().getPrice() + 30000} đ</p>
+												${price + 30000} đ</p>
 										</div>
 										<button id="paymentButton" class="btn btn-primary mt-2">
-											Thanh toán ${userOrder.getProduct().getPrice()+30000}đ</button>
+											Thanh toán ${price+30000}đ</button>
 										<div style="margin-top: 20px">
 											<a href="edit-template?id=${userOrder.product.productID}">
 												<p>Quay lại</p>

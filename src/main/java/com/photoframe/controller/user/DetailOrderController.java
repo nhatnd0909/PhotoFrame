@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.photoframe.model.Customer;
 import com.photoframe.model.DetailOrder;
 import com.photoframe.model.Icon;
+import com.photoframe.model.UserOrder;
 import com.photoframe.service.CustomerServie;
 import com.photoframe.service.DetailOrderService;
+import com.photoframe.service.UserOrderService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -23,7 +25,8 @@ public class DetailOrderController {
 	private CustomerServie customerServie;
 	@Autowired
 	private DetailOrderService deOrderService;
-
+	@Autowired
+	private UserOrderService userOrderService;
 	@GetMapping("/detail-order")
 	public String showDetailOrderPage(HttpSession session, Model model, @RequestParam String id) {
 		String userID = (String) session.getAttribute("userID");
@@ -48,6 +51,7 @@ public class DetailOrderController {
 		model.addAttribute("listImg", listImg);
 		List<Icon> listcon = detailOrder.getUserOrder().getIcons();
 		model.addAttribute("listIcon", listcon);
+
 		return "/user/detail-order";
 
 	}

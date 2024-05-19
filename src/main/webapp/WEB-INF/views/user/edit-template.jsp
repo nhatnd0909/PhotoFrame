@@ -110,34 +110,63 @@
 									allow="fullscreen"> </iframe>
 							</div>
 						</div>
+
+
 						<div class="col-lg-6">
-							<h4 class="fw-bold mb-3">${product.name}</h4>
-							<p class="mb-3">Phân loại: ${product.type}</p>
-							<h5 class="fw-bold mb-3">${product.price}Đ</h5>
-							<div class="d-flex mb-4">
-								<i class="fa fa-star text-secondary"></i> <i
-									class="fa fa-star text-secondary"></i> <i
-									class="fa fa-star text-secondary"></i> <i
-									class="fa fa-star text-secondary"></i> <i class="fa fa-star"></i>
-							</div>
-							<p class="mb-4">${product.describle}</p>
-							<p class="mb-4">
-								Nếu bạn muốn tự thiết kế sản phẩm theo sở thích của mình dựa
-								trên mẫu này <br> <a href="${product.urlDesign}"
-									target="_blank">Click vào đây</a>
-							</p>
-							<p>Nếu bạn hoành thành xong phần chỉnh sửa hãy thực hiện bước
-								đặt hàng</p>
-							<a href="designPayment?id=${product.productID}"
-								class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
-								class="fa fa-pen me-2 text-primary"></i>Đặt hàng</a>
+							<form action="designPayment" method="get">
+								<h4 class="fw-bold mb-3">${product.name}</h4>
+								<p class="mb-3">Phân loại: ${product.type}</p>
+
+								<h5 id="price1" class="fw-bold mb-3">${product.price}Đ</h5>
+								<h5 id="price2" class="fw-bold mb-3">${product.price2}Đ</h5>
+								<h5 id="price3" class="fw-bold mb-3">${product.price3}Đ</h5>
+
+								<div class="d-flex mb-4">
+									<i class="fa fa-star text-secondary"></i> <i
+										class="fa fa-star text-secondary"></i> <i
+										class="fa fa-star text-secondary"></i> <i
+										class="fa fa-star text-secondary"></i> <i class="fa fa-star"></i>
+								</div>
+
+								<input type="text" name="id" value="${product.productID}"
+									hidden="">
+
+								<p class="mb-4">${product.describle}</p>
+								<p class="mb-4">
+									Nếu bạn muốn tự thiết kế sản phẩm theo sở thích của mình dựa
+									trên mẫu này <br> <a href="${product.urlDesign}"
+										target="_blank">Click vào đây</a>
+								</p>
+								<div>
+									<select id="type" name="type"
+										class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">
+										<option value="Sản phẩm hoàn thiện">Sản phẩm hoàn
+											thiện</option>
+										<option value="Set nguyên liệu">Set nguyên liệu</option>
+									</select>
+								</div>
+								<input type="text" name="size" id="selectedSize" value="15*15"
+									hidden="">
+								<div>
+									<input type="button" id="size1"
+										class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"
+										value="Size 15*15"> <input type="button" id="size2"
+										class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"
+										value="Size 20*20"> <input type="button" id="size3"
+										class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"
+										value="Size 20*30">
+								</div>
+								<input type="submit" value="Đặt hàng"
+									class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">
+							</form>
 						</div>
-						
+
 						<form id="orders" action=edit-template method="post"
 							enctype="multipart/form-data">
 
 							<input name="idProduct" value="${product.productID}" hidden="">
 							<input name="" value="${product.numberImgRequire}" hidden="">
+
 							<!--  -->
 							<c:if test="${product.numberImgRequire eq 1}">
 								<div class="row" style="margin-top: 20px;">
@@ -599,6 +628,24 @@
 									<!--  -->
 								</div>
 							</div>
+
+							<div style="margin-top: 20px">
+								<select name="type"
+									class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">
+									<option value="Sản phẩm hoàn thiện">Sản phẩm hoàn
+										thiện</option>
+									<option value="Set nguyên liệu">Set nguyên liệu</option>
+								</select> 
+								<select name="size"
+									class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary" style="margin-left: 20px">
+									<option value="15*20">Size 15*20</option>
+									<option value="20*20">Size 20*20</option>
+									<option value="20*30">Size 20*30</option>
+								</select>
+							</div>
+
+
+
 							<div class="d-flex justify-content-center">
 								<button
 									class="btn border border-secondary rounded-pill px-5 py-3 mb-5 text-primary"
@@ -777,7 +824,7 @@
 	<!-- Template Javascript -->
 	<script src="lib/js/main.js"></script>
 	<!-- Kiểm tra -->
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 	function validateImageInputs() {
 		const imageInputs = document.querySelectorAll('input[type="file"]');
 		let imageCount = 0;
@@ -804,7 +851,7 @@
 			event.preventDefault(); // Prevent form submission if validation fails
 		}
 	});
-	</script>
+	</script> -->
 	<!--  -->
 	<script type="text/javascript">
 	function validateIcons() {
@@ -815,6 +862,35 @@
 	    }
 	    return true;
 	}
+	</script>
+	<!--  -->
+	<script type="text/javascript">
+	// Mặc định ẩn giá sản phẩm thứ 2 và thứ 3
+	document.getElementById('price2').style.display = 'none';
+	document.getElementById('price3').style.display = 'none';
+
+	// Sự kiện click vào nút chọn kích thước
+	document.getElementById('size1').addEventListener('click', function() {
+	    document.getElementById('price1').style.display = 'block';
+	    document.getElementById('price2').style.display = 'none';
+	    document.getElementById('price3').style.display = 'none';
+	    document.getElementById('selectedSize').value = "15*15";
+	});
+
+	document.getElementById('size2').addEventListener('click', function() {
+	    document.getElementById('price1').style.display = 'none';
+	    document.getElementById('price2').style.display = 'block';
+	    document.getElementById('price3').style.display = 'none';
+	    document.getElementById('selectedSize').value = "20*20";
+	});
+
+	document.getElementById('size3').addEventListener('click', function() {
+	    document.getElementById('price1').style.display = 'none';
+	    document.getElementById('price2').style.display = 'none';
+	    document.getElementById('price3').style.display = 'block';
+	    document.getElementById('selectedSize').value = "20*30";
+	});
+
 	</script>
 </body>
 

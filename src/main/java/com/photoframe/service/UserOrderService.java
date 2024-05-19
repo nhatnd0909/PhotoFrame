@@ -1,13 +1,10 @@
 package com.photoframe.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.photoframe.model.Product;
 import com.photoframe.model.UserOrder;
 import com.photoframe.repository.UserOrderRepository;
 

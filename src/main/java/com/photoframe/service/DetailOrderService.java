@@ -24,12 +24,22 @@ public class DetailOrderService {
 			String phone, String address, String name, String paymentMethod) {
 		Discount discount = discountService.getDiscountByCode(code);
 		Long totalPrice = userOrder.getProduct().getPrice();
+		
+		Long priceBySize = userOrder.getProduct().getPrice();
+		if (userOrder.getSize().equalsIgnoreCase("15*20")) {
+			priceBySize = userOrder.getProduct().getPrice();
+		} else if (userOrder.getSize().equalsIgnoreCase("20*20")) {
+			priceBySize = userOrder.getProduct().getPrice2();
+		} else if (userOrder.getSize().equalsIgnoreCase("20*30")) {
+			priceBySize = userOrder.getProduct().getPrice3();
+		}
+		
 		if (discount != null && discount.isStatus()) {
-			totalPrice = totalPrice - (userOrder.getProduct().getPrice() / 100 * discount.getDiscountValue())
+			totalPrice = priceBySize - (priceBySize / 100 * discount.getDiscountValue())
 					+ Long.parseLong("30000");
 
 		} else {
-			totalPrice = userOrder.getProduct().getPrice() + Long.parseLong("30000");
+			totalPrice = priceBySize + Long.parseLong("30000");
 		}
 		DetailOrder detailOrder = new DetailOrder();
 		detailOrder.setAddress(address);
@@ -57,12 +67,21 @@ public class DetailOrderService {
 			String phone, String address, String name, String paymentMethod) {
 		Discount discount = discountService.getDiscountByCode(code);
 		Long totalPrice = userOrder.getProduct().getPrice();
+
+		Long priceBySize = userOrder.getProduct().getPrice();
+		if (userOrder.getSize().equalsIgnoreCase("15*20")) {
+			priceBySize = userOrder.getProduct().getPrice();
+		} else if (userOrder.getSize().equalsIgnoreCase("20*20")) {
+			priceBySize = userOrder.getProduct().getPrice2();
+		} else if (userOrder.getSize().equalsIgnoreCase("20*30")) {
+			priceBySize = userOrder.getProduct().getPrice3();
+		}
+
 		if (discount != null && discount.isStatus()) {
-			totalPrice = totalPrice - (userOrder.getProduct().getPrice() / 100 * discount.getDiscountValue())
-					+ Long.parseLong("30000");
+			totalPrice = priceBySize - (priceBySize / 100 * discount.getDiscountValue()) + Long.parseLong("30000");
 
 		} else {
-			totalPrice = userOrder.getProduct().getPrice() + Long.parseLong("30000");
+			totalPrice = priceBySize + Long.parseLong("30000");
 		}
 		DetailOrder detailOrder = new DetailOrder();
 		detailOrder.setAddress(address);
@@ -153,12 +172,21 @@ public class DetailOrderService {
 			String address, String name, String paymentMethod) {
 		Discount discount = discountService.getDiscountByCode(code);
 		Long totalPrice = userOrder.getProduct().getPrice();
+		Long priceBySize = userOrder.getProduct().getPrice();
+		if (userOrder.getSize().equalsIgnoreCase("15*20")) {
+			priceBySize = userOrder.getProduct().getPrice();
+		} else if (userOrder.getSize().equalsIgnoreCase("20*20")) {
+			priceBySize = userOrder.getProduct().getPrice2();
+		} else if (userOrder.getSize().equalsIgnoreCase("20*30")) {
+			priceBySize = userOrder.getProduct().getPrice3();
+		}
+		
 		if (discount != null && discount.isStatus()) {
-			totalPrice = totalPrice - (userOrder.getProduct().getPrice() / 100 * discount.getDiscountValue())
+			totalPrice = priceBySize - (priceBySize / 100 * discount.getDiscountValue())
 					+ Long.parseLong("30000");
 
 		} else {
-			totalPrice = userOrder.getProduct().getPrice() + Long.parseLong("30000");
+			totalPrice = priceBySize + Long.parseLong("30000");
 		}
 		DetailOrder detailOrder = new DetailOrder();
 		detailOrder.setAddress(address);
@@ -191,12 +219,22 @@ public class DetailOrderService {
 			String phone, String address, String name, String paymentMethod) {
 		Discount discount = discountService.getDiscountByCode(code);
 		Long totalPrice = userOrder.getProduct().getPrice();
+		
+		Long priceBySize = userOrder.getProduct().getPrice();
+		if (userOrder.getSize().equalsIgnoreCase("15*20")) {
+			priceBySize = userOrder.getProduct().getPrice();
+		} else if (userOrder.getSize().equalsIgnoreCase("20*20")) {
+			priceBySize = userOrder.getProduct().getPrice2();
+		} else if (userOrder.getSize().equalsIgnoreCase("20*30")) {
+			priceBySize = userOrder.getProduct().getPrice3();
+		}
+		
 		if (discount != null && discount.isStatus()) {
-			totalPrice = totalPrice - (userOrder.getProduct().getPrice() / 100 * discount.getDiscountValue())
+			totalPrice = priceBySize - (priceBySize / 100 * discount.getDiscountValue())
 					+ Long.parseLong("30000");
 
 		} else {
-			totalPrice = userOrder.getProduct().getPrice() + Long.parseLong("30000");
+			totalPrice = priceBySize + Long.parseLong("30000");
 		}
 		DetailOrder detailOrder = new DetailOrder();
 		detailOrder.setAddress(address);

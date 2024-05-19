@@ -54,15 +54,16 @@
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
 							src="assets/images/logoSP.png" alt="EduWell Template"
-							style="max-width: 70px"> <span style="font-size: 20px;margin-left: -10px">Sparkle
-								Memo</span>
+							style="max-width: 70px"> <span
+							style="font-size: 20px; margin-left: -10px">Sparkle Memo</span>
 						</a>
 
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li class=""><a href="index">Trang Chủ</a></li>
-							<li class=""><a href="detail-template" class="active">Sản Phẩm</a></li>
+							<li class=""><a href="detail-template" class="active">Sản
+									Phẩm</a></li>
 							<li class=""><a href="contact-us" class="active">Liên hệ</a></li>
 							<c:if test="${logged eq 0}">
 								<li class=""><a href="login">Đăng Nhập</a></li>
@@ -105,7 +106,11 @@
 						<div class="box-inner-1 pb-3 mb-3 " style="margin-top: 50px">
 							<div class="d-flex justify-content-between mb-3 userdetails">
 								<p class="fw-bold">${userOrder.product.name}</p>
-								<p class="fw-lighter">${userOrder.product.price}đ</p>
+								<p class="fw-lighter">${price}đ</p>
+							</div>
+							<div class="d-flex justify-content-between mb-3 userdetails">
+								<p class="fw-bold">${userOrder.getType()}</p>
+								<p class="fw-lighter">Size ${userOrder.getSize()} cm</p>
 							</div>
 							<div id="my">
 								<div class="carousel-inner">
@@ -181,7 +186,7 @@
 											class="d-flex align-items-center justify-content-between mb-2">
 											<p>Tổng đơn hàng</p>
 											<p id="totalPrice">
-												<!-- <span class="fas fa-dollar-sign"></span> -->${userOrder.getProduct().getPrice()}
+												<!-- <span class="fas fa-dollar-sign"></span> -->${price}
 												đ
 											</p>
 										</div>
@@ -207,13 +212,13 @@
 											class="d-flex align-items-center justify-content-between mb-2">
 											<p class="fw-bold">Tổng đơn hàng</p>
 											<p class="fw-bold" id="priceAfterDiscount">
-												<!-- <span class="fas fa-dollar-sign"></span> -->${userOrder.getProduct().getPrice() + 30000}
+												<!-- <span class="fas fa-dollar-sign"></span> -->${price + 30000}
 												đ
 											</p>
 										</div>
 										<button id="paymentButton" class="btn btn-primary mt-2">
 											Thanh toán
-											<!-- <span class="fas fa-dollar-sign px-1"></span> -->${userOrder.getProduct().getPrice()+30000}đ
+											<!-- <span class="fas fa-dollar-sign px-1"></span> -->${price+30000}đ
 										</button>
 										<div style="margin-top: 20px">
 											<a href="edit-template?id=${userOrder.product.productID}">
@@ -344,6 +349,7 @@
 	        // Cập nhật giá trị giảm giá và giá sau giảm giá
 	        if (foundDiscount) {
 	            valueDiscount.innerHTML = 'Giảm giá <span>(' + discountValue + ') %</span>';
+	            var price = ${price};
 	            var totalPrice = parseFloat(totalPriceElement.textContent.replace('₫', '').replace(',', '').trim());
 	            var discountPriceValue = totalPrice / 100 * discountValue;
 	            discountPrice.innerHTML = '' + discountPriceValue.toLocaleString() + 'đ';
@@ -354,6 +360,7 @@
 	        } else {
 	            valueDiscount.innerHTML = 'Giảm giá <span>(0) %</span>';
 	            discountPrice.innerHTML = '0 đ';
+	            var price = ${price};
 	            var totalPriceWithShipping = parseFloat(totalPriceElement.textContent.replace('₫', '').replace(',', '').trim()) + 30000; // Giả sử phí vận chuyển là 30000đ
 	            priceAfterDiscountElement.innerHTML = '' + totalPriceWithShipping.toLocaleString() + 'đ';
 	            paymentButton.innerHTML = 'Thanh toán' + totalPriceWithShipping.toLocaleString() + 'đ';
@@ -362,6 +369,7 @@
 	});
 
 	</script>
+
 </body>
 
 </html>

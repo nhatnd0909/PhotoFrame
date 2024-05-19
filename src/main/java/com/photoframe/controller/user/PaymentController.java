@@ -5,14 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.photoframe.model.Customer;
 import com.photoframe.model.DetailOrder;
@@ -64,7 +61,21 @@ public class PaymentController {
 				if (cookie.getName().equals("userOrderId")) {
 					String userOrderId = cookie.getValue();
 					UserOrder userOrder = userOrderService.getUserOrderById(userOrderId);
+					String type = userOrder.getType();
+					String size = userOrder.getSize();
+					model.addAttribute("type", type);
+					model.addAttribute("size", size);
 					model.addAttribute("userOrder", userOrder);
+
+					long price = userOrder.getProduct().getPrice();
+					if (size.equalsIgnoreCase("15*20")) {
+						price = userOrder.getProduct().getPrice();
+					} else if (size.equalsIgnoreCase("20*20")) {
+						price = userOrder.getProduct().getPrice2();
+					} else if (size.equalsIgnoreCase("20*30")) {
+						price = userOrder.getProduct().getPrice3();
+					}
+					model.addAttribute("price", price);
 				}
 			}
 		}
@@ -101,6 +112,7 @@ public class PaymentController {
 			}
 		}
 		if (paymentMethod.equals("2")) {
+			
 			DetailOrder detailOrder = detailOrderService.createNewDetailOrder2(customer, userOrder, discount, email,
 					phone, address, name, paymentMethod);
 
@@ -124,7 +136,7 @@ public class PaymentController {
 
 	@GetMapping("/designPayment")
 	public String showDesignPaymentPage(HttpSession session, Model model, HttpServletRequest request,
-			@RequestParam String id) {
+			@RequestParam String id, @RequestParam String type, @RequestParam String size) {
 		String userID = (String) session.getAttribute("userID");
 //		kiểm tra user đăng nhập chưa
 		model.addAttribute("logged", "0");
@@ -134,14 +146,31 @@ public class PaymentController {
 			Customer customer = customerServie.getCustomerByID(userID);
 			model.addAttribute("username", customer.getAccount().getUserName());
 			model.addAttribute("customer", customer);
+
+		} else {
+			model.addAttribute("username", "");
+			model.addAttribute("mess", "");
+			return "/user/login";
 		}
 //
+
 		UserOrder userOrder = new UserOrder();
 		userOrder.setProduct(proService.getProductByID(id));
+		userOrder.setSize(size);
+		userOrder.setType(type);
 		userOrderService.saveUserOrder(userOrder);
 		model.addAttribute("userOrder", userOrder);
 		List<Discount> listDiscount = discountService.getDiscountValid();
 		model.addAttribute("listDiscount", listDiscount);
+		long price = userOrder.getProduct().getPrice();
+		if (size.equalsIgnoreCase("15*20")) {
+			price = userOrder.getProduct().getPrice();
+		} else if (size.equalsIgnoreCase("20*20")) {
+			price = userOrder.getProduct().getPrice2();
+		} else if (size.equalsIgnoreCase("20*30")) {
+			price = userOrder.getProduct().getPrice3();
+		}
+		model.addAttribute("price", price);
 		return "/user/design-payment";
 	}
 
@@ -172,6 +201,7 @@ public class PaymentController {
 			if (!discount.isEmpty()) {
 				discountService.updateUsedDiscount(discount);
 			}
+
 			String baseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
 			String vnpayUrl = vnPayService.createOrder(detailOrder.getTotalPrice().intValue(), "Thanh toan don hang",
 					baseUrl);
@@ -181,10 +211,12 @@ public class PaymentController {
 			userOrder = userOrderService.getUserOrderById(userOrderID);
 			detailOrderService.createNewDetailOrderDesign(customer, userOrder, discount, email, phone, address, name,
 					paymentMethod);
+
 			if (!discount.isEmpty()) {
 				discountService.updateUsedDiscount(discount);
 			}
 		}
+
 		return "redirect:/history-order";
 	}
 

@@ -11,7 +11,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.photoframe.model.Customer;
@@ -68,7 +67,8 @@ public class EditTemplateController {
 			@RequestParam(value = "image5", required = false) MultipartFile multipartFile5,
 			@RequestParam(value = "image6", required = false) MultipartFile multipartFile6,
 			@RequestParam(value = "icon", required = false) String[] selectedIcons, HttpSession session,
-			HttpServletRequest request, HttpServletResponse response) throws IOException {
+			HttpServletRequest request, HttpServletResponse response, @RequestParam String type,
+			@RequestParam String size) throws IOException {
 		// Lấy thông tin về sản phẩm và người dùng
 		Product product = productService.getProductByID(idProduct);
 
@@ -128,6 +128,8 @@ public class EditTemplateController {
 		// Tạo đối tượng UserOrder và lưu vào cơ sở dữ liệu
 
 		UserOrder userOrder = new UserOrder(product, selectedIconList, imageUrls);
+		userOrder.setType(type);
+		userOrder.setSize(size);
 		userOrderService.saveUserOrder(userOrder);
 		// Create a cookie to store user order id
 		String userOrderId = userOrder.getOrderID().toString();

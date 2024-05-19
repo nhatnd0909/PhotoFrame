@@ -47,8 +47,8 @@
 						<!-- ***** Logo Start ***** -->
 						<a href="index" class="logo"> <img
 							src="assets/images/logoSP.png" alt="EduWell Template"
-							style="max-width: 70px"> <span style="font-size: 20px;margin-left: -10px">Sparkle
-								Memo</span>
+							style="max-width: 70px"> <span
+							style="font-size: 20px; margin-left: -10px">Sparkle Memo</span>
 						</a>
 
 						<!-- ***** Logo End ***** -->
@@ -227,7 +227,7 @@
 														</c:otherwise>
 													</c:choose>
 
-													<div class="row mb-4" style="display: none">
+													<%-- <div class="row mb-4" style="display: none">
 														<div class="col-sm-3">
 															<h6 class="mb-0">Icon đã chọn</h6>
 														</div>
@@ -236,16 +236,65 @@
 																<img src="assets/images/${icon.urlIcon}" alt="">
 															</div>
 														</c:forEach>
+													</div> --%>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Kiểu đặt hàng</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<input name="city" type="text" class="form-control"
+																value="${detailOrder.getUserOrder().getType()}" readonly>
+														</div>
+													</div>
+													<div class="row mb-4">
+														<div class="col-sm-3">
+															<h6 class="mb-0">Kích thước</h6>
+														</div>
+														<div class="col-sm-9 text-secondary">
+															<input name="city" type="text" class="form-control"
+																value="${detailOrder.getUserOrder().getSize()} cm"
+																readonly>
+														</div>
 													</div>
 													<div class="row mb-4">
 														<div class="col-sm-3">
 															<h6 class="mb-0">Phương thức thanh toán</h6>
 														</div>
+
 														<div class="col-sm-9 text-secondary">
 															<input name="city" type="text" class="form-control"
 																value="${detailOrder.paymentMethod}" readonly>
 														</div>
+
 													</div>
+
+
+													<c:choose>
+														<c:when
+															test="${detailOrder.paymentMethod == 'Thanh toán trực tiếp'}">
+															<div class="row mb-4">
+																<div class="col-sm-3">
+																	<h6 class="mb-0">Chuyển Khoản</h6>
+																</div>
+																<div class="col-sm-6 text-secondary">
+																	<img alt="" src="assets/images/qrNganHang.jpg">
+																</div>
+															</div>
+															<div class="row mb-4">
+																<div class="col-sm-3"></div>
+																<div class="col-sm-9 text-secondary">
+																	<h6>
+																		<span class="text-warning" style="font-size: 23px">Nội
+																			Dung: </span> Thanh toán đơn hàng
+																		${detailOrder.detailOrderID}
+																	</h6>
+																</div>
+															</div>
+														</c:when>
+														<c:otherwise>
+
+														</c:otherwise>
+													</c:choose>
 													<div class="row mb-4">
 														<div class="col-sm-3">
 															<h6 class="mb-0">Trạng thái thanh toán</h6>
